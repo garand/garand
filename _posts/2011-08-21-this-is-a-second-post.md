@@ -1,7 +1,7 @@
 ---
 layout: post
-title: This is a Post Title
-excerpt: This is an excerpt
+title: Another Post Here
+excerpt: This is an excerpt of the second post
 ---
 
 # Post Title
