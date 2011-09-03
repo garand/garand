@@ -1,0 +1,58 @@
+#primary {
+  float:none;
+  width:55%;
+  padding:4%;
+}
+
+#secondary {
+  padding:4%;
+}
+
+#secondary {
+  position:static;
+  float:right;
+}
+
+aside {
+  width:100%;
+  float:left;
+  margin-bottom:10px;
+}
+
+aside:nth-child(even) {
+  margin-left:0;
+}
+
+footer {
+  padding:0;
+  position:absolute;
+  overflow:visible;
+}
+
+#twitter-plug {
+  width:92%;
+  padding:4% 4% 0 4%;
+}
+
+.post article {
+  
+  img {
+    max-width:100%;
+    display:block;
+    margin:20px auto 40px auto;
+    float:none;
+    
+    &.no-border {
+      margin:20px auto 20px 0;
+    }
+  }
+  
+  blockquote {
+    margin:35px auto 15px auto;
+    width:92%;
+  }
+  
+  h4 + img.no-border {
+    margin-bottom:10px;
+  }
+}

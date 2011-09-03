@@ -1,0 +1,385 @@
+@import "compass/css3";
+
+$primary: #FF4F44;
+$dark-primary: darken($primary,20%);
+$secondary: #ffc600;
+$dark-secondary: darken($secondary,7%);
+$accent: #FF4F44;
+
+$gray0: #111111;
+$gray1: #333333;
+$gray2: #777777;
+$gray3: #AAAAAA;
+$gray4: #CCCCCC;
+$gray5: #EEEEEE;
+
+$body: $gray1;
+
+$font-stack: "Muli",sans-serif;
+
+::selection { background:$secondary; }
+::-moz-selection { background:$secondary; }
+
+body {
+  font-family:$font-stack;
+  color:$body;
+  line-height:1.6em;
+  overflow:hidden;
+}
+
+#primary {
+  float:left;
+  width:50%;
+  padding:50px 2% 4% 8%;
+}
+
+article {
+  margin-bottom:15px;
+  
+  & + article {
+    margin-bottom:15px;
+    padding-top:15px;
+    border-top:dashed 1px $gray4;
+    
+    h1 {
+      color:$gray2;
+      font-size:20px;
+      
+      a {
+        color:$gray1;
+      }
+    }
+    
+    p {
+      font-size:14px;
+    }
+    
+    h4 {
+      font-size:13px;
+    }
+  }
+  
+  h1 {
+    color:$primary;
+    font-size:28px;
+    font-weight:normal;
+    margin:0;
+    padding:5px 0;
+    
+    a {
+      color:$primary;
+      text-decoration:none;
+      display:block;
+      
+      &:hover, &:active {
+        color:$dark-primary;
+      }
+    }
+  }
+  
+  h4 {
+    color:$gray3;
+    font-size:14px;
+    font-weight:normal;
+    margin:0;
+    padding:5px 0;
+    
+    a {
+      color:$primary;
+      text-decoration:none;
+    }
+    
+    &:hover, &:active {
+      a {
+        color:$secondary;
+        
+        &:hover, &:active {
+          color:$dark-secondary;
+          
+        }
+      }
+    }
+  }
+  
+  p {
+    font-size:16px;
+    margin:0;
+    padding:5px 0;
+    line-height:1.6em;
+    
+    a {
+      color:$primary;
+      text-decoration:none;
+      
+      &:hover, &:active {
+        color:$dark-primary;
+      }
+    }
+    
+    em {
+      color:$gray2;
+    }
+    
+    strong {
+      color:$gray0;
+    }
+  }
+}
+
+.post article {
+  
+  h1 {
+    line-height:1.2em;
+    padding:0;
+  }
+  
+  h2 {
+    margin:0;
+    padding:20px 0 5px 0;
+    font-weight:normal;
+    font-size:22px;
+    color:$gray1;
+    line-height:1.4em;
+  }
+  
+  h3 {
+    margin:0;
+    padding:20px 0 5px 0;
+    font-weight:normal;
+    font-size:20px;
+    color:$gray1;
+  }
+  
+  h1 + h4 + p, h1 + h4 + img + p {
+    font-size:18px;
+    padding:5px 0;
+  }
+  
+  p {
+    font-size:14px;
+    padding:10px 0;
+  }
+  
+  ul {
+    list-style:none;
+    margin:0;
+    padding:10px 0 10px 30px;
+    li {
+      font-size:14px;
+      line-height:1.4em;
+      
+      &:before {
+        content:"\2219 ";
+        font-size:25px;
+        margin-right:5px;
+        position:relative;
+        top:2px;
+        color:$secondary;
+      }
+    }
+  }
+  
+  img {
+    max-width:75%;
+    float:left;
+    margin:15px 30px 15px -10%;
+    @include box-shadow(0 5px 10px $gray3);
+    @include border-radius(4px);
+    
+    &.no-border {
+      borde:none;
+      margin:20px 30px 20px -15%;
+      @include box-shadow(none);
+      @include border-radius(0);
+    }
+  }
+  
+  blockquote {
+    background:$secondary;
+    padding:0 4%;
+    margin:45px 0 20px -10%;
+    color:white;
+    line-height:1.6em;
+    font-size:38px;
+    width:102%;
+    
+    &:before {
+      display:block;
+      width:108%;
+      left:-4%;
+      margin-top:-4%;
+      top:-5px;
+      content:"";
+      border-top:double 3px $gray5;
+      position:relative;
+      padding-top:4%;
+    }
+    
+    &:after {
+      display:block;
+      width:108%;
+      left:-4%;
+      margin-top:4%;
+      top:5px;
+      content:"";
+      border-bottom:double 3px $gray5;
+      position:relative;
+    }
+  }
+  
+  pre {
+    margin:0;
+    padding:0 0 0 30px;
+    line-height:.5em;
+    font-size:14px;
+    
+    code {
+      margin:0;
+      padding:0;
+      
+      ol {
+        margin:0;
+        
+        li {
+          margin:0;
+          padding:0;
+          font-family:"Inconsolata",monospace;
+        }
+      }
+    }
+  }
+}
+
+#secondary {
+  position:fixed;
+  top:50px;
+  right:0;
+  padding:0 8% 4% 2%;
+  width:30%;
+  
+  a {
+    text-decoration:none;
+  }
+  
+  h1 {
+    margin:0;
+    font-size:36px;
+    font-weight:normal;
+    padding-bottom:20px;
+    margin-bottom:10px;
+    border-bottom:double 3px $gray4;
+    letter-spacing:-.05em;
+    color:$gray1;
+  }
+  h4 {
+    margin:0;
+    padding:5px;
+    font-size:16px;
+    font-weight:normal;
+    color:$gray3;
+  }
+  
+  section {
+    overflow:hidden;
+  }
+}
+
+footer {
+  display: block;
+  width: 92%;
+  margin: 0 4% 2% 4%;
+  overflow: hidden;
+  padding: 0 4% 0 2%;
+  position: fixed;
+  top: 150px;
+  right: 0;
+  padding: 0 4% 0 2%;
+  width: 30%;
+  overflow: auto;
+  height: 65%;
+}
+
+aside {
+  width:48%;
+  float:left;
+  margin-bottom:10px;
+  clear:left;
+  
+  &:nth-child(even) {
+    margin-left:4%;
+    clear:none;
+  }
+  
+  h3 {
+    font-weight:normal;
+    color:$gray2;
+    text-transform:uppercase;
+    font-size:14px;
+    margin:0;
+    padding:15px 0 5px 0;
+  }
+  
+  p {
+    font-size:13px;
+    line-height:1.6em;
+    margin:0;
+    padding:0;
+    color:$gray3;
+  }
+  
+  ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    border-top:dashed 1px $gray5;
+    
+    li {
+      margin:0;
+      padding:0;
+      border-bottom:dashed 1px $gray5;
+      
+      a {
+        font-size:13px;
+        display:block;
+        color:$secondary;
+        text-decoration:none;
+        padding:2px 10px;
+        margin:2px 0;
+        
+        &:hover, &:active {
+          background:$secondary;
+          color:white;
+        }
+      }
+    }
+  }
+}
+
+#twitter-plug {
+  clear:both;
+  display:block;
+  width:84%;
+  padding:4% 8% 0 8%;
+  cursor:pointer;
+  
+  &:hover h3 a {
+    background-color:$secondary;
+  }
+  
+  h3 {
+    color:white;
+    font-size:20px;
+    font-weight:normal;
+    padding:0;
+    margin:0;
+    
+    a {
+      display:block;
+      color:inherit;
+      padding: 1.5% 2%;
+      text-decoration:none;
+      background-color:lighten($secondary,15%);
+      @include border-radius(4px 4px 0 0);
+    }
+  }
+}

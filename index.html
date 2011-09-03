@@ -3,10 +3,9 @@ layout: default
 ---
 
 {% for post in site.posts %}
-  <div class="post">
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <h4>{{ post.date | date: "%B %e, %Y" }}</h4>
+  <article>
+    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
     <p>{{ post.excerpt }}</p>
-    <p><a href="{{ post.url }}" class="continue">Continue Reading</a></p>
-  </div>
+    <h4>Posted on {{ post.date | date: "%B %e, %Y" }}</h4>
+  </article>
 {% endfor %}

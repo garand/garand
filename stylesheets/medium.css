@@ -1,0 +1,63 @@
+/* line 1, ../sass/medium.scss */
+#primary {
+  float: none;
+  width: 55%;
+  padding: 4%;
+}
+
+/* line 7, ../sass/medium.scss */
+#secondary {
+  padding: 4%;
+}
+
+/* line 11, ../sass/medium.scss */
+#secondary {
+  position: static;
+  float: right;
+}
+
+/* line 16, ../sass/medium.scss */
+aside {
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+/* line 22, ../sass/medium.scss */
+aside:nth-child(even) {
+  margin-left: 0;
+}
+
+/* line 26, ../sass/medium.scss */
+footer {
+  padding: 0;
+  position: absolute;
+  overflow: visible;
+}
+
+/* line 32, ../sass/medium.scss */
+#twitter-plug {
+  width: 92%;
+  padding: 4% 4% 0 4%;
+}
+
+/* line 39, ../sass/medium.scss */
+.post article img {
+  max-width: 100%;
+  display: block;
+  margin: 20px auto 40px auto;
+  float: none;
+}
+/* line 45, ../sass/medium.scss */
+.post article img.no-border {
+  margin: 20px auto 20px 0;
+}
+/* line 50, ../sass/medium.scss */
+.post article blockquote {
+  margin: 35px auto 15px auto;
+  width: 92%;
+}
+/* line 55, ../sass/medium.scss */
+.post article h4 + img.no-border {
+  margin-bottom: 10px;
+}

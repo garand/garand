@@ -1,0 +1,398 @@
+/* line 20, ../sass/screen.scss */
+::selection {
+  background: #ffc600;
+}
+
+/* line 21, ../sass/screen.scss */
+::-moz-selection {
+  background: #ffc600;
+}
+
+/* line 23, ../sass/screen.scss */
+body {
+  font-family: "Muli", sans-serif;
+  color: #333333;
+  line-height: 1.6em;
+  overflow: hidden;
+}
+
+/* line 30, ../sass/screen.scss */
+#primary {
+  float: left;
+  width: 50%;
+  padding: 50px 2% 4% 8%;
+}
+
+/* line 36, ../sass/screen.scss */
+article {
+  margin-bottom: 15px;
+}
+/* line 39, ../sass/screen.scss */
+article + article {
+  margin-bottom: 15px;
+  padding-top: 15px;
+  border-top: dashed 1px #cccccc;
+}
+/* line 44, ../sass/screen.scss */
+article + article h1 {
+  color: #777777;
+  font-size: 20px;
+}
+/* line 48, ../sass/screen.scss */
+article + article h1 a {
+  color: #333333;
+}
+/* line 53, ../sass/screen.scss */
+article + article p {
+  font-size: 14px;
+}
+/* line 57, ../sass/screen.scss */
+article + article h4 {
+  font-size: 13px;
+}
+/* line 62, ../sass/screen.scss */
+article h1 {
+  color: #ff4f44;
+  font-size: 28px;
+  font-weight: normal;
+  margin: 0;
+  padding: 5px 0;
+}
+/* line 69, ../sass/screen.scss */
+article h1 a {
+  color: #ff4f44;
+  text-decoration: none;
+  display: block;
+}
+/* line 74, ../sass/screen.scss */
+article h1 a:hover, article h1 a:active {
+  color: #dd0d00;
+}
+/* line 80, ../sass/screen.scss */
+article h4 {
+  color: #aaaaaa;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  padding: 5px 0;
+}
+/* line 87, ../sass/screen.scss */
+article h4 a {
+  color: #ff4f44;
+  text-decoration: none;
+}
+/* line 93, ../sass/screen.scss */
+article h4:hover a, article h4:active a {
+  color: #ffc600;
+}
+/* line 96, ../sass/screen.scss */
+article h4:hover a:hover, article h4:hover a:active, article h4:active a:hover, article h4:active a:active {
+  color: #dbaa00;
+}
+/* line 104, ../sass/screen.scss */
+article p {
+  font-size: 16px;
+  margin: 0;
+  padding: 5px 0;
+  line-height: 1.6em;
+}
+/* line 110, ../sass/screen.scss */
+article p a {
+  color: #ff4f44;
+  text-decoration: none;
+}
+/* line 114, ../sass/screen.scss */
+article p a:hover, article p a:active {
+  color: #dd0d00;
+}
+/* line 119, ../sass/screen.scss */
+article p em {
+  color: #777777;
+}
+/* line 123, ../sass/screen.scss */
+article p strong {
+  color: #111111;
+}
+
+/* line 131, ../sass/screen.scss */
+.post article h1 {
+  line-height: 1.2em;
+  padding: 0;
+}
+/* line 136, ../sass/screen.scss */
+.post article h2 {
+  margin: 0;
+  padding: 20px 0 5px 0;
+  font-weight: normal;
+  font-size: 22px;
+  color: #333333;
+  line-height: 1.4em;
+}
+/* line 145, ../sass/screen.scss */
+.post article h3 {
+  margin: 0;
+  padding: 20px 0 5px 0;
+  font-weight: normal;
+  font-size: 20px;
+  color: #333333;
+}
+/* line 153, ../sass/screen.scss */
+.post article h1 + h4 + p, .post article h1 + h4 + img + p {
+  font-size: 18px;
+  padding: 5px 0;
+}
+/* line 158, ../sass/screen.scss */
+.post article p {
+  font-size: 14px;
+  padding: 10px 0;
+}
+/* line 163, ../sass/screen.scss */
+.post article ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0 10px 30px;
+}
+/* line 167, ../sass/screen.scss */
+.post article ul li {
+  font-size: 14px;
+  line-height: 1.4em;
+}
+/* line 171, ../sass/screen.scss */
+.post article ul li:before {
+  content: "\2219 ";
+  font-size: 25px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+  color: #ffc600;
+}
+/* line 182, ../sass/screen.scss */
+.post article img {
+  max-width: 75%;
+  float: left;
+  margin: 15px 30px 15px -10%;
+  -moz-box-shadow: 0 5px 10px #aaaaaa;
+  -webkit-box-shadow: 0 5px 10px #aaaaaa;
+  -o-box-shadow: 0 5px 10px #aaaaaa;
+  box-shadow: 0 5px 10px #aaaaaa;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 189, ../sass/screen.scss */
+.post article img.no-border {
+  borde: none;
+  margin: 20px 30px 20px -15%;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-border-radius: 0;
+  -ms-border-radius: 0;
+  -khtml-border-radius: 0;
+  border-radius: 0;
+}
+/* line 197, ../sass/screen.scss */
+.post article blockquote {
+  background: #ffc600;
+  padding: 0 4%;
+  margin: 45px 0 20px -10%;
+  color: white;
+  line-height: 1.6em;
+  font-size: 38px;
+  width: 102%;
+}
+/* line 206, ../sass/screen.scss */
+.post article blockquote:before {
+  display: block;
+  width: 108%;
+  left: -4%;
+  margin-top: -4%;
+  top: -5px;
+  content: "";
+  border-top: double 3px #eeeeee;
+  position: relative;
+  padding-top: 4%;
+}
+/* line 218, ../sass/screen.scss */
+.post article blockquote:after {
+  display: block;
+  width: 108%;
+  left: -4%;
+  margin-top: 4%;
+  top: 5px;
+  content: "";
+  border-bottom: double 3px #eeeeee;
+  position: relative;
+}
+/* line 230, ../sass/screen.scss */
+.post article pre {
+  margin: 0;
+  padding: 0 0 0 30px;
+  line-height: .5em;
+  font-size: 14px;
+}
+/* line 236, ../sass/screen.scss */
+.post article pre code {
+  margin: 0;
+  padding: 0;
+}
+/* line 240, ../sass/screen.scss */
+.post article pre code ol {
+  margin: 0;
+}
+/* line 243, ../sass/screen.scss */
+.post article pre code ol li {
+  margin: 0;
+  padding: 0;
+  font-family: "Inconsolata",monospace;
+}
+
+/* line 253, ../sass/screen.scss */
+#secondary {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  padding: 0 8% 4% 2%;
+  width: 30%;
+}
+/* line 260, ../sass/screen.scss */
+#secondary a {
+  text-decoration: none;
+}
+/* line 264, ../sass/screen.scss */
+#secondary h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: normal;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom: double 3px #cccccc;
+  letter-spacing: -0.05em;
+  color: #333333;
+}
+/* line 274, ../sass/screen.scss */
+#secondary h4 {
+  margin: 0;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #aaaaaa;
+}
+/* line 282, ../sass/screen.scss */
+#secondary section {
+  overflow: hidden;
+}
+
+/* line 287, ../sass/screen.scss */
+footer {
+  display: block;
+  width: 92%;
+  margin: 0 4% 2% 4%;
+  overflow: hidden;
+  padding: 0 4% 0 2%;
+  position: fixed;
+  top: 150px;
+  right: 0;
+  padding: 0 4% 0 2%;
+  width: 30%;
+  overflow: auto;
+  height: 65%;
+}
+
+/* line 302, ../sass/screen.scss */
+aside {
+  width: 48%;
+  float: left;
+  margin-bottom: 10px;
+  clear: left;
+}
+/* line 308, ../sass/screen.scss */
+aside:nth-child(even) {
+  margin-left: 4%;
+  clear: none;
+}
+/* line 313, ../sass/screen.scss */
+aside h3 {
+  font-weight: normal;
+  color: #777777;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 0;
+  padding: 15px 0 5px 0;
+}
+/* line 322, ../sass/screen.scss */
+aside p {
+  font-size: 13px;
+  line-height: 1.6em;
+  margin: 0;
+  padding: 0;
+  color: #aaaaaa;
+}
+/* line 330, ../sass/screen.scss */
+aside ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: dashed 1px #eeeeee;
+}
+/* line 336, ../sass/screen.scss */
+aside ul li {
+  margin: 0;
+  padding: 0;
+  border-bottom: dashed 1px #eeeeee;
+}
+/* line 341, ../sass/screen.scss */
+aside ul li a {
+  font-size: 13px;
+  display: block;
+  color: #ffc600;
+  text-decoration: none;
+  padding: 2px 10px;
+  margin: 2px 0;
+}
+/* line 349, ../sass/screen.scss */
+aside ul li a:hover, aside ul li a:active {
+  background: #ffc600;
+  color: white;
+}
+
+/* line 358, ../sass/screen.scss */
+#twitter-plug {
+  clear: both;
+  display: block;
+  width: 84%;
+  padding: 4% 8% 0 8%;
+  cursor: pointer;
+}
+/* line 365, ../sass/screen.scss */
+#twitter-plug:hover h3 a {
+  background-color: #ffc600;
+}
+/* line 369, ../sass/screen.scss */
+#twitter-plug h3 {
+  color: white;
+  font-size: 20px;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+/* line 376, ../sass/screen.scss */
+#twitter-plug h3 a {
+  display: block;
+  color: inherit;
+  padding: 1.5% 2%;
+  text-decoration: none;
+  background-color: #ffd74d;
+  -moz-border-radius: 4px 4px 0 0;
+  -webkit-border-radius: 4px 4px 0 0;
+  -o-border-radius: 4px 4px 0 0;
+  -ms-border-radius: 4px 4px 0 0;
+  -khtml-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
