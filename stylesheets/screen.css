@@ -115,12 +115,12 @@ article p strong {
 }
 
 /* line 131, ../sass/screen.scss */
-article h1 {
+.post article h1 {
   line-height: 1.2em;
   padding: 0;
 }
 /* line 136, ../sass/screen.scss */
-article h2 {
+.post article h2 {
   margin: 0;
   padding: 20px 0 5px 0;
   font-weight: normal;
@@ -129,7 +129,7 @@ article h2 {
   line-height: 1.4em;
 }
 /* line 145, ../sass/screen.scss */
-article h3 {
+.post article h3 {
   margin: 0;
   padding: 20px 0 5px 0;
   font-weight: normal;
@@ -137,28 +137,28 @@ article h3 {
   color: #333333;
 }
 /* line 153, ../sass/screen.scss */
-article h1 + h4 + p, article h1 + h4 + img + p {
+.post article h1 + h4 + p, .post article h1 + h4 + img + p {
   font-size: 18px;
   padding: 5px 0;
 }
 /* line 158, ../sass/screen.scss */
-article p {
+.post article p {
   font-size: 14px;
   padding: 10px 0;
 }
 /* line 163, ../sass/screen.scss */
-article ul {
+.post article ul {
   list-style: none;
   margin: 0;
   padding: 10px 0 10px 30px;
 }
 /* line 167, ../sass/screen.scss */
-article ul li {
+.post article ul li {
   font-size: 14px;
   line-height: 1.4em;
 }
 /* line 171, ../sass/screen.scss */
-article ul li:before {
+.post article ul li:before {
   content: "\2219 ";
   font-size: 25px;
   margin-right: 5px;
@@ -167,7 +167,7 @@ article ul li:before {
   color: #ffc600;
 }
 /* line 182, ../sass/screen.scss */
-article img {
+.post article img {
   max-width: 75%;
   float: left;
   margin: 15px 30px 15px -10%;
@@ -183,7 +183,7 @@ article img {
   border-radius: 4px;
 }
 /* line 189, ../sass/screen.scss */
-article img.no-border {
+.post article img.no-border {
   borde: none;
   margin: 20px 30px 20px -15%;
   -moz-box-shadow: none;
@@ -198,7 +198,7 @@ article img.no-border {
   border-radius: 0;
 }
 /* line 197, ../sass/screen.scss */
-article blockquote {
+.post article blockquote {
   background: #ffc600;
   padding: 0 4%;
   margin: 45px 0 20px -10%;
@@ -208,7 +208,7 @@ article blockquote {
   width: 102%;
 }
 /* line 206, ../sass/screen.scss */
-article blockquote:before {
+.post article blockquote:before {
   display: block;
   width: 108%;
   left: -4%;
@@ -220,7 +220,7 @@ article blockquote:before {
   padding-top: 4%;
 }
 /* line 218, ../sass/screen.scss */
-article blockquote:after {
+.post article blockquote:after {
   display: block;
   width: 108%;
   left: -4%;
@@ -231,23 +231,23 @@ article blockquote:after {
   position: relative;
 }
 /* line 230, ../sass/screen.scss */
-article pre {
+.post article pre {
   margin: 0;
   padding: 0 0 0 30px;
   line-height: .5em;
   font-size: 14px;
 }
 /* line 236, ../sass/screen.scss */
-article pre code {
+.post article pre code {
   margin: 0;
   padding: 0;
 }
 /* line 240, ../sass/screen.scss */
-article pre code ol {
+.post article pre code ol {
   margin: 0;
 }
 /* line 243, ../sass/screen.scss */
-article pre code ol li {
+.post article pre code ol li {
   margin: 0;
   padding: 0;
   font-family: "Inconsolata",monospace;
