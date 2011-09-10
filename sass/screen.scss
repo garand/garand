@@ -133,6 +133,27 @@ header {
     font-size:16px;
   }
 
+  h2 {
+    font-size:22px;
+    margin-top:1em;
+    margin-bottom:.5em;
+  }
+
+  h3 {
+    font-size:18px;
+    margin-top:1em;
+    margin-bottom:.5em;
+  }
+
+  blockquote {
+    @include box-shadow(inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0,0,0,.4), inset 0 1px 0 #cecece);
+    padding:20px 30px;
+    background:white;
+    font-size:24px;
+    line-height:1.4em;
+    margin:1.4em 0 1em 0;
+  }
+
   p {
     color:#666;
     font-size:14px;
@@ -155,7 +176,7 @@ header {
   }
 
   em {
-    color:#666;
+    color:#999;
     font-style:italic;
   }
 }
@@ -302,6 +323,7 @@ a.twitter {
 
   h2 {
     font-size:18px;
+    margin:0;
     margin-bottom:.2em;
   }
 

@@ -234,44 +234,68 @@ header nav:after {
   font-size: 16px;
 }
 /* line 136, ../sass/screen.scss */
+.page-content h2 {
+  font-size: 22px;
+  margin-top: 1em;
+  margin-bottom: .5em;
+}
+/* line 142, ../sass/screen.scss */
+.page-content h3 {
+  font-size: 18px;
+  margin-top: 1em;
+  margin-bottom: .5em;
+}
+/* line 148, ../sass/screen.scss */
+.page-content blockquote {
+  -moz-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
+  -webkit-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
+  -o-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
+  box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
+  padding: 20px 30px;
+  background: white;
+  font-size: 24px;
+  line-height: 1.4em;
+  margin: 1.4em 0 1em 0;
+}
+/* line 157, ../sass/screen.scss */
 .page-content p {
   color: #666;
   font-size: 14px;
   margin-bottom: 1em;
 }
-/* line 142, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 .page-content a {
   color: #e99f00;
   text-decoration: none;
   border-bottom: dotted 2px #e99f00;
 }
-/* line 147, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 .page-content a:hover {
   border-bottom: solid 2px #e99f00;
 }
-/* line 152, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 .page-content strong {
   color: #222;
   font-weight: bold;
 }
-/* line 157, ../sass/screen.scss */
+/* line 178, ../sass/screen.scss */
 .page-content em {
-  color: #666;
+  color: #999;
   font-style: italic;
 }
 
-/* line 167, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 .page-articles article:first-child {
   margin-top: -25px;
 }
-/* line 170, ../sass/screen.scss */
+/* line 191, ../sass/screen.scss */
 .page-articles article:first-child a {
   -moz-box-shadow: inset 0 20px 20px #f3f3f3, inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3;
   -webkit-box-shadow: inset 0 20px 20px #f3f3f3, inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3;
   -o-box-shadow: inset 0 20px 20px #f3f3f3, inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3;
   box-shadow: inset 0 20px 20px #f3f3f3, inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3;
 }
-/* line 175, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 .page-articles article a {
   display: block;
   -moz-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
@@ -282,28 +306,28 @@ header nav:after {
   border: none;
   -webkit-transition: all 200ms ease-in;
 }
-/* line 182, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 .page-articles article a:hover {
   border: none;
   background-color: white;
 }
-/* line 188, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 .page-articles article h1 {
   margin-bottom: .25em;
 }
-/* line 192, ../sass/screen.scss */
+/* line 213, ../sass/screen.scss */
 .page-articles article p {
   margin: 0;
   color: #666;
   font-size: 14px;
 }
 
-/* line 200, ../sass/screen.scss */
+/* line 221, ../sass/screen.scss */
 .sidebar {
   float: right;
   width: 25%;
 }
-/* line 204, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 .sidebar h3 {
   font-size: 15px;
   color: #333;
@@ -311,11 +335,11 @@ header nav:after {
   margin-bottom: .7em;
   text-indent: 10px;
 }
-/* line 212, ../sass/screen.scss */
+/* line 233, ../sass/screen.scss */
 .sidebar ul {
   margin-bottom: 1.5em;
 }
-/* line 218, ../sass/screen.scss */
+/* line 239, ../sass/screen.scss */
 .sidebar ul li a {
   display: block;
   color: #666;
@@ -329,23 +353,23 @@ header nav:after {
   box-shadow: inset 15px -2px 15px #f3f3f3, inset -15px -2px 15px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
   -webkit-transition: all 200ms ease-in;
 }
-/* line 228, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 .sidebar ul li a:hover {
   text-indent: 30px;
   background-color: white;
   color: #333;
 }
 
-/* line 240, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 .page-about .content {
   text-align: right;
 }
-/* line 243, ../sass/screen.scss */
+/* line 264, ../sass/screen.scss */
 .page-about .content img {
   float: left;
   margin-right: 50px;
 }
-/* line 248, ../sass/screen.scss */
+/* line 269, ../sass/screen.scss */
 .page-about .content h1 {
   font-size: 40px;
   color: #666;
@@ -353,24 +377,24 @@ header nav:after {
   margin-bottom: .5em;
   line-height: 1.2em;
 }
-/* line 256, ../sass/screen.scss */
+/* line 277, ../sass/screen.scss */
 .page-about .content a, .page-about .content strong {
   color: #222;
   font-weight: normal;
   text-decoration: none;
 }
-/* line 262, ../sass/screen.scss */
+/* line 283, ../sass/screen.scss */
 .page-about .content a:hover {
   border-bottom: 2px dotted #222;
 }
-/* line 266, ../sass/screen.scss */
+/* line 287, ../sass/screen.scss */
 .page-about .content p {
   font-size: 20px;
   color: #666;
   line-height: 1.4em;
   margin-bottom: 1em;
 }
-/* line 272, ../sass/screen.scss */
+/* line 293, ../sass/screen.scss */
 .page-about .content p.twitter-about {
   float: right;
   line-height: 40px;
@@ -378,7 +402,7 @@ header nav:after {
   background: url("/images/about-twitter.png") left center no-repeat;
 }
 
-/* line 282, ../sass/screen.scss */
+/* line 303, ../sass/screen.scss */
 a.twitter {
   display: block;
   -moz-border-radius: 2px;
@@ -400,7 +424,7 @@ a.twitter {
   border: none;
   position: relative;
 }
-/* line 295, ../sass/screen.scss */
+/* line 316, ../sass/screen.scss */
 a.twitter:hover {
   background-color: #ffc600;
   background: white;
@@ -411,23 +435,24 @@ a.twitter:hover {
   -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
 }
-/* line 303, ../sass/screen.scss */
+/* line 324, ../sass/screen.scss */
 a.twitter h2 {
   font-size: 18px;
+  margin: 0;
   margin-bottom: .2em;
 }
-/* line 308, ../sass/screen.scss */
+/* line 330, ../sass/screen.scss */
 a.twitter p {
   margin: 0;
   font-size: 13px;
   line-height: 1.4em;
 }
 
-/* line 317, ../sass/screen.scss */
+/* line 339, ../sass/screen.scss */
 .page-work .page-content {
   width: auto;
 }
-/* line 321, ../sass/screen.scss */
+/* line 343, ../sass/screen.scss */
 .page-work article {
   -moz-border-radius: 0 0 2px 2px;
   -webkit-border-radius: 0 0 2px 2px;
@@ -443,23 +468,23 @@ a.twitter p {
   padding: 30px;
   margin-bottom: 20px;
 }
-/* line 328, ../sass/screen.scss */
+/* line 350, ../sass/screen.scss */
 .page-work article div {
   width: 47%;
 }
-/* line 332, ../sass/screen.scss */
+/* line 354, ../sass/screen.scss */
 .page-work article.renewal {
   background: white url("/images/work-renewal.png") 95% bottom no-repeat;
 }
-/* line 336, ../sass/screen.scss */
+/* line 358, ../sass/screen.scss */
 .page-work article.sticky {
   background: white url("/images/work-sticky.png") 95% bottom no-repeat;
 }
-/* line 340, ../sass/screen.scss */
+/* line 362, ../sass/screen.scss */
 .page-work article.imagerotator {
   background: white url("/images/work-imagerotator.png") 95% bottom no-repeat;
 }
-/* line 344, ../sass/screen.scss */
+/* line 366, ../sass/screen.scss */
 .page-work article p {
   font-size: 14px;
   color: #666;
