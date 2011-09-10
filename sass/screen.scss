@@ -43,7 +43,7 @@ header {
           text-transform:none;
           text-decoration:none;
           color:#999;
-          font-size:17px;
+          font-size: 16px;
           -webkit-transition: text-shadow,color,background-color,margin-left  200ms ease-in;
           @include box-shadow(1px 0 0 rgba(0,0,0,.1));
 
@@ -56,6 +56,7 @@ header {
           &:hover, &.current {
             background-color:#ffc600;
             color:white;
+            font-weight: 600;
             @include text-shadow(0 1px 0 rgba(0,0,0,.25));
             -webkit-transition: text-shadow,color,background-color 200ms ease-in;
             @include box-shadow(inset 1px 0 rgba(0,0,0,.1), inset -1px 0 rgba(0,0,0,.1), inset 0 -1px 1px rgba(0,0,0,.15), 0 1px 0 #987600);
@@ -140,6 +141,25 @@ header {
     font-size:18px;
     margin-top:1em;
     margin-bottom:.5em;
+  }
+
+  hr {
+    @include box-shadow(inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0,0,0,.4), inset 0 1px 0 #cecece);
+    border:none;
+    height:50px;
+    margin-top:1.5em;
+    margin-bottom:-1.25em;
+  }
+
+  ul, ol {
+    list-style:square;
+    font-size:14px;
+    margin-left:3em;
+    color:#666;
+  }
+
+  ol {
+    list-style:decimal;
   }
 
   blockquote {
@@ -239,14 +259,29 @@ header {
         font-size:13px;
         text-decoration:none;
         line-height:35px;
-        text-indent:20px;
+        text-indent:22px;
         @include box-shadow(inset 15px -2px 15px #f3f3f3, inset -15px -2px 15px #f3f3f3, inset 2px 1px 4px rgba(0,0,0,.4), inset 0 1px 0 #cecece);
         -webkit-transition:all 200ms ease-in;
 
+        img {
+          opacity:0;
+          margin-left:-22px;
+          -webkit-transition:all 200ms ease-in;
+          margin-right:5px;
+          position:relative;
+          margin-bottom:-3px;
+          width:16px;
+        }
+
         &:hover {
-          text-indent:30px;
+          text-indent:22px;
           background-color:white;
           color:#333;
+
+          img {
+            opacity:1;
+            margin-left:0;
+          }
         }
       }
     }

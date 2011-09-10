@@ -125,7 +125,7 @@ header nav ul li a {
   text-transform: none;
   text-decoration: none;
   color: #999;
-  font-size: 17px;
+  font-size: 16px;
   -webkit-transition: text-shadow,color,background-color,margin-left  200ms ease-in;
   -moz-box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1);
@@ -142,6 +142,7 @@ header nav ul li a img {
 header nav ul li a:hover, header nav ul li a.current {
   background-color: #ffc600;
   color: white;
+  font-weight: 600;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   -webkit-transition: text-shadow,color,background-color 200ms ease-in;
   -moz-box-shadow: inset 1px 0 rgba(0, 0, 0, 0.1), inset -1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.15), 0 1px 0 #987600;
@@ -149,7 +150,7 @@ header nav ul li a:hover, header nav ul li a.current {
   -o-box-shadow: inset 1px 0 rgba(0, 0, 0, 0.1), inset -1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.15), 0 1px 0 #987600;
   box-shadow: inset 1px 0 rgba(0, 0, 0, 0.1), inset -1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.15), 0 1px 0 #987600;
 }
-/* line 66, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
 header nav ul li:first-child span {
   height: 0;
   opacity: 0;
@@ -159,7 +160,7 @@ header nav ul li:first-child span {
   position: relative;
   left: 20px;
 }
-/* line 77, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 header nav ul li:first-child a:hover, header nav ul li:first-child a.current {
   -moz-box-shadow: inset -1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.15), 0 1px 0 #987600;
   -webkit-box-shadow: inset -1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.15), 0 1px 0 #987600;
@@ -172,18 +173,18 @@ header nav ul li:first-child a:hover, header nav ul li:first-child a.current {
   -khtml-border-radius: 0 0 0 2px;
   border-radius: 0 0 0 2px;
 }
-/* line 81, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 header nav ul li:first-child a:hover img, header nav ul li:first-child a.current img {
   margin-left: -110px;
   opacity: .1;
 }
-/* line 86, ../sass/screen.scss */
+/* line 87, ../sass/screen.scss */
 header nav ul li:first-child a:hover span, header nav ul li:first-child a.current span {
   display: block;
   opacity: 1;
   left: 33px;
 }
-/* line 93, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 header nav ul li:last-child a:hover, header nav ul li:last-child a.current {
   -moz-box-shadow: inset 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.15), 0 1px 0 #987600;
   -webkit-box-shadow: inset 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.15), 0 1px 0 #987600;
@@ -196,7 +197,7 @@ header nav ul li:last-child a:hover, header nav ul li:last-child a.current {
   -khtml-border-radius: 0 0 2px 0;
   border-radius: 0 0 2px 0;
 }
-/* line 100, ../sass/screen.scss */
+/* line 101, ../sass/screen.scss */
 header nav:after {
   content: ".";
   display: block;
@@ -205,7 +206,7 @@ header nav:after {
   visibility: hidden;
 }
 
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 .content {
   padding: 0 30px;
   padding-top: 90px;
@@ -213,36 +214,58 @@ header nav:after {
   margin-bottom: 50px;
 }
 
-/* line 117, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 .page-content {
   width: 70%;
   float: left;
 }
-/* line 121, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 .page-content h1 {
   font-size: 26px;
   color: #111;
   margin-bottom: .5em;
   line-height: 1.2em;
 }
-/* line 128, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 .page-content h1 + p {
   color: #333;
   font-size: 16px;
 }
-/* line 133, ../sass/screen.scss */
+/* line 134, ../sass/screen.scss */
 .page-content h2 {
   font-size: 22px;
   margin-top: 1em;
   margin-bottom: .5em;
 }
-/* line 139, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 .page-content h3 {
   font-size: 18px;
   margin-top: 1em;
   margin-bottom: .5em;
 }
-/* line 145, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
+.page-content hr {
+  -moz-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
+  -webkit-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
+  -o-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
+  box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
+  border: none;
+  height: 50px;
+  margin-top: 1.5em;
+  margin-bottom: -1.25em;
+}
+/* line 154, ../sass/screen.scss */
+.page-content ul, .page-content ol {
+  list-style: square;
+  font-size: 14px;
+  margin-left: 3em;
+  color: #666;
+}
+/* line 161, ../sass/screen.scss */
+.page-content ol {
+  list-style: decimal;
+}
+/* line 165, ../sass/screen.scss */
 .page-content blockquote {
   -moz-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
   -webkit-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
@@ -254,45 +277,45 @@ header nav:after {
   line-height: 1.4em;
   margin: 1.4em 0 1em 0;
 }
-/* line 154, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 .page-content p {
   color: #666;
   font-size: 14px;
   margin-bottom: 1em;
   line-height: 1.6em;
 }
-/* line 161, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 .page-content a {
   color: #e99f00;
   text-decoration: none;
   border-bottom: dotted 2px #e99f00;
 }
-/* line 166, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 .page-content a:hover {
   border-bottom: solid 2px #e99f00;
 }
-/* line 171, ../sass/screen.scss */
+/* line 191, ../sass/screen.scss */
 .page-content strong {
   color: #222;
   font-weight: 600;
 }
-/* line 176, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 .page-content em {
   font-style: italic;
 }
 
-/* line 185, ../sass/screen.scss */
+/* line 205, ../sass/screen.scss */
 .page-articles article:first-child {
   margin-top: -25px;
 }
-/* line 188, ../sass/screen.scss */
+/* line 208, ../sass/screen.scss */
 .page-articles article:first-child a {
   -moz-box-shadow: inset 0 20px 20px #f3f3f3, inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3;
   -webkit-box-shadow: inset 0 20px 20px #f3f3f3, inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3;
   -o-box-shadow: inset 0 20px 20px #f3f3f3, inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3;
   box-shadow: inset 0 20px 20px #f3f3f3, inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3;
 }
-/* line 193, ../sass/screen.scss */
+/* line 213, ../sass/screen.scss */
 .page-articles article a {
   display: block;
   -moz-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
@@ -303,28 +326,28 @@ header nav:after {
   border: none;
   -webkit-transition: all 200ms ease-in;
 }
-/* line 200, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 .page-articles article a:hover {
   border: none;
   background-color: white;
 }
-/* line 206, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 .page-articles article h1 {
   margin-bottom: .25em;
 }
-/* line 210, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 .page-articles article p {
   margin: 0;
   color: #666;
   font-size: 14px;
 }
 
-/* line 218, ../sass/screen.scss */
+/* line 238, ../sass/screen.scss */
 .sidebar {
   float: right;
   width: 25%;
 }
-/* line 222, ../sass/screen.scss */
+/* line 242, ../sass/screen.scss */
 .sidebar h3 {
   font-size: 15px;
   color: #333;
@@ -332,41 +355,56 @@ header nav:after {
   margin-bottom: .7em;
   text-indent: 10px;
 }
-/* line 230, ../sass/screen.scss */
+/* line 250, ../sass/screen.scss */
 .sidebar ul {
   margin-bottom: 1.5em;
 }
-/* line 236, ../sass/screen.scss */
+/* line 256, ../sass/screen.scss */
 .sidebar ul li a {
   display: block;
   color: #666;
   font-size: 13px;
   text-decoration: none;
   line-height: 35px;
-  text-indent: 20px;
+  text-indent: 22px;
   -moz-box-shadow: inset 15px -2px 15px #f3f3f3, inset -15px -2px 15px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
   -webkit-box-shadow: inset 15px -2px 15px #f3f3f3, inset -15px -2px 15px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
   -o-box-shadow: inset 15px -2px 15px #f3f3f3, inset -15px -2px 15px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
   box-shadow: inset 15px -2px 15px #f3f3f3, inset -15px -2px 15px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
   -webkit-transition: all 200ms ease-in;
 }
-/* line 246, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
+.sidebar ul li a img {
+  opacity: 0;
+  margin-left: -22px;
+  -webkit-transition: all 200ms ease-in;
+  margin-right: 5px;
+  position: relative;
+  margin-bottom: -3px;
+  width: 16px;
+}
+/* line 276, ../sass/screen.scss */
 .sidebar ul li a:hover {
-  text-indent: 30px;
+  text-indent: 22px;
   background-color: white;
   color: #333;
 }
+/* line 281, ../sass/screen.scss */
+.sidebar ul li a:hover img {
+  opacity: 1;
+  margin-left: 0;
+}
 
-/* line 258, ../sass/screen.scss */
+/* line 293, ../sass/screen.scss */
 .page-about .content {
   text-align: right;
 }
-/* line 261, ../sass/screen.scss */
+/* line 296, ../sass/screen.scss */
 .page-about .content img {
   float: left;
   margin-right: 50px;
 }
-/* line 266, ../sass/screen.scss */
+/* line 301, ../sass/screen.scss */
 .page-about .content h1 {
   font-size: 40px;
   color: #666;
@@ -374,24 +412,24 @@ header nav:after {
   margin-bottom: .5em;
   line-height: 1.2em;
 }
-/* line 274, ../sass/screen.scss */
+/* line 309, ../sass/screen.scss */
 .page-about .content a, .page-about .content strong {
   color: #222;
   font-weight: normal;
   text-decoration: none;
 }
-/* line 280, ../sass/screen.scss */
+/* line 315, ../sass/screen.scss */
 .page-about .content a:hover {
   border-bottom: 2px dotted #222;
 }
-/* line 284, ../sass/screen.scss */
+/* line 319, ../sass/screen.scss */
 .page-about .content p {
   font-size: 20px;
   color: #666;
   line-height: 1.4em;
   margin-bottom: 1em;
 }
-/* line 290, ../sass/screen.scss */
+/* line 325, ../sass/screen.scss */
 .page-about .content p.twitter-about {
   float: right;
   line-height: 40px;
@@ -399,7 +437,7 @@ header nav:after {
   background: url("/images/about-twitter.png") left center no-repeat;
 }
 
-/* line 300, ../sass/screen.scss */
+/* line 335, ../sass/screen.scss */
 a.twitter {
   display: block;
   -moz-border-radius: 2px;
@@ -421,7 +459,7 @@ a.twitter {
   border: none;
   position: relative;
 }
-/* line 313, ../sass/screen.scss */
+/* line 348, ../sass/screen.scss */
 a.twitter:hover {
   background-color: #ffc600;
   background: white;
@@ -432,24 +470,24 @@ a.twitter:hover {
   -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
 }
-/* line 321, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 a.twitter h2 {
   font-size: 18px;
   margin: 0;
   margin-bottom: .2em;
 }
-/* line 327, ../sass/screen.scss */
+/* line 362, ../sass/screen.scss */
 a.twitter p {
   margin: 0;
   font-size: 13px;
   line-height: 1.4em;
 }
 
-/* line 336, ../sass/screen.scss */
+/* line 371, ../sass/screen.scss */
 .page-work .page-content {
   width: auto;
 }
-/* line 340, ../sass/screen.scss */
+/* line 375, ../sass/screen.scss */
 .page-work article {
   -moz-border-radius: 0 0 2px 2px;
   -webkit-border-radius: 0 0 2px 2px;
@@ -465,23 +503,23 @@ a.twitter p {
   padding: 30px;
   margin-bottom: 20px;
 }
-/* line 347, ../sass/screen.scss */
+/* line 382, ../sass/screen.scss */
 .page-work article div {
   width: 47%;
 }
-/* line 351, ../sass/screen.scss */
+/* line 386, ../sass/screen.scss */
 .page-work article.renewal {
   background: white url("/images/work-renewal.png") 95% bottom no-repeat;
 }
-/* line 355, ../sass/screen.scss */
+/* line 390, ../sass/screen.scss */
 .page-work article.sticky {
   background: white url("/images/work-sticky.png") 95% bottom no-repeat;
 }
-/* line 359, ../sass/screen.scss */
+/* line 394, ../sass/screen.scss */
 .page-work article.imagerotator {
   background: white url("/images/work-imagerotator.png") 95% bottom no-repeat;
 }
-/* line 363, ../sass/screen.scss */
+/* line 398, ../sass/screen.scss */
 .page-work article p {
   font-size: 14px;
   color: #666;
