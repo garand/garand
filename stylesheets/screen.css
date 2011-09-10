@@ -396,36 +396,38 @@ a.twitter {
   margin: 30px 0 5px 0;
   text-decoration: none;
   color: inherit;
-  -webkit-transition: text-shadow,color,background-color 200ms linear;
+  -webkit-transition: all 200ms linear;
   border: none;
+  position: relative;
 }
-/* line 294, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 a.twitter:hover {
   background-color: #ffc600;
   background: white;
   border: none;
+  top: -2px;
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
 }
-/* line 301, ../sass/screen.scss */
+/* line 303, ../sass/screen.scss */
 a.twitter h2 {
   font-size: 18px;
   margin-bottom: .2em;
 }
-/* line 306, ../sass/screen.scss */
+/* line 308, ../sass/screen.scss */
 a.twitter p {
   margin: 0;
   font-size: 13px;
   line-height: 1.4em;
 }
 
-/* line 315, ../sass/screen.scss */
+/* line 317, ../sass/screen.scss */
 .page-work .page-content {
   width: auto;
 }
-/* line 319, ../sass/screen.scss */
+/* line 321, ../sass/screen.scss */
 .page-work article {
   -moz-border-radius: 0 0 2px 2px;
   -webkit-border-radius: 0 0 2px 2px;
@@ -441,23 +443,23 @@ a.twitter p {
   padding: 30px;
   margin-bottom: 20px;
 }
-/* line 326, ../sass/screen.scss */
+/* line 328, ../sass/screen.scss */
 .page-work article div {
   width: 47%;
 }
-/* line 330, ../sass/screen.scss */
+/* line 332, ../sass/screen.scss */
 .page-work article.renewal {
   background: white url("/images/work-renewal.png") 95% bottom no-repeat;
 }
-/* line 334, ../sass/screen.scss */
+/* line 336, ../sass/screen.scss */
 .page-work article.sticky {
   background: white url("/images/work-sticky.png") 95% bottom no-repeat;
 }
-/* line 338, ../sass/screen.scss */
+/* line 340, ../sass/screen.scss */
 .page-work article.imagerotator {
   background: white url("/images/work-imagerotator.png") 95% bottom no-repeat;
 }
-/* line 342, ../sass/screen.scss */
+/* line 344, ../sass/screen.scss */
 .page-work article p {
   font-size: 14px;
   color: #666;
