@@ -351,6 +351,10 @@ header {
   }
 }
 
+.page-articles a.twitter {
+  display:none;
+}
+
 a.twitter {
   display:block;
   @include border-radius(2px);

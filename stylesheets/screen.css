@@ -457,6 +457,11 @@ header nav:after {
 }
 
 /* line 354, ../sass/screen.scss */
+.page-articles a.twitter {
+  display: none;
+}
+
+/* line 358, ../sass/screen.scss */
 a.twitter {
   display: block;
   -moz-border-radius: 2px;
@@ -479,7 +484,7 @@ a.twitter {
   border: none;
   position: relative;
 }
-/* line 368, ../sass/screen.scss */
+/* line 372, ../sass/screen.scss */
 a.twitter:hover {
   background-color: #ffc600;
   background: white;
@@ -490,24 +495,24 @@ a.twitter:hover {
   -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
 }
-/* line 376, ../sass/screen.scss */
+/* line 380, ../sass/screen.scss */
 a.twitter h2 {
   font-size: 18px;
   margin: 0;
   margin-bottom: .2em;
 }
-/* line 382, ../sass/screen.scss */
+/* line 386, ../sass/screen.scss */
 a.twitter p {
   margin: 0;
   font-size: 13px;
   line-height: 1.4em;
 }
 
-/* line 391, ../sass/screen.scss */
+/* line 395, ../sass/screen.scss */
 .page-work .page-content {
   width: auto;
 }
-/* line 395, ../sass/screen.scss */
+/* line 399, ../sass/screen.scss */
 .page-work article {
   -moz-border-radius: 0 0 2px 2px;
   -webkit-border-radius: 0 0 2px 2px;
@@ -523,23 +528,23 @@ a.twitter p {
   padding: 30px;
   margin-bottom: 20px;
 }
-/* line 402, ../sass/screen.scss */
+/* line 406, ../sass/screen.scss */
 .page-work article div {
   width: 47%;
 }
-/* line 406, ../sass/screen.scss */
+/* line 410, ../sass/screen.scss */
 .page-work article.renewal {
   background: white url("/images/work-renewal.png") 95% bottom no-repeat;
 }
-/* line 410, ../sass/screen.scss */
+/* line 414, ../sass/screen.scss */
 .page-work article.sticky {
   background: white url("/images/work-sticky.png") 95% bottom no-repeat;
 }
-/* line 414, ../sass/screen.scss */
+/* line 418, ../sass/screen.scss */
 .page-work article.imagerotator {
   background: white url("/images/work-imagerotator.png") 95% bottom no-repeat;
 }
-/* line 418, ../sass/screen.scss */
+/* line 422, ../sass/screen.scss */
 .page-work article p {
   font-size: 14px;
   color: #666;

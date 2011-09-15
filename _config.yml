@@ -1,0 +1,5 @@
+markdown: rdiscount
+pygments: true
+permalink: /articles/:title
+rdiscount:
+  extensions: [smart]
