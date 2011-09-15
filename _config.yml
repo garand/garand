@@ -15,3 +15,4 @@ navigation:
   shortname: about
 - text: Contact
   url: mailto:anthonygarand@gmail.com
+  shortname: contact
