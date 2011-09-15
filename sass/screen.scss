@@ -117,11 +117,6 @@ header {
   padding-top:90px;
   overflow:hidden;
   margin-bottom:50px;
-}
-
-.page-content {
-  width:70%;
-  float:left;
 
   h1 {
     font-size:26px;
@@ -200,6 +195,11 @@ header {
   em {
     font-style:italic;
   }
+}
+
+.page-content {
+  width:70%;
+  float:left;
 }
 
 .page-articles {

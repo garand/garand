@@ -217,38 +217,32 @@ header nav:after {
   overflow: hidden;
   margin-bottom: 50px;
 }
-
-/* line 122, ../sass/screen.scss */
-.page-content {
-  width: 70%;
-  float: left;
-}
-/* line 126, ../sass/screen.scss */
-.page-content h1 {
+/* line 121, ../sass/screen.scss */
+.content h1 {
   font-size: 26px;
   color: #111;
   margin-bottom: .5em;
   line-height: 1.2em;
 }
-/* line 133, ../sass/screen.scss */
-.page-content h1 + p {
+/* line 128, ../sass/screen.scss */
+.content h1 + p {
   color: #333;
   font-size: 16px;
 }
-/* line 138, ../sass/screen.scss */
-.page-content h2 {
+/* line 133, ../sass/screen.scss */
+.content h2 {
   font-size: 22px;
   margin-top: 1em;
   margin-bottom: .5em;
 }
-/* line 144, ../sass/screen.scss */
-.page-content h3 {
+/* line 139, ../sass/screen.scss */
+.content h3 {
   font-size: 18px;
   margin-top: 1em;
   margin-bottom: .5em;
 }
-/* line 150, ../sass/screen.scss */
-.page-content hr {
+/* line 145, ../sass/screen.scss */
+.content hr {
   -moz-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
   -webkit-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
   -o-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
@@ -258,19 +252,19 @@ header nav:after {
   margin-top: 1.5em;
   margin-bottom: -1.25em;
 }
-/* line 158, ../sass/screen.scss */
-.page-content ul, .page-content ol {
+/* line 153, ../sass/screen.scss */
+.content ul, .content ol {
   list-style: square;
   font-size: 14px;
   margin-left: 3em;
   color: #666;
 }
-/* line 165, ../sass/screen.scss */
-.page-content ol {
+/* line 160, ../sass/screen.scss */
+.content ol {
   list-style: decimal;
 }
-/* line 169, ../sass/screen.scss */
-.page-content blockquote {
+/* line 164, ../sass/screen.scss */
+.content blockquote {
   -moz-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
   -webkit-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
   -o-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
@@ -281,31 +275,37 @@ header nav:after {
   line-height: 1.4em;
   margin: 1.4em 0 1em 0;
 }
-/* line 178, ../sass/screen.scss */
-.page-content p {
+/* line 173, ../sass/screen.scss */
+.content p {
   color: #666;
   font-size: 14px;
   margin-bottom: 1em;
   line-height: 1.6em;
 }
-/* line 185, ../sass/screen.scss */
-.page-content a {
+/* line 180, ../sass/screen.scss */
+.content a {
   color: #e99f00;
   text-decoration: none;
   border-bottom: dotted 2px #e99f00;
 }
-/* line 190, ../sass/screen.scss */
-.page-content a:hover {
+/* line 185, ../sass/screen.scss */
+.content a:hover {
   border-bottom: solid 2px #e99f00;
 }
-/* line 195, ../sass/screen.scss */
-.page-content strong {
+/* line 190, ../sass/screen.scss */
+.content strong {
   color: #222;
   font-weight: 600;
 }
-/* line 200, ../sass/screen.scss */
-.page-content em {
+/* line 195, ../sass/screen.scss */
+.content em {
   font-style: italic;
+}
+
+/* line 200, ../sass/screen.scss */
+.page-content {
+  width: 70%;
+  float: left;
 }
 
 /* line 209, ../sass/screen.scss */
