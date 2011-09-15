@@ -363,8 +363,10 @@ header nav:after {
 /* line 255, ../sass/screen.scss */
 .sidebar ul {
   margin-bottom: 1.5em;
+  list-style: none;
+  margin-left: 0;
 }
-/* line 261, ../sass/screen.scss */
+/* line 263, ../sass/screen.scss */
 .sidebar ul li a {
   display: block;
   color: #666;
@@ -380,7 +382,7 @@ header nav:after {
   -moz-transition: all 200ms ease-in;
   border: none;
 }
-/* line 273, ../sass/screen.scss */
+/* line 275, ../sass/screen.scss */
 .sidebar ul li a img {
   opacity: 0;
   margin-left: -22px;
@@ -391,29 +393,29 @@ header nav:after {
   margin-bottom: -3px;
   width: 16px;
 }
-/* line 284, ../sass/screen.scss */
+/* line 286, ../sass/screen.scss */
 .sidebar ul li a:hover {
   text-indent: 22px;
   background-color: white;
   color: #333;
   border: none;
 }
-/* line 290, ../sass/screen.scss */
+/* line 292, ../sass/screen.scss */
 .sidebar ul li a:hover img {
   opacity: 1;
   margin-left: 0;
 }
 
-/* line 302, ../sass/screen.scss */
+/* line 304, ../sass/screen.scss */
 .page-about .content {
   text-align: right;
 }
-/* line 305, ../sass/screen.scss */
+/* line 307, ../sass/screen.scss */
 .page-about .content img {
   float: left;
   margin-right: 50px;
 }
-/* line 310, ../sass/screen.scss */
+/* line 312, ../sass/screen.scss */
 .page-about .content h1 {
   font-size: 40px;
   color: #666;
@@ -421,24 +423,24 @@ header nav:after {
   margin-bottom: .5em;
   line-height: 1.2em;
 }
-/* line 318, ../sass/screen.scss */
+/* line 320, ../sass/screen.scss */
 .page-about .content a, .page-about .content strong {
   color: #222;
   font-weight: normal;
   text-decoration: none;
 }
-/* line 324, ../sass/screen.scss */
+/* line 326, ../sass/screen.scss */
 .page-about .content a:hover {
   border-bottom: 2px dotted #222;
 }
-/* line 328, ../sass/screen.scss */
+/* line 330, ../sass/screen.scss */
 .page-about .content p {
   font-size: 20px;
   color: #666;
   line-height: 1.4em;
   margin-bottom: 1em;
 }
-/* line 334, ../sass/screen.scss */
+/* line 336, ../sass/screen.scss */
 .page-about .content p.twitter-about {
   float: right;
   line-height: 40px;
@@ -446,7 +448,7 @@ header nav:after {
   background: url("/images/about-twitter.png") left center no-repeat;
 }
 
-/* line 344, ../sass/screen.scss */
+/* line 346, ../sass/screen.scss */
 a.twitter {
   display: block;
   -moz-border-radius: 2px;
@@ -469,7 +471,7 @@ a.twitter {
   border: none;
   position: relative;
 }
-/* line 358, ../sass/screen.scss */
+/* line 360, ../sass/screen.scss */
 a.twitter:hover {
   background-color: #ffc600;
   background: white;
@@ -480,24 +482,24 @@ a.twitter:hover {
   -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
 }
-/* line 366, ../sass/screen.scss */
+/* line 368, ../sass/screen.scss */
 a.twitter h2 {
   font-size: 18px;
   margin: 0;
   margin-bottom: .2em;
 }
-/* line 372, ../sass/screen.scss */
+/* line 374, ../sass/screen.scss */
 a.twitter p {
   margin: 0;
   font-size: 13px;
   line-height: 1.4em;
 }
 
-/* line 381, ../sass/screen.scss */
+/* line 383, ../sass/screen.scss */
 .page-work .page-content {
   width: auto;
 }
-/* line 385, ../sass/screen.scss */
+/* line 387, ../sass/screen.scss */
 .page-work article {
   -moz-border-radius: 0 0 2px 2px;
   -webkit-border-radius: 0 0 2px 2px;
@@ -513,23 +515,23 @@ a.twitter p {
   padding: 30px;
   margin-bottom: 20px;
 }
-/* line 392, ../sass/screen.scss */
+/* line 394, ../sass/screen.scss */
 .page-work article div {
   width: 47%;
 }
-/* line 396, ../sass/screen.scss */
+/* line 398, ../sass/screen.scss */
 .page-work article.renewal {
   background: white url("/images/work-renewal.png") 95% bottom no-repeat;
 }
-/* line 400, ../sass/screen.scss */
+/* line 402, ../sass/screen.scss */
 .page-work article.sticky {
   background: white url("/images/work-sticky.png") 95% bottom no-repeat;
 }
-/* line 404, ../sass/screen.scss */
+/* line 406, ../sass/screen.scss */
 .page-work article.imagerotator {
   background: white url("/images/work-imagerotator.png") 95% bottom no-repeat;
 }
-/* line 408, ../sass/screen.scss */
+/* line 410, ../sass/screen.scss */
 .page-work article p {
   font-size: 14px;
   color: #666;
