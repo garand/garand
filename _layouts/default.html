@@ -15,7 +15,7 @@
             {% if page.shortname == link.shortname %}
               {% assign current = 'current' %}
             {% endif %}
-            <li class="{{ current }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
+            <li rel="page.shortname | link.shortname" class="{{ current }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
           {% endfor %}
         </ul>
       </nav>
