@@ -168,6 +168,12 @@ header {
     font-size:24px;
     line-height:1.4em;
     margin:1.4em 0 1em 0;
+
+    p {
+      font-size:inherit;
+      margin:0;
+      line-height:inherit;
+    }
   }
 
   p {
@@ -321,6 +327,7 @@ header {
       color:#222;
       font-weight:normal;
       text-decoration:none;
+      border:none;
     }
 
     a:hover {

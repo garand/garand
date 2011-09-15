@@ -275,51 +275,57 @@ header nav:after {
   line-height: 1.4em;
   margin: 1.4em 0 1em 0;
 }
-/* line 173, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
+.content blockquote p {
+  font-size: inherit;
+  margin: 0;
+  line-height: inherit;
+}
+/* line 179, ../sass/screen.scss */
 .content p {
   color: #666;
   font-size: 14px;
   margin-bottom: 1em;
   line-height: 1.6em;
 }
-/* line 180, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 .content a {
   color: #e99f00;
   text-decoration: none;
   border-bottom: dotted 2px #e99f00;
 }
-/* line 185, ../sass/screen.scss */
+/* line 191, ../sass/screen.scss */
 .content a:hover {
   border-bottom: solid 2px #e99f00;
 }
-/* line 190, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 .content strong {
   color: #222;
   font-weight: 600;
 }
-/* line 195, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
 .content em {
   font-style: italic;
 }
 
-/* line 200, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 .page-content {
   width: 70%;
   float: left;
 }
 
-/* line 209, ../sass/screen.scss */
+/* line 215, ../sass/screen.scss */
 .page-articles article:first-child {
   margin-top: -25px;
 }
-/* line 212, ../sass/screen.scss */
+/* line 218, ../sass/screen.scss */
 .page-articles article:first-child a {
   -moz-box-shadow: inset 0 20px 20px #f3f3f3, inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3;
   -webkit-box-shadow: inset 0 20px 20px #f3f3f3, inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3;
   -o-box-shadow: inset 0 20px 20px #f3f3f3, inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3;
   box-shadow: inset 0 20px 20px #f3f3f3, inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3;
 }
-/* line 217, ../sass/screen.scss */
+/* line 223, ../sass/screen.scss */
 .page-articles article a {
   display: block;
   -moz-box-shadow: inset 30px -2px 30px #f3f3f3, inset -30px -2px 30px #f3f3f3, inset 2px 1px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
@@ -331,28 +337,28 @@ header nav:after {
   -webkit-transition: all 200ms ease-in;
   -moz-transition: all 200ms ease-in;
 }
-/* line 225, ../sass/screen.scss */
+/* line 231, ../sass/screen.scss */
 .page-articles article a:hover {
   border: none;
   background-color: white;
 }
-/* line 231, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 .page-articles article h1 {
   margin-bottom: .25em;
 }
-/* line 235, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 .page-articles article p {
   margin: 0;
   color: #666;
   font-size: 14px;
 }
 
-/* line 243, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 .sidebar {
   float: right;
   width: 25%;
 }
-/* line 247, ../sass/screen.scss */
+/* line 253, ../sass/screen.scss */
 .sidebar h3 {
   font-size: 15px;
   color: #333;
@@ -360,13 +366,13 @@ header nav:after {
   margin-bottom: .7em;
   text-indent: 10px;
 }
-/* line 255, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 .sidebar ul {
   margin-bottom: 1.5em;
   list-style: none;
   margin-left: 0;
 }
-/* line 263, ../sass/screen.scss */
+/* line 269, ../sass/screen.scss */
 .sidebar ul li a {
   display: block;
   color: #666;
@@ -382,7 +388,7 @@ header nav:after {
   -moz-transition: all 200ms ease-in;
   border: none;
 }
-/* line 275, ../sass/screen.scss */
+/* line 281, ../sass/screen.scss */
 .sidebar ul li a img {
   opacity: 0;
   margin-left: -22px;
@@ -393,29 +399,29 @@ header nav:after {
   margin-bottom: -3px;
   width: 16px;
 }
-/* line 286, ../sass/screen.scss */
+/* line 292, ../sass/screen.scss */
 .sidebar ul li a:hover {
   text-indent: 22px;
   background-color: white;
   color: #333;
   border: none;
 }
-/* line 292, ../sass/screen.scss */
+/* line 298, ../sass/screen.scss */
 .sidebar ul li a:hover img {
   opacity: 1;
   margin-left: 0;
 }
 
-/* line 304, ../sass/screen.scss */
+/* line 310, ../sass/screen.scss */
 .page-about .content {
   text-align: right;
 }
-/* line 307, ../sass/screen.scss */
+/* line 313, ../sass/screen.scss */
 .page-about .content img {
   float: left;
   margin-right: 50px;
 }
-/* line 312, ../sass/screen.scss */
+/* line 318, ../sass/screen.scss */
 .page-about .content h1 {
   font-size: 40px;
   color: #666;
@@ -423,24 +429,25 @@ header nav:after {
   margin-bottom: .5em;
   line-height: 1.2em;
 }
-/* line 320, ../sass/screen.scss */
+/* line 326, ../sass/screen.scss */
 .page-about .content a, .page-about .content strong {
   color: #222;
   font-weight: normal;
   text-decoration: none;
+  border: none;
 }
-/* line 326, ../sass/screen.scss */
+/* line 333, ../sass/screen.scss */
 .page-about .content a:hover {
   border-bottom: 2px dotted #222;
 }
-/* line 330, ../sass/screen.scss */
+/* line 337, ../sass/screen.scss */
 .page-about .content p {
   font-size: 20px;
   color: #666;
   line-height: 1.4em;
   margin-bottom: 1em;
 }
-/* line 336, ../sass/screen.scss */
+/* line 343, ../sass/screen.scss */
 .page-about .content p.twitter-about {
   float: right;
   line-height: 40px;
@@ -448,7 +455,7 @@ header nav:after {
   background: url("/images/about-twitter.png") left center no-repeat;
 }
 
-/* line 346, ../sass/screen.scss */
+/* line 353, ../sass/screen.scss */
 a.twitter {
   display: block;
   -moz-border-radius: 2px;
@@ -471,7 +478,7 @@ a.twitter {
   border: none;
   position: relative;
 }
-/* line 360, ../sass/screen.scss */
+/* line 367, ../sass/screen.scss */
 a.twitter:hover {
   background-color: #ffc600;
   background: white;
@@ -482,24 +489,24 @@ a.twitter:hover {
   -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
 }
-/* line 368, ../sass/screen.scss */
+/* line 375, ../sass/screen.scss */
 a.twitter h2 {
   font-size: 18px;
   margin: 0;
   margin-bottom: .2em;
 }
-/* line 374, ../sass/screen.scss */
+/* line 381, ../sass/screen.scss */
 a.twitter p {
   margin: 0;
   font-size: 13px;
   line-height: 1.4em;
 }
 
-/* line 383, ../sass/screen.scss */
+/* line 390, ../sass/screen.scss */
 .page-work .page-content {
   width: auto;
 }
-/* line 387, ../sass/screen.scss */
+/* line 394, ../sass/screen.scss */
 .page-work article {
   -moz-border-radius: 0 0 2px 2px;
   -webkit-border-radius: 0 0 2px 2px;
@@ -515,23 +522,23 @@ a.twitter p {
   padding: 30px;
   margin-bottom: 20px;
 }
-/* line 394, ../sass/screen.scss */
+/* line 401, ../sass/screen.scss */
 .page-work article div {
   width: 47%;
 }
-/* line 398, ../sass/screen.scss */
+/* line 405, ../sass/screen.scss */
 .page-work article.renewal {
   background: white url("/images/work-renewal.png") 95% bottom no-repeat;
 }
-/* line 402, ../sass/screen.scss */
+/* line 409, ../sass/screen.scss */
 .page-work article.sticky {
   background: white url("/images/work-sticky.png") 95% bottom no-repeat;
 }
-/* line 406, ../sass/screen.scss */
+/* line 413, ../sass/screen.scss */
 .page-work article.imagerotator {
   background: white url("/images/work-imagerotator.png") 95% bottom no-repeat;
 }
-/* line 410, ../sass/screen.scss */
+/* line 417, ../sass/screen.scss */
 .page-work article p {
   font-size: 14px;
   color: #666;
