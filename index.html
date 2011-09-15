@@ -5,6 +5,6 @@ layout: post
 {% for post in site.posts limit: 1 %}
   <article>
     <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
+    {{ post.content }}
   </article>
 {% endfor %}
