@@ -15,7 +15,7 @@
             {% if page.url == link.url + "/index.html" or page.layout == link.layout %}
               {% assign current = 'current' %}
             {% endif %}
-            <li rel="{{ page.url }} | {{ link.url }} | {{ page.layout }} | {{ link.layout }}" class="{{ current }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
+            <li class="{{ current }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
           {% endfor %}
           <li><a href="mailto:anthonygarand@gmail.com">Contact</a></li>
         </ul>
