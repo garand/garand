@@ -1,6 +1,7 @@
 ---
 layout: default
 bodyclass: page-work
+shortname: work
 ---
 <article class="renewal">
   <div>

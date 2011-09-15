@@ -2,6 +2,7 @@
 layout: default
 title: About
 bodyclass: page-about
+shortname: about
 ---
 ![My Face](/images/about-head.png)
 

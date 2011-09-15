@@ -5,7 +5,12 @@ navigation:
   url: /
 - text: Articles
   url: /articles
+  shortname: articles
 - text: Recent Work
   url: /work
+  shortname: work
 - text: About
   url: /about
+  shortname: about
+- text: Contact
+  url: mailto:anthonygarand@gmail.com

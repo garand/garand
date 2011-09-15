@@ -12,12 +12,11 @@
         <ul>
           {% for link in site.navigation %}
             {% assign current = nil %}
-            {% if page.url == link.url + "/index.html" or page.layout == link.layout %}
+            {% if page.shortname == link.shortname %}
               {% assign current = 'current' %}
             {% endif %}
             <li class="{{ current }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
           {% endfor %}
-          <li><a href="mailto:anthonygarand@gmail.com">Contact</a></li>
         </ul>
       </nav>
     </header>
