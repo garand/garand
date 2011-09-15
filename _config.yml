@@ -3,3 +3,10 @@ pygments: true
 permalink: /articles/:title
 rdiscount:
   extensions: [smart]
+navigation:
+- text: Articles
+  url: /articles
+- text: Recent Work
+  url: /work
+- text: About
+  url: /about
