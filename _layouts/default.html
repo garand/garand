@@ -12,7 +12,7 @@
         <ul>
           {% for link in site.navigation %}
             {% assign current = nil %}
-            {% if link.url == '/' or page.shortname == link.shortname %}
+            {% if page.shortname == link.shortname %}
               {% assign current = 'current' %}
             {% endif %}
             <li><a href="{{ link.url }}" class="{{ current }}">{{ link.text }}</a></li>
