@@ -268,6 +268,7 @@ header {
         @include box-shadow(inset 15px -2px 15px #f3f3f3, inset -15px -2px 15px #f3f3f3, inset 2px 1px 4px rgba(0,0,0,.4), inset 0 1px 0 #cecece);
         -webkit-transition:all 200ms ease-in;
         -moz-transition:all 200ms ease-in;
+        border:none;
 
         img {
           opacity:0;
