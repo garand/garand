@@ -4,6 +4,8 @@ permalink: /articles/:title
 rdiscount:
   extensions: [smart]
 navigation:
+- text: <img src="/images/logo.png"/><span>Anthony Garand</span>
+  url: /
 - text: Articles
   url: /articles
 - text: Recent Work
