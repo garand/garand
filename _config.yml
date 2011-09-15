@@ -3,6 +3,7 @@ permalink: /articles/:title
 navigation:
 - text: <img src="/images/logo.png"/><span>Anthony Garand</span>
   url: /
+  shortname: index
 - text: Articles
   url: /articles
   shortname: articles

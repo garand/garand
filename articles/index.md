@@ -1,6 +1,7 @@
 ---
 layout: post
 bodyclass: page-articles
+shortname: articles
 ---
 
 {% for post in site.posts %}
