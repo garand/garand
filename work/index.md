@@ -1,5 +1,6 @@
 ---
 layout: default
+bodyclass: page-work
 ---
 <article class="renewal">
   <div>

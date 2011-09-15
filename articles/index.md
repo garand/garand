@@ -1,5 +1,6 @@
 ---
 layout: post
+bodyclass: page-articles
 ---
 
 {% for post in site.posts %}
