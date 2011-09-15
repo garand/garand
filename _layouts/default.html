@@ -12,7 +12,7 @@
         <ul>
           {% for link in site.navigation %}
             {% assign current = nil %}
-            {% if page.url + "/index.html" == link.url or page.layout == link.layout %}
+            {% if page.url == link.url + "/index.html" or page.layout == link.layout %}
               {% assign current = 'current' %}
             {% endif %}
             <li rel="{{ page.url }} | {{ link.url }} | {{ page.layout }} | {{ link.layout }}" class="{{ current }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
