@@ -13,7 +13,7 @@ A big thing to make sure is that the height of the desk is right for your height
 
 To be continued next week.
 
-[Sitting, Standing, Balance Ball](http://hivelogic.com/articles/sitting-standing-balance-ball/)  
-[How and Why I Switched to a Standing Desk](http://smarterware.org/7102/how-and-why-i-switched-to-a-standing-desk)  
-[Stand Up Desk Productivity](http://freestylemind.com/stand-up-desk-productivity)  
-[Why and How I Switched to a Standing Desk](http://lifehacker.com/5735528/why-and-how-i-switched-to-a-standing-desk)
+- [Sitting, Standing, Balance Ball](http://hivelogic.com/articles/sitting-standing-balance-ball/)  
+- [How and Why I Switched to a Standing Desk](http://smarterware.org/7102/how-and-why-i-switched-to-a-standing-desk)  
+- [Stand Up Desk Productivity](http://freestylemind.com/stand-up-desk-productivity)  
+- [Why and How I Switched to a Standing Desk](http://lifehacker.com/5735528/why-and-how-i-switched-to-a-standing-desk)

@@ -10,11 +10,11 @@ I decided to have a little fun with it and sent them this.
 
 ----------
 
-"I regret to inform you of your card reader's loss. We know it comes as striking news to you, your coworkers and loved ones. How tragic that black, and white card readers alike, must depart from my possession at such a young age. My deepest sympathies and affections are extended to you and your coworkers. I cannot begin to comprehend the grief and sorrow that you’ll experience within the next few days.
+"I regret to inform you of your card reader's loss. We know it comes as striking news to you, your coworkers and loved ones. How tragic that black, and white card readers alike, must depart from my possession at such a young age. My deepest sympathies and affections are extended to you and your coworkers. I cannot begin to comprehend the grief and sorrow that you'll experience within the next few days.
 
 In this vocation, card readers, like mine, are put on the line to charge others, and to better the society in which we must live. This means any loss can be costly. I failed to protect your card reader, and together we will forever regret it. 
 
-I honored and revered your card reader – my assistant – in life; I wish to bequeath its memory in death. God bless you; may it remain with you and comfort you in your trials and loneliness.
+I honored and revered your card reader - my assistant - in life; I wish to bequeath its memory in death. God bless you; may it remain with you and comfort you in your trials and loneliness.
 
 I extend to you my deepest regrets and most sincere apologies.
 
