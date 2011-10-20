@@ -2,6 +2,7 @@
 layout: default
 bodyclass: page-work
 shortname: work
+title: "Recent Work"
 ---
 <article class="renewal">
   <div>

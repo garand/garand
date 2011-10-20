@@ -1,5 +1,6 @@
 ---
 layout: post
+title: Articles
 bodyclass: page-articles
 shortname: articles
 ---
