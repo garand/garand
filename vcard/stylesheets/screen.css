@@ -1,0 +1,134 @@
+@import url(http://fonts.googleapis.com/css?family=Cabin);
+/* line 17, ../../../../../Applications/compass.app/Contents/Resources/ruby/compass_0.11/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../Applications/compass.app/Contents/Resources/ruby/compass_0.11/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../Applications/compass.app/Contents/Resources/ruby/compass_0.11/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../Applications/compass.app/Contents/Resources/ruby/compass_0.11/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../Applications/compass.app/Contents/Resources/ruby/compass_0.11/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../Applications/compass.app/Contents/Resources/ruby/compass_0.11/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../Applications/compass.app/Contents/Resources/ruby/compass_0.11/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../Applications/compass.app/Contents/Resources/ruby/compass_0.11/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 115, ../../../../../Applications/compass.app/Contents/Resources/ruby/compass_0.11/compass-0.11.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+@font-face {
+  font-family: 'MenschThin';
+  src: url("/font-face/mensch-thin-wf.eot");
+  src: url("/font-face/mensch-thin-wf.eot?#iefix") format("embedded-opentype"), url("/font-face/mensch-thin-wf.woff") format("woff"), url("/font-face/mensch-thin-wf.ttf") format("truetype"), url("/font-face/mensch-thin-wf.svg#MenschMenschThin") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 16, ../sass/screen.scss */
+body {
+  background: #efefef;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 21, ../sass/screen.scss */
+#me {
+  width: 500px;
+  overflow: hidden;
+  margin: 10% auto;
+  position: relative;
+  background-color: white;
+  background-image: url("/images/bg-avatar.png");
+  background-position: left center;
+  background-repeat: no-repeat;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: right;
+  font-family: Cabin;
+  color: #333;
+}
+/* line 37, ../sass/screen.scss */
+#me h1 {
+  font-family: MenschThin;
+  font-size: 60px;
+  margin: 15px;
+}
+/* line 49, ../sass/screen.scss */
+#me ul li a {
+  color: inherit;
+  text-decoration: none;
+  padding: 11px 15px 11px 100px;
+  line-height: 40px;
+  -moz-box-shadow: inset 20px 0 20px white, inset 2px 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
+  -webkit-box-shadow: inset 20px 0 20px white, inset 2px 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
+  -o-box-shadow: inset 20px 0 20px white, inset 2px 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
+  box-shadow: inset 20px 0 20px white, inset 2px 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #cecece;
+  -webkit-transition: padding-left,padding-right,color,background-color;
+  -webkit-transition-duration: 200ms;
+  font-size: 14px;
+}
+/* line 59, ../sass/screen.scss */
+#me ul li a:hover {
+  padding-right: 30px;
+  padding-left: 85px;
+  color: #111;
+  background-color: #f5f5f5;
+  -webkit-transition: padding-left,padding-right,color,background-color;
+  -webkit-transition-duration: 200ms;
+}

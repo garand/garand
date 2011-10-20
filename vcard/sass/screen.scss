@@ -1,0 +1,70 @@
+@import url(http://fonts.googleapis.com/css?family=Cabin);
+@import "compass/reset";
+@import "compass/css3";
+
+@font-face {
+    font-family: 'MenschThin';
+    src: url('/font-face/mensch-thin-wf.eot');
+    src: url('/font-face/mensch-thin-wf.eot?#iefix') format('embedded-opentype'),
+         url('/font-face/mensch-thin-wf.woff') format('woff'),
+         url('/font-face/mensch-thin-wf.ttf') format('truetype'),
+         url('/font-face/mensch-thin-wf.svg#MenschMenschThin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  background:#efefef;
+  -webkit-font-smoothing: antialiased;
+}
+
+#me {
+  width:500px;
+  overflow:hidden;
+  margin:10% auto;
+  position:relative;
+  background-color:white;
+  background-image:url("/images/bg-avatar.png");
+  background-position:left center;
+  background-repeat:no-repeat;
+  @include border-radius(2px);
+  @include box-shadow(0 1px 2px rgba(0,0,0,.5));
+  text-align:right;
+  font-family:Cabin;
+  color:#333;
+  //@include linear-gradient(#e5e5e5,white 97%,image-url("/images/bg-avatar.png"));
+
+  h1 {
+    font-family:MenschThin;
+    font-size:60px;
+    margin:15px;
+  }
+
+  ul {
+    
+
+    li {
+      
+
+      a {
+        color:inherit;
+        text-decoration:none; 
+        padding:11px 15px 11px 100px;
+        line-height:40px;
+        @include box-shadow(inset 20px 0 20px white, inset 2px 1px 3px rgba(0,0,0,.4), inset 0 1px 0 #cecece);
+        -webkit-transition:padding-left,padding-right,color,background-color;
+        -webkit-transition-duration: 200ms;
+        font-size:14px;
+
+        &:hover {
+          padding-right:30px;
+          padding-left:85px;
+          color:#111;
+          background-color:#f5f5f5;
+          -webkit-transition:padding-left,padding-right,color,background-color;
+          -webkit-transition-duration: 200ms;
+        }
+      }
+    }
+  }
+}
