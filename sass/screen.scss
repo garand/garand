@@ -6,6 +6,15 @@
   -moz-transition:all $speed ease-in;
 }
 
+::-moz-selection {
+  background:#999;
+  background:rgba(black,.15);
+}
+::selection {
+  background:#999;
+  background:rgba(black,.15);
+}
+
 html {
   background:#eee url("images/noise.png") fixed;
   color:#333;
