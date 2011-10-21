@@ -95,11 +95,14 @@ header {
       
       li {
         list-style:none;
+        width:25%;
+        float:left;
+        margin:0;
+        padding-left:0;
+        display:block;
         
         a {
           display:block;
-          width:25%;
-          float:left;
           text-align:center;
           font-family:purista-web,sans-serif;
           text-transform:uppercase;
