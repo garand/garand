@@ -15,7 +15,7 @@
   background:rgba(black,.15);
 }
 
-html {
+body {
   background:#eee url("images/noise.png") fixed;
   color:#333;
   min-height:100%;
@@ -24,21 +24,20 @@ html {
   @include box-shadow(0 0 150px rgba(black,.3) inset);
   font:14px ff-meta-serif-web-pro,serif;
   -webkit-text-size-adjust:none;
-}
-
-body {
   line-height:1.6em;
 }
 
 .wrap {
-  width:90%;
+  width:95%;
   max-width:700px;
-  margin:0 auto .75em auto;
+  margin:0 auto;
+  padding-bottom:.75em;
 }
 
 header {
   overflow:hidden;
-  margin:1em 0 -2em 0;
+  margin:0 0 -2em 0;
+  padding:1em 0 0 0;
 /*
   position:fixed;
   width:90%;
@@ -57,9 +56,10 @@ header {
       text-decoration:none;
       text-transform:uppercase;
       text-align:center;
-      font-size:1.2em;
+      font-size:17px;
       letter-spacing:.075em;
       position:relative;
+      overflow:hidden;
       
       &:hover,&.current {
         img {
@@ -67,7 +67,7 @@ header {
         }
         
         span {
-          top:14px;
+          top:15px;
           opacity:1;
         }
       }
@@ -108,7 +108,7 @@ header {
           text-transform:uppercase;
           text-decoration:none;
           color:#333;
-          font-size:1.1em;
+          font-size:15px;
           padding:1.25em 0;
           letter-spacing:.1em;
           opacity:.5;
@@ -228,6 +228,7 @@ a {
 }
 
 strong {
+  background:#fff600;
   @include linear-gradient(lighten(#fff600,30%),#fff600);
   @include box-shadow(0 -3px 3px lighten(#fff600,30%) inset,
                       0 0 3px darken(#fff600,2%) inset);
@@ -262,6 +263,9 @@ article {
   counter-reset:figure;
   padding:4em;
   margin:2em 0;
+  border:solid 1px #eee;
+  border-bottom:solid 2px #aaa;
+  border:solid 0 rgba(0,0,0,0);
   @include text-shadow(0 1px 2px rgba(white,.3));
   @include box-shadow(0 3px 4px -1px rgba(black,.5),
                       0 13px 5px -7px rgba(black,.15),
@@ -270,7 +274,7 @@ article {
   
   &.on-disconnecting {background-image:url("images/on-disconnecting.png")}
   &.on-valiocon-2011 {
-    background-image:url("images/on-valiocon-2011.png")
+    background-image:url("images/on-valiocon-2011.png");
   }
   
   &.excerpt {
@@ -336,6 +340,7 @@ article {
     &.about {
       background-size:auto 100%;
       background-image:url("images/bg-avatar.png");
+      background-position:right center;
       
       h1,h2,h3,h4,h5,h6 {width:80%;}
       p{width:80%;}
@@ -448,6 +453,40 @@ article {
       }
       
       &:hover {margin-right:0;}
+    }
+  }
+}
+
+@media all and (max-width: 500px)  {
+  article {
+    padding:2em;
+    @include box-shadow(0 3px 4px -1px rgba(black,.5),
+                        0 13px 5px -7px rgba(black,.15),
+                        0 0 0 9px rgba(white,.6) inset,
+                        0 0 0 10px rgba(black,.05) inset);
+    
+    &.excerpt {
+      @include box-shadow(0 3px 4px -1px rgba(black,.5),
+                          0 13px 5px -7px rgba(black,.15),
+                          0 0 0 9px rgba(white,.6) inset,
+                          0 0 0 10px rgba(black,.05) inset,
+                          0 0 0 350px rgba(white,.15) inset);
+  
+      &:hover {
+        @include box-shadow(0 3px 4px -1px rgba(black,.5),
+                            0 13px 5px -7px rgba(black,.15),
+                            0 0 0 9px rgba(white,.6) inset,
+                            0 0 0 10px rgba(black,.05) inset);
+      }
+      
+      a {
+        padding:2em 0;
+      }
+    }
+    
+    .date {
+      top:2em;
+      right:2em;
     }
   }
 }
