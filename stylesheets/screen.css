@@ -141,8 +141,8 @@ header nav .logo img {
   max-height: 50px;
   opacity: .9;
   position: relative;
-  -webkit-transition: all 400ms ease-in;
-  -moz-transition: all 400ms ease-in;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
 }
 /* line 82, ../sass/screen.scss */
 header nav .logo span {
@@ -152,8 +152,8 @@ header nav .logo span {
   top: 50px;
   width: 100%;
   text-align: center;
-  -webkit-transition: all 400ms ease-in;
-  -moz-transition: all 400ms ease-in;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
 }
 /* line 93, ../sass/screen.scss */
 header nav ul {
@@ -235,7 +235,7 @@ h1.white {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: .2em;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.75);
 }
 
 /* line 172, ../sass/screen.scss */
@@ -365,11 +365,15 @@ article {
 article.on-disconnecting {
   background-image: url("images/on-disconnecting.png");
 }
-/* line 270, ../sass/screen.scss */
+/* line 269, ../sass/screen.scss */
+article.on-valiocon-2011 {
+  background-image: url("images/on-valiocon-2011.png");
+}
+/* line 273, ../sass/screen.scss */
 article.excerpt {
   padding: 0;
-  -webkit-transition: all 100ms ease-in;
-  -moz-transition: all 100ms ease-in;
+  -webkit-transition: all 150ms ease-in;
+  -moz-transition: all 150ms ease-in;
   background-position: center -50px;
   background-size: auto;
   -moz-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 14px rgba(255, 255, 255, 0.6) inset, 0 0 0 15px rgba(0, 0, 0, 0.05) inset, 0 0 0 350px rgba(255, 255, 255, 0.15) inset;
@@ -377,88 +381,88 @@ article.excerpt {
   -o-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 14px rgba(255, 255, 255, 0.6) inset, 0 0 0 15px rgba(0, 0, 0, 0.05) inset, 0 0 0 350px rgba(255, 255, 255, 0.15) inset;
   box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 14px rgba(255, 255, 255, 0.6) inset, 0 0 0 15px rgba(0, 0, 0, 0.05) inset, 0 0 0 350px rgba(255, 255, 255, 0.15) inset;
 }
-/* line 281, ../sass/screen.scss */
+/* line 284, ../sass/screen.scss */
 article.excerpt:hover {
   -moz-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 14px rgba(255, 255, 255, 0.6) inset, 0 0 0 15px rgba(0, 0, 0, 0.05) inset;
   -webkit-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 14px rgba(255, 255, 255, 0.6) inset, 0 0 0 15px rgba(0, 0, 0, 0.05) inset;
   -o-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 14px rgba(255, 255, 255, 0.6) inset, 0 0 0 15px rgba(0, 0, 0, 0.05) inset;
   box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 14px rgba(255, 255, 255, 0.6) inset, 0 0 0 15px rgba(0, 0, 0, 0.05) inset;
 }
-/* line 287, ../sass/screen.scss */
+/* line 290, ../sass/screen.scss */
 article.excerpt:hover h1 {
   letter-spacing: .3em;
 }
-/* line 292, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 article.excerpt a {
   display: block;
   text-decoration: none;
   padding: 4em 0;
 }
-/* line 297, ../sass/screen.scss */
+/* line 300, ../sass/screen.scss */
 article.excerpt a h1 {
   margin: 0;
-  -webkit-transition: all 100ms ease-in;
-  -moz-transition: all 100ms ease-in;
+  -webkit-transition: all 150ms ease-in;
+  -moz-transition: all 150ms ease-in;
 }
-/* line 304, ../sass/screen.scss */
+/* line 307, ../sass/screen.scss */
 article.clean {
   background-position: right top;
   background-size: 50% auto;
 }
-/* line 308, ../sass/screen.scss */
+/* line 311, ../sass/screen.scss */
 article.clean h1, article.clean h2, article.clean h3, article.clean h4, article.clean h5, article.clean h6 {
   margin: 0 0 1em 0;
   width: 45%;
 }
-/* line 309, ../sass/screen.scss */
+/* line 312, ../sass/screen.scss */
 article.clean p {
   margin: 1em 0 0 0;
   width: 45%;
 }
-/* line 311, ../sass/screen.scss */
+/* line 314, ../sass/screen.scss */
 article.clean.renewal {
   background-image: url("images/proj-renewal.png");
 }
-/* line 312, ../sass/screen.scss */
+/* line 315, ../sass/screen.scss */
 article.clean.sticky {
   background-image: url("images/proj-sticky.png");
 }
-/* line 313, ../sass/screen.scss */
+/* line 316, ../sass/screen.scss */
 article.clean.rotator {
   background-image: url("images/proj-rotator.png");
 }
-/* line 315, ../sass/screen.scss */
+/* line 318, ../sass/screen.scss */
 article.clean.ruiz-counter {
   background-image: url("images/exp-ruiz-counter.png");
   background-size: 50% auto;
   background-position: right center;
 }
-/* line 320, ../sass/screen.scss */
+/* line 323, ../sass/screen.scss */
 article.clean.ios-popover {
   background-image: url("images/exp-ios-popover.png");
   background-size: 50% auto;
   background-position: right center;
 }
-/* line 325, ../sass/screen.scss */
+/* line 328, ../sass/screen.scss */
 article.clean.vcard {
   background-image: url("images/exp-vcard.png");
   background-size: 50% auto;
   background-position: right center;
 }
-/* line 330, ../sass/screen.scss */
+/* line 333, ../sass/screen.scss */
 article.clean.about {
   background-size: auto 100%;
   background-image: url("images/bg-avatar.png");
 }
-/* line 334, ../sass/screen.scss */
+/* line 337, ../sass/screen.scss */
 article.clean.about h1, article.clean.about h2, article.clean.about h3, article.clean.about h4, article.clean.about h5, article.clean.about h6 {
   width: 80%;
 }
-/* line 335, ../sass/screen.scss */
+/* line 338, ../sass/screen.scss */
 article.clean.about p {
   width: 80%;
 }
-/* line 339, ../sass/screen.scss */
+/* line 342, ../sass/screen.scss */
 article .date {
   position: absolute;
   display: block;
@@ -469,12 +473,12 @@ article .date {
   color: #666;
   overflow: visible;
 }
-/* line 349, ../sass/screen.scss */
+/* line 352, ../sass/screen.scss */
 article .date.white {
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
-/* line 356, ../sass/screen.scss */
+/* line 359, ../sass/screen.scss */
 article img {
   max-width: 40%;
   float: right;
@@ -490,28 +494,28 @@ article img {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0 6px 5px -3px rgba(0, 0, 0, 0.25);
   margin: .5em 0 .5em 1.5em;
 }
-/* line 364, ../sass/screen.scss */
+/* line 367, ../sass/screen.scss */
 article img.left {
   float: left;
   margin: .5em 1.5em .5em 0;
 }
-/* line 367, ../sass/screen.scss */
+/* line 370, ../sass/screen.scss */
 article .figure {
   max-width: 40%;
   float: right;
   margin: .5em 0 .5em 1.5em;
 }
-/* line 372, ../sass/screen.scss */
+/* line 375, ../sass/screen.scss */
 article .figure.left {
   float: left;
   margin: .5em 1.5em .5em 0;
 }
-/* line 374, ../sass/screen.scss */
+/* line 377, ../sass/screen.scss */
 article .figure img {
   margin: 0 0 .75em 0;
   max-width: 100%;
 }
-/* line 379, ../sass/screen.scss */
+/* line 382, ../sass/screen.scss */
 article .figure .caption {
   font-style: normal;
   display: block;
@@ -519,25 +523,25 @@ article .figure .caption {
   font-size: .8em;
   line-height: 1.5em;
 }
-/* line 386, ../sass/screen.scss */
+/* line 389, ../sass/screen.scss */
 article .figure .caption:before {
   counter-increment: figure;
   content: "Fig. " counter(figure) " - ";
   font-style: italic;
   color: #999;
 }
-/* line 392, ../sass/screen.scss */
+/* line 395, ../sass/screen.scss */
 article .figure .caption:after {
   content: "";
 }
 
-/* line 397, ../sass/screen.scss */
+/* line 400, ../sass/screen.scss */
 .article-navigation {
   margin-top: -2em;
   margin-bottom: -5em;
   overflow: hidden;
 }
-/* line 402, ../sass/screen.scss */
+/* line 405, ../sass/screen.scss */
 .article-navigation a {
   display: block;
   padding: 1.5em 0 3em;
@@ -549,42 +553,42 @@ article .figure .caption:after {
   opacity: .5;
   width: 40%;
 }
-/* line 412, ../sass/screen.scss */
+/* line 415, ../sass/screen.scss */
 .article-navigation a:before {
   display: block;
   color: #999;
   line-height: 1em;
   font-size: .75em;
 }
-/* line 419, ../sass/screen.scss */
+/* line 422, ../sass/screen.scss */
 .article-navigation a:hover {
   opacity: 1;
 }
-/* line 423, ../sass/screen.scss */
-.article-navigation a[href="#prev"] {
+/* line 426, ../sass/screen.scss */
+.article-navigation a.prev {
   float: left;
   margin-left: 15px;
   text-align: left;
 }
-/* line 428, ../sass/screen.scss */
-.article-navigation a[href="#prev"]:before {
+/* line 431, ../sass/screen.scss */
+.article-navigation a.prev:before {
   content: "Prev";
 }
-/* line 432, ../sass/screen.scss */
-.article-navigation a[href="#prev"]:hover {
+/* line 435, ../sass/screen.scss */
+.article-navigation a.prev:hover {
   margin-left: 0;
 }
-/* line 435, ../sass/screen.scss */
-.article-navigation a[href="#next"] {
+/* line 438, ../sass/screen.scss */
+.article-navigation a.next {
   float: right;
   margin-right: 15px;
   text-align: right;
 }
-/* line 440, ../sass/screen.scss */
-.article-navigation a[href="#next"]:before {
+/* line 443, ../sass/screen.scss */
+.article-navigation a.next:before {
   content: "Next";
 }
-/* line 444, ../sass/screen.scss */
-.article-navigation a[href="#next"]:hover {
+/* line 447, ../sass/screen.scss */
+.article-navigation a.next:hover {
   margin-right: 0;
 }

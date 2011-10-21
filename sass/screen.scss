@@ -76,7 +76,7 @@ header {
         max-height:50px;
         opacity:.9;
         position:relative;
-        @include animate(400ms);
+        @include animate(300ms);
       }
       
       span {
@@ -86,7 +86,7 @@ header {
         top:50px;
         width:100%;
         text-align:center;
-        @include animate(400ms);
+        @include animate(300ms);
       }
     }
     
@@ -165,7 +165,7 @@ h1 {
     text-align:center;
     text-transform:uppercase;
     letter-spacing:.2em;
-    @include text-shadow(0 1px 10px rgba(0, 0, 0, .5));
+    @include text-shadow(0 1px 10px rgba(0, 0, 0, .75));
   }
 }
 
@@ -266,10 +266,13 @@ article {
                       0 0 0 15px rgba(black,.05) inset);
   
   &.on-disconnecting {background-image:url("images/on-disconnecting.png")}
+  &.on-valiocon-2011 {
+    background-image:url("images/on-valiocon-2011.png")
+  }
   
   &.excerpt {
     padding:0;
-    @include animate(100ms);
+    @include animate(150ms);
     background-position:center -50px;
     background-size:auto;
     @include box-shadow(0 3px 4px -1px rgba(black,.5),
@@ -296,7 +299,7 @@ article {
       
       h1 {
         margin:0;
-        @include animate(100ms);
+        @include animate(150ms);
       }
     }
   }
@@ -420,7 +423,7 @@ article {
       opacity:1;
     }
     
-    &[href="#prev"] {
+    &.prev {
       float:left;
       margin-left:15px;
       text-align:left;
@@ -432,7 +435,7 @@ article {
       &:hover {margin-left:0;}
     }
     
-    &[href="#next"] {
+    &.next {
       float:right;
       margin-right:15px;
       text-align:right;
