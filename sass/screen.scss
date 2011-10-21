@@ -308,6 +308,11 @@ article {
       background-size:50% auto;
       background-position:right center;
     }
+    &.vcard {
+      background-image:url("images/exp-vcard.png");
+      background-size:50% auto;
+      background-position:right center;
+    }
     &.about {
       background-size:auto 100%;
       background-image:url("images/bg-avatar.png");
