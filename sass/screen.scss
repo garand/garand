@@ -19,7 +19,6 @@ body {
   background:#eee url("images/noise.png") fixed;
   color:#333;
   min-height:100%;
-  width:100%;
   -webkit-font-smoothing: antialiased;
   text-rendering:optimizeLegibility;
   @include box-shadow(0 0 150px rgba(black,.3) inset);
