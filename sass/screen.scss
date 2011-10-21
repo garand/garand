@@ -19,6 +19,9 @@ html {
 
 body {
   line-height:1.6em;
+}
+
+.wrap {
   width:90%;
   max-width:700px;
   margin:0 auto .75em auto;
@@ -259,6 +262,7 @@ article {
     padding:0;
     @include animate(100ms);
     background-position:center -50px;
+    background-size:auto;
     @include box-shadow(0 3px 4px -1px rgba(black,.5),
                         0 13px 5px -7px rgba(black,.15),
                         0 0 0 14px rgba(white,.6) inset,
