@@ -218,10 +218,10 @@ ol {
 blockquote {
   font-family:purista-web,sans-serif;
   color:#eee;
-  font-size:2em;
+  font-size:1.75em;
   line-height:1.4em;
   background:#222;
-  padding:.8em 1em;
+  padding:1.3em 1em;
   margin:1em 0;
   @include box-shadow(0 0 0 4px lighten(#222,2%) inset,
                       0 0 0 5px lighten(#222,40%) inset);
@@ -277,9 +277,8 @@ article {
                       0 0 0 15px rgba(black,.05) inset);
   
   &.on-disconnecting {background-image:url("images/on-disconnecting.png")}
-  &.on-valiocon-2011 {
-    background-image:url("images/on-valiocon-2011.png");
-  }
+  &.on-valiocon-2011 {background-image:url("images/on-valiocon-2011.png")}
+  &.on-productivity {background-image:url("images/on-productivity.png")}
   
   &.excerpt {
     padding:0;
