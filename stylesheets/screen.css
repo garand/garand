@@ -453,32 +453,38 @@ article.clean.ruiz-counter {
   background-position: right center;
 }
 /* line 333, ../sass/screen.scss */
+article.clean.hudson-letterboxd {
+  background-image: url("images/exp-hudson-letterboxd.png");
+  background-size: 50% auto;
+  background-position: right center;
+}
+/* line 338, ../sass/screen.scss */
 article.clean.ios-popover {
   background-image: url("images/exp-ios-popover.png");
   background-size: 50% auto;
   background-position: right center;
 }
-/* line 338, ../sass/screen.scss */
+/* line 343, ../sass/screen.scss */
 article.clean.vcard {
   background-image: url("images/exp-vcard.png");
   background-size: 50% auto;
   background-position: right center;
 }
-/* line 343, ../sass/screen.scss */
+/* line 348, ../sass/screen.scss */
 article.clean.about {
   background-size: auto 100%;
   background-image: url("images/bg-avatar.png");
   background-position: right center;
 }
-/* line 348, ../sass/screen.scss */
+/* line 353, ../sass/screen.scss */
 article.clean.about h1, article.clean.about h2, article.clean.about h3, article.clean.about h4, article.clean.about h5, article.clean.about h6 {
   width: 80%;
 }
-/* line 349, ../sass/screen.scss */
+/* line 354, ../sass/screen.scss */
 article.clean.about p {
   width: 80%;
 }
-/* line 353, ../sass/screen.scss */
+/* line 358, ../sass/screen.scss */
 article .date {
   position: absolute;
   display: block;
@@ -489,12 +495,12 @@ article .date {
   color: #666;
   overflow: visible;
 }
-/* line 363, ../sass/screen.scss */
+/* line 368, ../sass/screen.scss */
 article .date.white {
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
-/* line 370, ../sass/screen.scss */
+/* line 375, ../sass/screen.scss */
 article img {
   max-width: 40%;
   float: right;
@@ -510,28 +516,28 @@ article img {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0 6px 5px -3px rgba(0, 0, 0, 0.25);
   margin: .5em 0 .5em 1.5em;
 }
-/* line 378, ../sass/screen.scss */
+/* line 383, ../sass/screen.scss */
 article img.left {
   float: left;
   margin: .5em 1.5em .5em 0;
 }
-/* line 381, ../sass/screen.scss */
+/* line 386, ../sass/screen.scss */
 article .figure {
   max-width: 40%;
   float: right;
   margin: .5em 0 .5em 1.5em;
 }
-/* line 386, ../sass/screen.scss */
+/* line 391, ../sass/screen.scss */
 article .figure.left {
   float: left;
   margin: .5em 1.5em .5em 0;
 }
-/* line 388, ../sass/screen.scss */
+/* line 393, ../sass/screen.scss */
 article .figure img {
   margin: 0 0 .75em 0;
   max-width: 100%;
 }
-/* line 393, ../sass/screen.scss */
+/* line 398, ../sass/screen.scss */
 article .figure .caption {
   font-style: normal;
   display: block;
@@ -539,25 +545,25 @@ article .figure .caption {
   font-size: .8em;
   line-height: 1.5em;
 }
-/* line 400, ../sass/screen.scss */
+/* line 405, ../sass/screen.scss */
 article .figure .caption:before {
   counter-increment: figure;
   content: "Fig. " counter(figure) " - ";
   font-style: italic;
   color: #999;
 }
-/* line 406, ../sass/screen.scss */
+/* line 411, ../sass/screen.scss */
 article .figure .caption:after {
   content: "";
 }
 
-/* line 411, ../sass/screen.scss */
+/* line 416, ../sass/screen.scss */
 .article-navigation {
   margin-top: -2em;
   margin-bottom: -5em;
   overflow: hidden;
 }
-/* line 416, ../sass/screen.scss */
+/* line 421, ../sass/screen.scss */
 .article-navigation a {
   display: block;
   padding: 1.5em 0 3em;
@@ -569,48 +575,48 @@ article .figure .caption:after {
   opacity: .5;
   width: 40%;
 }
-/* line 426, ../sass/screen.scss */
+/* line 431, ../sass/screen.scss */
 .article-navigation a:before {
   display: block;
   color: #999;
   line-height: 1em;
   font-size: .75em;
 }
-/* line 433, ../sass/screen.scss */
+/* line 438, ../sass/screen.scss */
 .article-navigation a:hover {
   opacity: 1;
 }
-/* line 437, ../sass/screen.scss */
+/* line 442, ../sass/screen.scss */
 .article-navigation a.prev {
   float: left;
   margin-left: 15px;
   text-align: left;
 }
-/* line 442, ../sass/screen.scss */
+/* line 447, ../sass/screen.scss */
 .article-navigation a.prev:before {
   content: "Prev";
 }
-/* line 446, ../sass/screen.scss */
+/* line 451, ../sass/screen.scss */
 .article-navigation a.prev:hover {
   margin-left: 0;
 }
-/* line 449, ../sass/screen.scss */
+/* line 454, ../sass/screen.scss */
 .article-navigation a.next {
   float: right;
   margin-right: 15px;
   text-align: right;
 }
-/* line 454, ../sass/screen.scss */
+/* line 459, ../sass/screen.scss */
 .article-navigation a.next:before {
   content: "Next";
 }
-/* line 458, ../sass/screen.scss */
+/* line 463, ../sass/screen.scss */
 .article-navigation a.next:hover {
   margin-right: 0;
 }
 
 @media all and (max-width:500px) {
-  /* line 464, ../sass/screen.scss */
+  /* line 469, ../sass/screen.scss */
   article {
     padding: 2em;
     -moz-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 9px rgba(255, 255, 255, 0.6) inset, 0 0 0 10px rgba(0, 0, 0, 0.05) inset;
@@ -618,25 +624,25 @@ article .figure .caption:after {
     -o-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 9px rgba(255, 255, 255, 0.6) inset, 0 0 0 10px rgba(0, 0, 0, 0.05) inset;
     box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 9px rgba(255, 255, 255, 0.6) inset, 0 0 0 10px rgba(0, 0, 0, 0.05) inset;
   }
-  /* line 471, ../sass/screen.scss */
+  /* line 476, ../sass/screen.scss */
   article.excerpt {
     -moz-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 9px rgba(255, 255, 255, 0.6) inset, 0 0 0 10px rgba(0, 0, 0, 0.05) inset, 0 0 0 350px rgba(255, 255, 255, 0.15) inset;
     -webkit-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 9px rgba(255, 255, 255, 0.6) inset, 0 0 0 10px rgba(0, 0, 0, 0.05) inset, 0 0 0 350px rgba(255, 255, 255, 0.15) inset;
     -o-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 9px rgba(255, 255, 255, 0.6) inset, 0 0 0 10px rgba(0, 0, 0, 0.05) inset, 0 0 0 350px rgba(255, 255, 255, 0.15) inset;
     box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 9px rgba(255, 255, 255, 0.6) inset, 0 0 0 10px rgba(0, 0, 0, 0.05) inset, 0 0 0 350px rgba(255, 255, 255, 0.15) inset;
   }
-  /* line 478, ../sass/screen.scss */
+  /* line 483, ../sass/screen.scss */
   article.excerpt:hover {
     -moz-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 9px rgba(255, 255, 255, 0.6) inset, 0 0 0 10px rgba(0, 0, 0, 0.05) inset;
     -webkit-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 9px rgba(255, 255, 255, 0.6) inset, 0 0 0 10px rgba(0, 0, 0, 0.05) inset;
     -o-box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 9px rgba(255, 255, 255, 0.6) inset, 0 0 0 10px rgba(0, 0, 0, 0.05) inset;
     box-shadow: 0 3px 4px -1px rgba(0, 0, 0, 0.5), 0 13px 5px -7px rgba(0, 0, 0, 0.15), 0 0 0 9px rgba(255, 255, 255, 0.6) inset, 0 0 0 10px rgba(0, 0, 0, 0.05) inset;
   }
-  /* line 485, ../sass/screen.scss */
+  /* line 490, ../sass/screen.scss */
   article.excerpt a {
     padding: 2em 0;
   }
-  /* line 490, ../sass/screen.scss */
+  /* line 495, ../sass/screen.scss */
   article .date {
     top: 2em;
     right: 2em;
