@@ -1,4 +1,157 @@
 @import "compass/css3";
 @import "normalize";
 @import "base";
-@import "pygments";
+
+html,body {
+  height:100%;
+  overflow:hidden;
+}
+
+body {
+  font-family:"proxima-nova",Proxima Nova,sans-serif;
+  font-weight:300;
+  color:#7f8c8d;
+}
+
+header {
+  margin-bottom:70px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color:#34495e;
+  margin-top:2em;
+}
+
+h1 {font-size:2.4em;}
+
+h2,h3,h4,h5,h6 {font-weight:400;}
+
+.me {
+  max-height:100%;
+  width:auto;
+  border-right:10px solid #ecf0f1;
+  float:left;
+  margin-left:-100px;
+}
+
+.logo {
+  border:0;
+  &:hover {border:0;}
+  display:inline-block;
+  margin-left:-160px;
+  margin-top:40px;
+  float:left;
+
+  img {
+    width:110px;
+    height:110px;
+  }
+}
+
+body.post .me {
+  margin-left:-370px;
+}
+
+.content {
+  padding:70px;
+  height:100%;
+  overflow:scroll;
+}
+
+a {
+  text-decoration:none;
+  color:#2980b9;
+  border-bottom:2px solid lighten(#2980b9,50%);
+  @include transition(border-bottom 100ms ease-in-out);
+  
+  &:hover {
+    border-bottom:2px solid lighten(#2980b9,30%);
+  }
+}
+
+hr {
+  border:0;
+  background:#ecf0f1;
+  height:2px;
+  margin:1em 0;
+}
+
+.my-name {
+  color:#233140;
+  font-weight:400;
+  font-size:3.5em;
+  margin-bottom:40px;
+}
+
+.intro {
+  font-size:2em;
+  color:#7f8c8d;
+  line-height:1.5em;
+}
+
+.greeting {
+  font-size:2em;
+  color:#7f8c8d;
+  line-height:.75em;
+}
+
+p {
+  font-size:1.2em;
+  line-height:1.5em;
+}
+
+blockquote {
+  border-left:10px solid #ecf0f1;
+  margin:1em 2em;
+  padding:.5em 2em;
+  font-size:1.4em;
+  line-height:1.4em;
+  color:#34495e;
+}
+
+code {
+  font-family:"source-code-pro",Source Code Pro;
+  color:#34495e;
+  font-weight:400;
+  font-size:.9em;
+}
+
+pre {
+  border-left:10px solid #ecf0f1;
+  margin:1em 2em;
+  padding:.5em 2em;
+
+  code {font-size:1em;}
+}
+
+ul {
+  margin:1em;
+  list-style:square;
+}
+
+
+li {
+  font-size:1.2em;
+  margin:.5em;
+  padding-left:.3em;
+}
+
+.grid {
+  overflow:hidden;
+  display:none;
+  margin-bottom:70px;
+
+  img {
+    display:block;
+    float:left;
+    width:33.333333333%;
+  }
+}
+
+.posts {
+  h2:first-child {margin-top:0;}
+}
+
+.post {
+  h1:first-child {margin-top:0;}
+}
