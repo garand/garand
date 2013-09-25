@@ -11,6 +11,8 @@ body {
   font-family:"proxima-nova",Proxima Nova,sans-serif;
   font-weight:300;
   color:#7f8c8d;
+  background-image:image-url("avatar.jpg");
+  background-size:auto 100%;
 }
 
 header {
@@ -48,9 +50,14 @@ h2,h3,h4,h5,h6 {font-weight:400;}
 }
 
 .content {
-  padding:70px;
+  padding-left:44%;
   height:100%;
   overflow:scroll;
+}
+
+.content-inner {
+  padding:70px;
+  background:rgba(#fff,.7);
 }
 
 a {
