@@ -1,0 +1,16 @@
+{
+	"name": "garand",
+	"private": true,
+	"main": "gulpfile.js",
+	"devDependencies": {
+		"browser-sync": "*",
+		"gulp-connect-php": "*",
+		"gulp-notify": "*"
+	},
+	"dependencies": {
+		"gulp": "*",
+		"gulp-autoprefixer": "*",
+		"gulp-minify-css": "*",
+		"gulp-sass": "*"
+	}
+}
