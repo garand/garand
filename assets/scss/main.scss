@@ -81,6 +81,10 @@ article {
 		flex: 0;
 		background: none;
 	}
+
+	@media screen and (max-width: 600px) {
+		padding-bottom: 0;
+	}
 }
 
 .greeting {
@@ -135,8 +139,8 @@ article {
 
 	@media screen and (max-width: 600px) {
 		margin-top: -6px;
-		margin-left: -6.5vw;
-		margin-right: -6.5vw;
+		margin-left: -5.5vw;
+		margin-right: -5.5vw;
 	}
 
 	&:hover {
