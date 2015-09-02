@@ -135,8 +135,8 @@ article {
 
 	@media screen and (max-width: 600px) {
 		margin-top: -6px;
-		margin-left: -6px;
-		margin-right: -6px;
+		margin-left: -6.5vw;
+		margin-right: -6.5vw;
 	}
 
 	&:hover {
@@ -152,10 +152,6 @@ article {
 		transition: opacity 200ms ease-in-out;
 		border: .5vw solid transparent;
 
-		@media screen and (max-width: 600px) {
-			border-width: 6px;
-		}
-
 		@media screen and (min-width: 1450px) {
 			flex-basis: calc(100%/4);
 		}
@@ -170,10 +166,6 @@ article {
 
 		@media screen and (max-width: 750px) {
 			flex-basis: calc(100%/3);
-		}
-
-		@media screen and (max-width: 500px) {
-			flex-basis: calc(100%/2);
 		}
 
 		&:hover {
