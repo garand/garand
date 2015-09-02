@@ -15,9 +15,9 @@ var feed = new Instafeed({
 		}
 });
 
-feed.run();
-
 window.onload = function() {
+	feed.run();
+
 	var _gauges = _gauges || [];
 	(function() {
 		var t   = document.createElement('script');
