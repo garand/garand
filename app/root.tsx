@@ -23,7 +23,7 @@ export function links() {
   return [{ rel: "stylesheet", href: style }];
 }
 
-export default function App() {
+export default function Component() {
   return (
     <html lang="en" className="dark:bg-black">
       <head>
