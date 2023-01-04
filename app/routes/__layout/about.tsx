@@ -1,3 +1,14 @@
+function getAge(birthDate: string) {
+  const today = new Date();
+  const birth = new Date(birthDate);
+  let age = today.getFullYear() - birth.getFullYear();
+  const m = today.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+    age -= 1;
+  }
+  return age;
+}
+
 export default function Component() {
   return (
     <div>
@@ -7,9 +18,10 @@ export default function Component() {
         </h1>
         <div className="text-slate-500 text-lg grid grid-flow-row auto-rows-auto gap-6 mb-6 md:mb-12">
           <p>
-            I'm Anthony Garand, a 31 year old front-end engineer living in Fort
-            Gratiot, Michigan. I&apos;m married to my incredible wife, Michaela,
-            and have been blessed to be a father to two beautiful children.
+            I'm Anthony Garand, a {getAge("1991-11-05")} year old front-end
+            engineer living in Fort Gratiot, Michigan. I&apos;m married to my
+            incredible wife, Michaela, and have been blessed to be a father to
+            two beautiful children.
           </p>
           <p>
             I currently work at Towbook, building and maintaining a large web
