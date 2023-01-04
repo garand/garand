@@ -25,7 +25,7 @@ export function links() {
 
 export default function Component() {
   return (
-    <html lang="en" className="dark:bg-black">
+    <html lang="en" className="antialiased dark:bg-black">
       <head>
         <Meta />
         <Links />
