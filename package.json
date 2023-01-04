@@ -1,16 +1,44 @@
 {
-	"name": "garand",
-	"private": true,
-	"main": "gulpfile.js",
-	"devDependencies": {
-		"browser-sync": "*",
-		"gulp-connect-php": "*",
-		"gulp-notify": "*"
-	},
-	"dependencies": {
-		"gulp": "*",
-		"gulp-autoprefixer": "*",
-		"gulp-minify-css": "*",
-		"gulp-sass": "*"
-	}
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "dev": "run-p dev:*",
+    "dev:remix": "remix dev",
+    "dev:css": "npm run build:css -- -w",
+    "build": "run-p build:*",
+    "build:remix": "remix build",
+    "build:css": "postcss ./style/index.css -o app/style/index.css",
+    "start": "remix-serve build",
+    "deploy": "fly deploy --remote-only",
+    "typecheck": "tsc -b"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@remix-run/node": "^1.9.0",
+    "@remix-run/react": "^1.9.0",
+    "@remix-run/serve": "^1.9.0",
+    "isbot": "^3.6.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.9.0",
+    "@remix-run/eslint-config": "^1.9.0",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "eslint": "^8.27.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.8.4"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "prettier": {}
 }
