@@ -9,6 +9,10 @@ function getAge(birthDate: string) {
   return age;
 }
 
+const age = getAge("1991-11-05"); // 32
+
+age;
+
 export default function Component() {
   return (
     <div>
@@ -24,9 +28,23 @@ export default function Component() {
             two beautiful children.
           </p>
           <p>
-            I currently work at Towbook, building and maintaining a large web
+            I have a passion for the small details. I believe they can make or
+            break an experience and although a user may not notice them, they
+            will <em>feel</em> them.
+          </p>
+          <p>
+            Currently, I work at Towbook, building and maintaining a large web
             application for the towing industry. I've been working there since
             late 2019.
+          </p>
+          <p>
+            Previously, I worked at LiftUX, aquired by 10up in 2017, where I
+            worked on products and websites for clients such as Microsoft, AMC
+            Networks, Capital One, PA Media Group, and Stadium.
+          </p>
+          <p>
+            Outside of work, I spend time with my wife and kids, volunteering at
+            our church, and trying to catch up on sleep!
           </p>
         </div>
       </div>

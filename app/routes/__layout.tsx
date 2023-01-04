@@ -3,7 +3,10 @@ import {
   faEnvelope,
   faLightbulb,
   faNewspaper,
+  faTools,
   faUser,
+  faCode,
+  faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, Outlet } from "@remix-run/react";
@@ -115,6 +118,30 @@ export default function Component() {
             </li>
             <li>
               <Link
+                to="projects"
+                className="flex items-center gap-4 px-5 py-3 rounded-lg hover:bg-slate-50 transition-colors"
+              >
+                <FontAwesomeIcon
+                  icon={faBriefcase}
+                  className="text-slate-300 w-5 h-5"
+                />
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="snippets"
+                className="flex items-center gap-4 px-5 py-3 rounded-lg hover:bg-slate-50 transition-colors"
+              >
+                <FontAwesomeIcon
+                  icon={faCode}
+                  className="text-slate-300 w-5 h-5"
+                />
+                Snippets
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="about"
                 className="flex items-center gap-4 px-5 py-3 rounded-lg hover:bg-slate-50 transition-colors"
               >
@@ -123,6 +150,18 @@ export default function Component() {
                   className="text-slate-300 w-5 h-5"
                 />
                 About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="uses"
+                className="flex items-center gap-4 px-5 py-3 rounded-lg hover:bg-slate-50 transition-colors"
+              >
+                <FontAwesomeIcon
+                  icon={faTools}
+                  className="text-slate-300 w-5 h-5"
+                />
+                Uses
               </Link>
             </li>
           </ul>

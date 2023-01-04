@@ -35,10 +35,11 @@ export default function Component() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
+        {process.env.NODE_ENV === "production" && (
+          <script
+            type="text/javascript"
+            dangerouslySetInnerHTML={{
+              __html: `
   var _gauges = _gauges || [];
   (function() {
     var t   = document.createElement('script');
@@ -52,8 +53,9 @@ export default function Component() {
     s.parentNode.insertBefore(t, s);
   })();
         `,
-          }}
-        />
+            }}
+          />
+        )}
       </body>
     </html>
   );
