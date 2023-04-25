@@ -1,3 +1,5 @@
+import { Heading } from "~/components/Heading";
+
 function getAge(birthDate: string) {
   const today = new Date();
   const birth = new Date(birthDate);
@@ -9,22 +11,16 @@ function getAge(birthDate: string) {
   return age;
 }
 
-const age = getAge("1991-11-05"); // 32
-
-age;
-
 export default function Component() {
   return (
     <div>
       <div className="max-w-prose">
-        <h1 className="text-3xl md:text-4xl lg:text-6xl text-slate-800 font-extrabold mb-6 md:mb-8 lg:mb-10">
-          About
-        </h1>
+        <Heading.Level2>About</Heading.Level2>
         <div className="text-slate-500 text-lg grid grid-flow-row auto-rows-auto gap-6 mb-6 md:mb-12">
           <p>
             I'm Anthony Garand, a {getAge("1991-11-05")} year old front-end
             engineer living in Fort Gratiot, Michigan. I&apos;m married to my
-            incredible wife, Michaela, and have been blessed to be a father to
+            incredible wife, Michaela, and I am been blessed to be a father to
             two beautiful children.
           </p>
           <p>

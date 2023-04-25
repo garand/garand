@@ -1,4 +1,8 @@
-import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
   faLightbulb,
@@ -7,22 +11,26 @@ import {
   faUser,
   faCode,
   faBriefcase,
+  faRssSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, Outlet } from "@remix-run/react";
 
 export default function Component() {
   return (
-    <div className="px-6 py-10 md:px-12 md:py-16 lg:px-16 lg:py-24 grid grid-flow-row auto-rows-auto lg:grid-flow-col lg:grid-cols-[auto_1fr] gap-8 md:gap-12 lg:gap-16">
+    <div className="px-6 py-10 md:px-12 md:py-16 lg:px-16 lg:py-24 grid grid-flow-row auto-rows-auto lg:grid-flow-col lg:grid-cols-[auto_1fr] gap-8 md:gap-12 lg:gap-20">
       <div>
-        <Link to="/">
+        <Link
+          to="/"
+          className="rounded-full bg-slate-200 inline-flex mb-4 w-32 md:w-48 aspect-square overflow-hidden"
+        >
           <img
             src="/avatar.png"
-            className="rounded-full w-32 md:w-48 aspect-square mb-4 dark:brightness-75 dark:contrast-125"
+            className="aspect-square dark:brightness-75 dark:contrast-125 mix-blend-luminosity"
             alt="Anthony Garand"
           />
         </Link>
-        <h1 className="font-bold text-3xl text-slate-900 dark:text-slate-50">
+        <h1 className="font-extrabold text-3xl text-slate-800 dark:text-slate-50 tracking-tight">
           Anthony Garand
         </h1>
         <div className="text-slate-500 dark:text-slate-400 text-lg mb-4">
@@ -39,21 +47,21 @@ export default function Component() {
             </a>
           </p>
         </div>
-        <ul className="flex gap-4 mb-6">
+        <ul className="flex gap-3 mb-6">
           <li>
             <a
               href="https://twitter.com/garand"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full inline-flex items-center p-4 bg-sky-50 hover:bg-sky-100 hover:scale-110 transition"
+              className="rounded-full inline-flex items-center p-3.5 bg-sky-50 hover:bg-sky-100 hover:scale-110 transition ease-in group"
               title="Twitter"
               style={{
-                transitionProperty: "color, transform",
+                transitionProperty: "background, transform",
               }}
             >
               <FontAwesomeIcon
                 icon={faTwitter}
-                className="text-sky-500 w-5 h-5"
+                className="text-sky-400 group-hover:text-sky-500 transition-colors ease-in text-lg aspect-square"
               />
             </a>
           </li>
@@ -62,30 +70,68 @@ export default function Component() {
               href="https://github.com/garand"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full inline-flex items-center p-4 bg-slate-50 hover:bg-slate-100 hover:scale-110 transition"
+              className="rounded-full inline-flex items-center p-3.5 bg-emerald-50 hover:bg-emerald-100 hover:scale-110 transition ease-in"
               title="GitHub"
               style={{
-                transitionProperty: "color, transform",
+                transitionProperty: "background, transform",
               }}
             >
               <FontAwesomeIcon
                 icon={faGithub}
-                className="text-slate-500 w-5 h-5"
+                className="text-emerald-400 group-hover:text-emerald-500 transition-colors ease-in text-lg aspect-square"
               />
             </a>
           </li>
           <li>
             <a
               href="mailto:garand@garand.me"
-              className="rounded-full inline-flex items-center p-4 bg-amber-50 hover:bg-amber-100 hover:scale-110 transition"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full inline-flex items-center p-3.5 bg-amber-50 hover:bg-amber-100 hover:scale-110 transition ease-in"
+              onClick={(event) => {
+                event.preventDefault();
+                alert("🚧 Under construction 🚧");
+              }}
+              title="RSS"
+              style={{
+                transitionProperty: "background, transform",
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faRssSquare}
+                className="text-amber-400 group-hover:text-amber-500 transition-colors ease-in text-lg aspect-square"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:garand@garand.me"
+              className="rounded-full inline-flex items-center p-3.5 bg-purple-50 hover:bg-purple-100 hover:scale-110 transition ease-in"
               title="Email"
               style={{
-                transitionProperty: "color, transform",
+                transitionProperty: "background, transform",
               }}
             >
               <FontAwesomeIcon
                 icon={faEnvelope}
-                className="text-amber-500 w-5 h-5"
+                className="text-purple-400 group-hover:text-purple-500 transition-colors ease-in text-lg aspect-square"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/anthonygarand/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full inline-flex items-center p-3.5 bg-rose-50 hover:bg-rose-100 hover:scale-110 transition ease-in"
+              title="LinkedIn"
+              style={{
+                transitionProperty: "background, transform",
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="text-rose-400 group-hover:text-rose-500 transition-colors ease-in text-lg aspect-square"
               />
             </a>
           </li>
