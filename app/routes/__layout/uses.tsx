@@ -1,10 +1,10 @@
+import { Heading } from "~/components/Heading";
+
 export default function Component() {
   return (
     <div>
       <div className="max-w-prose">
-        <h1 className="text-3xl md:text-4xl lg:text-6xl text-slate-800 font-extrabold mb-6 md:mb-8 lg:mb-10">
-          Uses
-        </h1>
+        <Heading.Level2>Uses</Heading.Level2>
         <div className="text-slate-500 text-lg grid grid-flow-row auto-rows-auto gap-6 mb-6 md:mb-12">
           <p>
             This is a list of the gear I use on a daily basis. I&apos;ll try to
