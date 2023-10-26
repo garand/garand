@@ -1,4 +1,5 @@
-import type { MetaFunction } from "@remix-run/node";
+import { cssBundleHref } from "@remix-run/css-bundle";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -7,26 +8,35 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import style from "~/style/index.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import styles from "~/styles/index.css";
 
 config.autoAddCss = false;
 
-export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "Anthony Garand",
-  description: "Front-End Engineer working at Towbook.",
-  viewport: "width=device-width,initial-scale=1",
-});
+export const meta: MetaFunction = () => {
+  return [
+    {
+      charset: "utf-8",
+      title: "Anthony Garand",
+      description: "Front-End Engineer working at Towbook.",
+      viewport: "width=device-width,initial-scale=1",
+    },
+  ];
+};
 
-export function links() {
-  return [{ rel: "stylesheet", href: style }];
-}
+export const links: LinksFunction = () => {
+  return [
+    ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+    { rel: "stylesheet", href: styles },
+  ];
+};
 
 export default function Component() {
   return (
-    <html lang="en" className="antialiased dark:bg-black">
+    <html lang="en" className="antialiased dark:bg-black font-sans">
       <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
