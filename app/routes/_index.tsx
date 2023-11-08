@@ -27,12 +27,12 @@ export default function Component() {
                 className="relative group rounded-md inline-flex p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:transition-colors text-zinc-600 dark:text-zinc-400  hover:text-sky-500"
               >
                 <FontAwesomeIcon
-                  icon={faTwitter}
+                  icon={faXTwitter}
                   className="group-hover:opacity-0 transition-opacity duration-300"
                 />
                 <div className="absolute inset-0 grid place-items-center">
                   <FontAwesomeIcon
-                    icon={faXTwitter}
+                    icon={faTwitter}
                     className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
