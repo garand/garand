@@ -95,23 +95,31 @@ export default function Component() {
       </section>
       <section className="mt-20">
         <h2 className="text-xl mb-4 max-w-3xl mx-auto px-8">Projects</h2>
-        <ul
-          className="flex gap-4 md:gap-8 overflow-auto snap-x snap-mandatory"
-          style={{
-            paddingInline: `max(calc((100% - 48rem) / 2 + 2rem), 2rem)`,
-            scrollPaddingInline: `max(calc((100% - 48rem) / 2 + 2rem), 2rem)`,
-          }}
-        >
-          {new Array(8).fill(0).map((_, i) => (
-            <div
-              key={i}
-              className="aspect-video bg-zinc-200 dark:bg-zinc-800 rounded-sm flex-shrink-0 snap-start"
-              style={{
-                width: `min(32rem, calc(100vw - 4rem))`,
-              }}
-            ></div>
-          ))}
-        </ul>
+        <div className="relative">
+          <div
+            className="bg-gradient-to-r from-transparent to-zinc-50 dark:to-zinc-900 absolute top-0 right-0 bottom-0 z-10 pointer-events-none"
+            style={{
+              width: `calc(((100vw - 48rem) / 2 + 2rem) / 2)`,
+            }}
+          />
+          <ul
+            className="flex gap-4 md:gap-8 overflow-auto snap-x snap-mandatory relative"
+            style={{
+              paddingInline: `max(calc((100% - 48rem) / 2 + 2rem), 2rem)`,
+              scrollPaddingInline: `max(calc((100% - 48rem) / 2 + 2rem), 2rem)`,
+            }}
+          >
+            {new Array(8).fill(0).map((_, i) => (
+              <div
+                key={i}
+                className="aspect-video bg-zinc-200 dark:bg-zinc-800 rounded-sm flex-shrink-0 snap-start"
+                style={{
+                  width: `min(32rem, calc(100vw - 4rem))`,
+                }}
+              ></div>
+            ))}
+          </ul>
+        </div>
       </section>
     </>
   );
