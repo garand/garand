@@ -69,13 +69,13 @@ export default function Component() {
               <div
                 className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded-sm"
                 style={{
-                  width: `${random(30, 50)}%`,
+                  width: `${random(40, 55)}%`,
                 }}
               />
               <div
                 className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded-sm"
                 style={{
-                  width: `${random(8, 12)}%`,
+                  width: `${random(60, 80)}px`,
                 }}
               />
             </li>
@@ -96,7 +96,7 @@ export default function Component() {
       <section className="mt-20">
         <h2 className="text-xl mb-4 max-w-3xl mx-auto px-8">Projects</h2>
         <ul
-          className="flex gap-8 overflow-auto snap-x snap-mandatory"
+          className="flex gap-4 md:gap-8 overflow-auto snap-x snap-mandatory"
           style={{
             paddingInline: `max(calc((100% - 48rem) / 2 + 2rem), 2rem)`,
             scrollPaddingInline: `max(calc((100% - 48rem) / 2 + 2rem), 2rem)`,
