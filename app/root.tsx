@@ -33,18 +33,21 @@ export const links: LinksFunction = () => {
 
 export default function Component() {
   return (
-    <html lang="en" className="antialiased dark:bg-black font-sans">
+    <html
+      lang="en"
+      className="antialiased font-sans bg-zinc-50 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-50"
+    >
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="py-20">
         <Outlet />
         <ScrollRestoration />
-        <Scripts />
         <LiveReload />
+        <Scripts />
         {process.env.NODE_ENV === "production" && (
           <script
             type="text/javascript"
