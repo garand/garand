@@ -49,8 +49,8 @@ export default function Component() {
           </ul>
         </div>
         <p className="text-zinc-500 dark:text-zinc-400">
-          I'm a Christian, husband, father of three, and software engineer. I
-          currently work as a software engineer at{" "}
+          I'm a Christian, husband, father of three, and software engineer. I'm
+          currently working at{" "}
           <a
             href="https://towbook.com"
             rel="noopener noreferer"
@@ -96,15 +96,19 @@ export default function Component() {
       <section className="mt-20">
         <h2 className="text-xl mb-4 max-w-3xl mx-auto px-8">Projects</h2>
         <ul
-          className="flex overflow-auto gap-8"
+          className="flex gap-8 overflow-auto snap-x snap-mandatory"
           style={{
             paddingInline: `max(calc((100% - 48rem) / 2 + 2rem), 2rem)`,
+            scrollPaddingInline: `max(calc((100% - 48rem) / 2 + 2rem), 2rem)`,
           }}
         >
           {new Array(8).fill(0).map((_, i) => (
             <div
               key={i}
-              className="aspect-video bg-zinc-200 dark:bg-zinc-800 rounded-sm h-64"
+              className="aspect-video bg-zinc-200 dark:bg-zinc-800 rounded-sm flex-shrink-0 snap-start"
+              style={{
+                width: `min(32rem, calc(100vw - 4rem))`,
+              }}
             ></div>
           ))}
         </ul>
