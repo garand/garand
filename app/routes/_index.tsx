@@ -1,9 +1,9 @@
 import {
   faGithub,
-  faInstagram,
   faTwitter,
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Component() {
@@ -16,7 +16,7 @@ export default function Component() {
             <li>
               <a
                 href="https://github.com/garand"
-                className="relative group rounded-md inline-flex p-2 hover:bg-zinc-100 hover:dark:bg-zinc-800 hover:transition-colors text-zinc-600 dark:text-zinc-400 hover:text-lime-500"
+                className="relative group rounded-md inline-flex p-2 hover:bg-zinc-100 hover:dark:bg-zinc-800 hover:transition-colors text-zinc-600 dark:text-zinc-400 hover:text-purple-500"
               >
                 <FontAwesomeIcon icon={faGithub} />
               </a>
@@ -40,10 +40,10 @@ export default function Component() {
             </li>
             <li>
               <a
-                href="https://instagram.com/garand"
-                className="relative group rounded-md inline-flex p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:transition-colors text-zinc-600 dark:text-zinc-400  hover:text-pink-500"
+                href="mailto:garand@garand.me"
+                className="relative group rounded-md inline-flex p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:transition-colors text-zinc-600 dark:text-zinc-400  hover:text-green-500"
               >
-                <FontAwesomeIcon icon={faInstagram} />
+                <FontAwesomeIcon icon={faEnvelope} />
               </a>
             </li>
           </ul>
