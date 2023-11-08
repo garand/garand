@@ -102,7 +102,10 @@ export default function Component() {
           }}
         >
           {new Array(8).fill(0).map((_, i) => (
-            <div className="aspect-video bg-zinc-800 rounded-sm"></div>
+            <div
+              key={i}
+              className="aspect-video bg-zinc-200 dark:bg-zinc-800 rounded-sm"
+            ></div>
           ))}
         </ul>
       </section>
