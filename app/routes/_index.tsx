@@ -96,7 +96,7 @@ export default function Component() {
       <section className="mt-20">
         <h2 className="text-xl mb-4 max-w-3xl mx-auto px-8">Projects</h2>
         <ul
-          className="flex overflow-auto h-64 gap-8"
+          className="flex overflow-auto gap-8"
           style={{
             paddingInline: `max(calc((100% - 48rem) / 2 + 2rem), 2rem)`,
           }}
@@ -104,7 +104,7 @@ export default function Component() {
           {new Array(8).fill(0).map((_, i) => (
             <div
               key={i}
-              className="aspect-video bg-zinc-200 dark:bg-zinc-800 rounded-sm"
+              className="aspect-video bg-zinc-200 dark:bg-zinc-800 rounded-sm h-64"
             ></div>
           ))}
         </ul>
