@@ -162,18 +162,12 @@ export default function Component() {
       <section className="mt-20 max-w-3xl mx-auto px-8">
         <h2 className="text-xl mb-4">About</h2>
         <div className="space-y-4 text-zinc-500 dark:text-zinc-400">
-          <div
-            className="sm:float-right w-1/2 sm:w-1/3 max-w-[200px] sm:ml-6 mx-auto mb-6"
-            style={{
-              shapeOutside: `circle()`,
-              shapeMargin: `1.5rem`,
-            }}
-          >
+          <div className="float-right w-1/2 sm:w-1/3 max-w-[200px] ml-6 mb-6 -mr-8 sm:mr-0 transition-all">
             <img
               src="/avatar.png"
               title="Anthony Garand"
               alt="Anthony Garand"
-              className="rounded-full shadow-2xl shadow-zinc-200 dark:shadow-zinc-800 mix-blend-multiply dark:mix-blend-difference"
+              className="rounded-l-3xl sm:rounded-r-3xl shadow-2xl shadow-zinc-200 dark:shadow-zinc-800 mix-blend-multiply dark:mix-blend-difference"
             />
           </div>
           <p>
