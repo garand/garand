@@ -177,9 +177,9 @@ export default function Component() {
             />
           </div>
           <p>
-            I'm a {getAge("1991-11-05")} year old front-end engineer living in
-            Fort Gratiot, Michigan. I&apos;m a Christian, husband to my
-            incredible wife, and a father to three beautiful children.
+            I'm a {getAge("1991-11-05")} year old software engineer living in
+            Michigan. I&apos;m a Christian, a husband to my incredible wife, and
+            a father to three beautiful children.
           </p>
           <p>
             I have a passion for the small details. I believe they can make or
@@ -199,9 +199,9 @@ export default function Component() {
             towing industry. I've been working there since late 2019.
           </p>
           <p>
-            Previously, I worked at LiftUX, aquired by 10up in 2017, where I
-            worked on products and websites for clients like Microsoft, AMC
-            Networks, Capital One, PA Media Group, and Stadium.
+            Previously, I've worked at LiftUX and 10up, where I worked on
+            products and websites for clients like Microsoft, AMC Networks,
+            Capital One, PA Media Group, and Stadium.
           </p>
         </div>
       </section>
