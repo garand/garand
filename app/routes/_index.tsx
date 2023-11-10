@@ -7,6 +7,8 @@ import { faArrowRight, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Component() {
+  const availability: "yes" | "limited" | "no" = "yes";
+
   return (
     <>
       <section className="max-w-3xl mx-auto px-8">
@@ -56,12 +58,30 @@ export default function Component() {
           <br />
           Product Designer
         </h3>
-        <div className="mt-3">
-          <div className="rounded-full inline-flex text-zinc-600 dark:text-zinc-400 items-center text-xs border border-zinc-200 dark:border-zinc-700 p-[5px]">
-            <div className="bg-lime-500 dark:bg-lime-600 rounded-full w-2 ml-[3px] aspect-square mr-2 inline-block shadow-lime-400/80 dark:shadow-lime-500/80 shadow-[0_0_12px]" />
-            <div className="leading-none mr-1.5">Available for Work</div>
+        {availability === "yes" && (
+          <div className="mt-3">
+            <div className="rounded-full inline-flex text-zinc-600 dark:text-zinc-400 items-center text-xs border border-zinc-200 dark:border-zinc-700 p-[5px]">
+              <div className="bg-lime-500 dark:bg-lime-600 rounded-full w-2 ml-[3px] aspect-square mr-2 inline-block shadow-lime-400/80 dark:shadow-lime-500/80 shadow-[0_0_12px]" />
+              <div className="leading-none mr-1.5">Available for work</div>
+            </div>
           </div>
-        </div>
+        )}
+        {availability === "limited" && (
+          <div className="mt-3">
+            <div className="rounded-full inline-flex text-zinc-600 dark:text-zinc-400 items-center text-xs border border-zinc-200 dark:border-zinc-700 p-[5px]">
+              <div className="bg-amber-500 dark:bg-amber-600 rounded-full w-2 ml-[3px] aspect-square mr-2 inline-block shadow-amber-400/80 dark:shadow-amber-500/80 shadow-[0_0_12px]" />
+              <div className="leading-none mr-1.5">Limited availability</div>
+            </div>
+          </div>
+        )}
+        {availability === "no" && (
+          <div className="mt-3">
+            <div className="rounded-full inline-flex text-zinc-600 dark:text-zinc-400 items-center text-xs border border-zinc-200 dark:border-zinc-700 p-[5px]">
+              <div className="bg-red-500 dark:bg-red-600 rounded-full w-2 ml-[3px] aspect-square mr-2 inline-block shadow-red-400/80 dark:shadow-red-500/80 shadow-[0_0_12px]" />
+              <div className="leading-none mr-1.5">Not available for work</div>
+            </div>
+          </div>
+        )}
       </section>
       <section className="max-w-3xl mx-auto px-8 mt-20">
         <h2 className="text-xl mb-4">Writing</h2>
