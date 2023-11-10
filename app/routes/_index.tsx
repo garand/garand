@@ -50,9 +50,9 @@ export default function Component() {
             </li>
           </ul>
         </div>
-        <h3 className="text-zinc-800 dark:text-zinc-100 text-3xl font-[450] tracking-[-.01em]">
-          Senior Software Engineer{" "}
-          <span className="text-zinc-400 dark:text-zinc-400">&amp;</span>
+        <h3 className="text-zinc-800 dark:text-zinc-100 text-2xl sm:text-3xl font-[450] tracking-[-.01em]">
+          Senior Software Engineer
+          <span className="text-zinc-400 dark:text-zinc-400"> &amp; </span>
           <br />
           Product Designer
         </h3>
