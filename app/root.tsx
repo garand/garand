@@ -35,7 +35,7 @@ export default function Component() {
   return (
     <html
       lang="en"
-      className="antialiased font-sans bg-zinc-50 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-50"
+      className="antialiased font-sans bg-zinc-50 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-100"
     >
       <head>
         <meta charSet="utf-8" />

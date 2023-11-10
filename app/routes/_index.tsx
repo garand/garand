@@ -3,20 +3,22 @@ import {
   faTwitter,
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Component() {
   return (
     <>
       <section className="max-w-3xl mx-auto px-8">
-        <div className="mb-4 flex justify-between items-baseline gap-8">
-          <h1 className="text-xl mb-4">Anthony Garand</h1>
+        <div className="mb-6 flex justify-between items-baseline gap-8">
+          <h1 className="text-lg text-zinc-500 dark:text-zinc-400">
+            Anthony Garand
+          </h1>
           <ul className="flex items-center gap-0.5">
             <li>
               <a
                 href="https://github.com/garand"
-                className="relative group rounded-md inline-flex p-2 hover:bg-zinc-100 hover:dark:bg-zinc-800 hover:transition-colors text-zinc-600 dark:text-zinc-400 hover:text-purple-500"
+                className="relative group rounded-md inline-flex p-2 hover:bg-zinc-100 hover:dark:bg-zinc-800 transition-colors text-zinc-600 dark:text-zinc-400 hover:text-purple-500"
               >
                 <FontAwesomeIcon icon={faGithub} />
               </a>
@@ -24,7 +26,7 @@ export default function Component() {
             <li>
               <a
                 href="https://x.com/garand"
-                className="relative group rounded-md inline-flex p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:transition-colors text-zinc-600 dark:text-zinc-400  hover:text-sky-500"
+                className="relative group rounded-md inline-flex p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-600 dark:text-zinc-400  hover:text-sky-500"
               >
                 <FontAwesomeIcon
                   icon={faXTwitter}
@@ -41,25 +43,22 @@ export default function Component() {
             <li>
               <a
                 href="mailto:garand@garand.me"
-                className="relative group rounded-md inline-flex p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:transition-colors text-zinc-600 dark:text-zinc-400  hover:text-green-500"
+                className="relative group rounded-md inline-flex p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-600 dark:text-zinc-400  hover:text-green-500"
               >
                 <FontAwesomeIcon icon={faEnvelope} />
               </a>
             </li>
           </ul>
         </div>
-        <p className="text-zinc-500 dark:text-zinc-400">
-          I'm a Christian, husband, father of three, and software engineer. I'm
-          currently working at{" "}
-          <a
-            href="https://towbook.com"
-            rel="noopener noreferer"
-            className="text-sky-600 underline underline-offset-2 decoration-sky-500/40"
-          >
-            Towbook
-          </a>
-          .
-        </p>
+        <h3 className="text-zinc-800 dark:text-zinc-100 text-3xl font-[450] tracking-[-.01em]">
+          Senior Product Engineer
+        </h3>
+        <div className="mt-3">
+          <div className="rounded-full inline-flex text-zinc-600 dark:text-zinc-400 items-center text-xs border border-zinc-200 dark:border-zinc-700 p-[5px]">
+            <div className="bg-lime-500 dark:bg-lime-600 rounded-full w-2 ml-[3px] aspect-square mr-2 inline-block shadow-lime-400/80 dark:shadow-lime-500/80 shadow-[0_0_12px]" />
+            <div className="leading-none mr-1.5">Available for Work</div>
+          </div>
+        </div>
       </section>
       <section className="max-w-3xl mx-auto px-8 mt-20">
         <h2 className="text-xl mb-4">Writing</h2>
@@ -97,6 +96,12 @@ export default function Component() {
         <h2 className="text-xl mb-4 max-w-3xl mx-auto px-8">Projects</h2>
         <div className="relative">
           <div
+            className="bg-gradient-to-l from-transparent to-zinc-50 dark:to-zinc-900 absolute top-0 left-0 bottom-0 z-10 pointer-events-none"
+            style={{
+              width: `calc(((100vw - 48rem) / 2 + 2rem) / 2)`,
+            }}
+          />
+          <div
             className="bg-gradient-to-r from-transparent to-zinc-50 dark:to-zinc-900 absolute top-0 right-0 bottom-0 z-10 pointer-events-none"
             style={{
               width: `calc(((100vw - 48rem) / 2 + 2rem) / 2)`,
@@ -110,15 +115,92 @@ export default function Component() {
             }}
           >
             {new Array(8).fill(0).map((_, i) => (
-              <div
-                key={i}
-                className="aspect-video bg-zinc-200 dark:bg-zinc-800 rounded-sm flex-shrink-0 snap-start"
-                style={{
-                  width: `min(32rem, calc(100vw - 4rem))`,
-                }}
-              ></div>
+              <div key={i}>
+                <div
+                  className="aspect-video bg-zinc-200 dark:bg-zinc-800 rounded-sm flex-shrink-0 snap-start"
+                  style={{
+                    width: `min(32rem, calc(100vw - 4rem))`,
+                  }}
+                ></div>
+                <div className="mt-4 flex gap-8 items-end">
+                  <div className="flex-1">
+                    <div className="mb-1">
+                      <div
+                        className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded-sm"
+                        style={{
+                          width: `${random(40, 55)}%`,
+                        }}
+                      />
+                    </div>
+                    <div className="text-sm text-zinc-500 dark:text-zinc-400">
+                      <div
+                        className="h-8 bg-zinc-200 dark:bg-zinc-800 rounded-sm"
+                        style={{
+                          width: `90%`,
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <button className="rounded-full border border-zinc-200 dark:border-zinc-700 px-3 py-[3px] text-sm hover:border-transparent hover:bg-zinc-800 dark:hover:bg-zinc-50 hover:text-zinc-50 dark:hover:text-zinc-800 transition-colors inline-flex items-center gap-1.5 text-zinc-800 dark:text-zinc-300">
+                      <span>Read More</span>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="h-2.5 mr-0.5"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
             ))}
           </ul>
+        </div>
+      </section>
+      <section className="mt-20 max-w-3xl mx-auto px-8">
+        <h2 className="text-xl mb-4">About</h2>
+        <div className="space-y-4 text-zinc-500 dark:text-zinc-400">
+          <div
+            className="sm:float-right w-1/2 sm:w-1/3 sm:ml-8 mx-auto mb-8 sm:mb-0"
+            style={{
+              shapeOutside: `circle()`,
+              shapeMargin: `2rem`,
+            }}
+          >
+            <img
+              src="/avatar.png"
+              title="Anthony Garand"
+              alt="Anthony Garand"
+              className="rounded-full shadow-2xl shadow-zinc-200 dark:shadow-zinc-800 mix-blend-multiply dark:mix-blend-difference"
+            />
+          </div>
+          <p>
+            I'm a {getAge("1991-11-05")} year old front-end engineer living in
+            Fort Gratiot, Michigan. I&apos;m married to my incredible wife,
+            Michaela, and I am blessed to be a father to three beautiful
+            children.
+          </p>
+          <p>
+            I have a passion for the small details. I believe they can make or
+            break an experience and although a user may not notice them, they
+            will <em>feel</em> them.
+          </p>
+          <p>
+            Currently, I work at{" "}
+            <a
+              href="https://towbook.com"
+              rel="noopener noreferer"
+              className="text-sky-600 underline underline-offset-2 decoration-sky-500/40"
+            >
+              Towbook
+            </a>
+            , building and maintaining large scale web applications for the
+            towing industry. I've been working there since late 2019.
+          </p>
+          <p>
+            Previously, I worked at LiftUX, aquired by 10up in 2017, where I
+            worked on products and websites for clients like Microsoft, AMC
+            Networks, Capital One, PA Media Group, and Stadium.
+          </p>
         </div>
       </section>
     </>
@@ -128,4 +210,15 @@ export default function Component() {
 // generate random number between two values
 function random(min = 1, max = 10) {
   return Math.random() * (max - min) + min;
+}
+
+function getAge(birthDate: string) {
+  const today = new Date();
+  const birth = new Date(birthDate);
+  let age = today.getFullYear() - birth.getFullYear();
+  const m = today.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+    age -= 1;
+  }
+  return age;
 }
