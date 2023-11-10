@@ -51,7 +51,10 @@ export default function Component() {
           </ul>
         </div>
         <h3 className="text-zinc-800 dark:text-zinc-100 text-3xl font-[450] tracking-[-.01em]">
-          Senior Product Engineer
+          Senior Software Engineer{" "}
+          <span className="text-zinc-400 dark:text-zinc-400">&amp;</span>
+          <br />
+          Product Designer
         </h3>
         <div className="mt-3">
           <div className="rounded-full inline-flex text-zinc-600 dark:text-zinc-400 items-center text-xs border border-zinc-200 dark:border-zinc-700 p-[5px]">
@@ -160,10 +163,10 @@ export default function Component() {
         <h2 className="text-xl mb-4">About</h2>
         <div className="space-y-4 text-zinc-500 dark:text-zinc-400">
           <div
-            className="sm:float-right w-1/2 sm:w-1/3 sm:ml-8 mx-auto mb-8 sm:mb-0"
+            className="sm:float-right w-1/2 sm:w-1/3 max-w-[200px] sm:ml-6 mx-auto mb-6"
             style={{
               shapeOutside: `circle()`,
-              shapeMargin: `2rem`,
+              shapeMargin: `1.5rem`,
             }}
           >
             <img
@@ -175,9 +178,8 @@ export default function Component() {
           </div>
           <p>
             I'm a {getAge("1991-11-05")} year old front-end engineer living in
-            Fort Gratiot, Michigan. I&apos;m married to my incredible wife,
-            Michaela, and I am blessed to be a father to three beautiful
-            children.
+            Fort Gratiot, Michigan. I&apos;m a Christian, husband to my
+            incredible wife, and a father to three beautiful children.
           </p>
           <p>
             I have a passion for the small details. I believe they can make or
