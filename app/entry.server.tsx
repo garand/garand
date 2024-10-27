@@ -21,6 +21,8 @@ export default function handleRequest(
   remixContext: EntryContext,
   loadContext: AppLoadContext
 ) {
+  responseHeaders.set("fly-region", process.env.FLY_REGION);
+
   return isbot(request.headers.get("user-agent"))
     ? handleBotRequest(
         request,
