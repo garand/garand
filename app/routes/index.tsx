@@ -5,5 +5,5 @@ export const Route = createFileRoute("/")({
 });
 
 function Component() {
-  return <h1>Anthony Garand</h1>;
+  return <h1 className="text-lg font-medium">Anthony Garand</h1>;
 }
