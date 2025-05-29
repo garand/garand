@@ -1,5 +1,0 @@
-@import "@fortawesome/fontawesome-svg-core/styles.css";
-@import "./switzer/switzer.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
