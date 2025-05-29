@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import * as React from "react";
 import {
   Outlet,
   createRootRoute,
@@ -39,7 +39,7 @@ function Component() {
   );
 }
 
-function Document({ children }: Readonly<{ children: ReactNode }>) {
+function Document({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <head>
