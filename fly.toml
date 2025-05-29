@@ -1,6 +1,9 @@
 app = "garand"
 primary_region = "ord"
 
+[deploy]
+  strategy = "bluegreen"
+
 [experimental]
   allowed_public_ports = []
   auto_rollback = true
@@ -10,14 +13,10 @@ primary_region = "ord"
   internal_port = 3000
   processes = ["app"]
   protocol = "tcp"
-  auto_stop_machines = "stop"
+  auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 1
   script_checks = []
-  [services.concurrency]
-    type = "connections"
-    hard_limit = 25
-    soft_limit = 20
 
   [[services.ports]]
     force_https = true
