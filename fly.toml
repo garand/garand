@@ -1,4 +1,5 @@
 app = "garand"
+primary_region = "ord"
 
 [experimental]
   allowed_public_ports = []
