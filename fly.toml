@@ -1,10 +1,7 @@
 app = "garand"
-kill_signal = "SIGINT"
-kill_timeout = 5
-processes = []
 
 [env]
-  PORT = "3000"
+  PORT = "8080"
 
 [experimental]
   allowed_public_ports = []
@@ -12,13 +9,10 @@ processes = []
 
 [[services]]
   http_checks = []
-  internal_port = 3000
+  internal_port = 8080
   processes = ["app"]
   protocol = "tcp"
   script_checks = []
-  auto_stop_machines = true
-  auto_start_machines = true
-  min_machines_running = 1
   [services.concurrency]
     hard_limit = 25
     soft_limit = 20
