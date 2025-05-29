@@ -5,6 +5,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import styles from "../index.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -25,19 +26,20 @@ export const Route = createRootRoute({
           "Anthony Garand is a senior product designer and developer focused on building pragmatic web applications.",
       },
     ],
+    links: [{ rel: "stylesheet", href: styles }],
   }),
-  component: RootComponent,
+  component: Component,
 });
 
-function RootComponent() {
+function Component() {
   return (
-    <RootDocument>
+    <Document>
       <Outlet />
-    </RootDocument>
+    </Document>
   );
 }
 
-function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
+function Document({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
       <head>
