@@ -14,9 +14,9 @@ app = "garand"
   protocol = "tcp"
   script_checks = []
   [services.concurrency]
+    type = "connections"
     hard_limit = 25
     soft_limit = 20
-    type = "connections"
 
   [[services.ports]]
     force_https = true
