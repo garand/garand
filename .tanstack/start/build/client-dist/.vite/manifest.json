@@ -1,0 +1,27 @@
+{
+  "../../../../../~start/default-client-entry.tsx": {
+    "file": "assets/main-JhQLrkcw.js",
+    "name": "main",
+    "src": "../../../../../~start/default-client-entry.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/routes/index.tsx?tsr-split=component"
+    ],
+    "assets": [
+      "assets/index-B2RPqedG.css"
+    ]
+  },
+  "/Users/garand/Projects/garand/garand/src/index.css": {
+    "file": "assets/index-B2RPqedG.css",
+    "src": "/Users/garand/Projects/garand/garand/src/index.css"
+  },
+  "src/routes/index.tsx?tsr-split=component": {
+    "file": "assets/index-vXFKUIg9.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "../../../../../~start/default-client-entry.tsx"
+    ]
+  }
+}
