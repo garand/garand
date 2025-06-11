@@ -3,23 +3,24 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
-    "build": "vinxi build",
-    "start": "vinxi start"
+    "dev": "vite dev --port 3000",
+    "build": "vite build",
+    "start": "node .output/server/index.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
-    "@tanstack/react-router": "^1.120.13",
-    "@tanstack/react-start": "^1.120.13",
+    "@tanstack/react-router": "^1.121.0-alpha.27",
+    "@tanstack/react-router-devtools": "^1.121.0-alpha.27",
+    "@tanstack/react-start": "^1.121.0-alpha.27",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "vinxi": "0.5.6"
+    "vite": "^6.3.5"
   },
   "devDependencies": {
-    "@types/node": "^22.15.29",
-    "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.5",
-    "@vitejs/plugin-react": "^4.5.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.7",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.5.2",
     "autoprefixer": "^10.4.21",
     "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3",
