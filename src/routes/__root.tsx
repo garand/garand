@@ -41,11 +41,11 @@ function Component() {
 
 function Document({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="text-slate-900 h-full">
         {children}
         <Scripts />
       </body>
