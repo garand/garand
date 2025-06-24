@@ -52,7 +52,7 @@ function Component() {
               <div className="flex items-center gap-2">
                 Lift UX{" "}
                 <span className="rounded-xl bg-slate-50 text-gray-500 text-xs px-1.5 py-0.5">
-                  Aquired
+                  Acquired
                 </span>
               </div>
               <div className=" text-gray-500 tracking-tight tabular-nums">
