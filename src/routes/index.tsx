@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
 
 function Component() {
   return (
-    <div className="p-8">
+    <div className="p-8 sm:p-10 md:p-12 ">
       <div className="grid auto-cols-max justify-between grid-flow-col">
         <div>
           <div className="inline-flex mb-4 rounded-full relative dark:bg-blend-multiply">
