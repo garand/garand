@@ -26,7 +26,10 @@ export const Route = createRootRoute({
           "Anthony Garand is a senior product designer and developer focused on building pragmatic web applications.",
       },
     ],
-    links: [{ rel: "stylesheet", href: styles }],
+    links: [
+      { rel: "stylesheet", href: styles },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+    ],
   }),
   component: Component,
 });
