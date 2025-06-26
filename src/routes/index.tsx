@@ -7,14 +7,14 @@ export const Route = createFileRoute("/")({
 
 function Component() {
   return (
-    <div className="p-8 sm:p-10 md:p-12 ">
-      <div className="grid auto-cols-max justify-between grid-flow-col">
+    <div className="p-8 sm:p-10 md:p-12">
+      <div className="grid auto-cols-max grid-flow-col justify-between">
         <div>
-          <div className="inline-flex mb-4 rounded-full relative dark:bg-blend-multiply">
-            <div className="rounded-full border-1 border-zinc-500/15 absolute inset-0 pointer-events-none" />
+          <div className="relative mb-4 inline-flex rounded-full dark:bg-blend-multiply">
+            <div className="pointer-events-none absolute inset-0 rounded-full border-1 border-zinc-500/15 dark:hidden" />
             <img
               src="/avatar.jpg"
-              className="h-20 rounded-full dark:brightness-[.8] dark:contrast-[1.2]"
+              className="h-20 rounded-full dark:brightness-90 dark:contrast-[1.1]"
             />
           </div>
           <h1 className="text-lg leading-tight font-medium">Anthony Garand</h1>
@@ -32,7 +32,7 @@ function Component() {
             .
           </p>
         </div>
-        <div className="grid auto-cols-max gap-4 grid-flow-col">
+        <div className="grid auto-cols-max grid-flow-col gap-4">
           <a href="https://x.com/garand" className="">
             <FaXTwitter />
           </a>
@@ -43,34 +43,34 @@ function Component() {
       </div>
       <div className="mt-8">
         <h2 className="font-medium">Roles</h2>
-        <div className="grid auto-rows-max gap-8 mt-4">
-          <div className="max-w-xs grid gap-y-0.5 gap-x-1 grid-cols-[32rem,max-content] grid-flow-row">
-            <div className="grid-cols-subgrid grid col-span-2">
+        <div className="mt-4 grid auto-rows-max gap-8">
+          <div className="grid max-w-xs grid-flow-row grid-cols-[32rem,max-content] gap-x-1 gap-y-0.5">
+            <div className="col-span-2 grid grid-cols-subgrid">
               <div>Towbook</div>
-              <div className=" text-zinc-500 dark:text-zinc-400 tracking-tight tabular-nums">
+              <div className="tracking-tight text-zinc-500 tabular-nums dark:text-zinc-400">
                 2019 &ndash; Now
               </div>
             </div>
-            <div className="grid-cols-subgrid grid col-span-2">
+            <div className="col-span-2 grid grid-cols-subgrid">
               <div>10up</div>
-              <div className=" text-zinc-500 dark:text-zinc-400 tracking-tight tabular-nums">
+              <div className="tracking-tight text-zinc-500 tabular-nums dark:text-zinc-400">
                 2017 &ndash; 2019
               </div>
             </div>
-            <div className="grid-cols-subgrid grid col-span-2">
+            <div className="col-span-2 grid grid-cols-subgrid">
               <div className="flex items-center gap-2">
                 Lift UX{" "}
-                <span className="rounded-xl bg-zinc-50 text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400 text-xs px-1.5 py-0.5">
+                <span className="rounded-xl bg-zinc-50 px-1.5 py-0.5 text-xs text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400">
                   Acquired
                 </span>
               </div>
-              <div className=" text-zinc-500 dark:text-zinc-400 tracking-tight tabular-nums">
+              <div className="tracking-tight text-zinc-500 tabular-nums dark:text-zinc-400">
                 2011 &ndash; 2017
               </div>
             </div>
-            <div className="grid-cols-subgrid grid col-span-2">
+            <div className="col-span-2 grid grid-cols-subgrid">
               <div>funeralOne</div>
-              <div className=" text-zinc-500 dark:text-zinc-400 tracking-tight tabular-nums">
+              <div className="tracking-tight text-zinc-500 tabular-nums dark:text-zinc-400">
                 2007 &ndash; 2011
               </div>
             </div>
@@ -79,7 +79,7 @@ function Component() {
       </div>
       <div className="mt-8">
         <h2 className="font-medium">Past Work</h2>
-        <div className="group/work-list grid auto-rows-max sm:grid-cols-[max-content_auto] gap-x-8 mt-4 max-w-prose grid-flow-row max-sm:gap-y-5">
+        <div className="group/work-list mt-4 grid max-w-prose grid-flow-row auto-rows-max gap-x-8 max-sm:gap-y-5 sm:grid-cols-[max-content_auto]">
           <div className={workStyle}>
             <h3 className={workTitleStyle}>Microsoft</h3>
             <div className="relative">
@@ -157,7 +157,7 @@ function Component() {
             <h3 className={workTitleStyle}>IFC</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Built a custom WordPress theme to power the redesign of the main
+                Built a custom WordPress theme to power the redesign of the
                 IFC.com website.
               </p>
             </div>
@@ -166,7 +166,7 @@ function Component() {
             <h3 className={workTitleStyle}>We TV</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Built a custom WordPress theme to power the redesign of the main
+                Built a custom WordPress theme to power the redesign of the
                 we.tv website.
               </p>
             </div>
@@ -175,7 +175,7 @@ function Component() {
             <h3 className={workTitleStyle}>Sundance TV</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Built a custom WordPress theme to power the redesign of the main
+                Built a custom WordPress theme to power the redesign of the
                 sundancetv.com website.
               </p>
             </div>

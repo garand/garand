@@ -48,7 +48,7 @@ function Document({ children }: Readonly<{ children: React.ReactNode }>) {
       <head>
         <HeadContent />
       </head>
-      <body className="text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50 h-full antialiased">
+      <body className="h-full text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-50">
         {children}
         <Scripts />
       </body>
