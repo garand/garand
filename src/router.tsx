@@ -19,10 +19,10 @@ function NotFound() {
   const location = useLocation();
 
   return (
-    <div className="grid place-items-center min-h-full">
+    <div className="grid min-h-full place-items-center">
       <div className="">
         <h1 className="text-xl font-medium">Not Found</h1>
-        <p className="text-slate-600 mt-2">
+        <p className="mt-2 text-slate-600">
           The page you are looking for does not exist.
         </p>
         <div className="mt-4">
