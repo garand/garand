@@ -10,6 +10,10 @@ function Component() {
     <div className="p-8">
       <div className="grid auto-cols-max justify-between grid-flow-col">
         <div>
+          <div className="inline-flex mb-4 rounded-full relative">
+            <div className="rounded-full border-1 border-gray-500/15 absolute inset-0 pointer-events-none" />
+            <img src="/avatar.jpg" className="h-20 rounded-full" />
+          </div>
           <h1 className="text-lg leading-tight font-medium">Anthony Garand</h1>
           <p className="text-gray-500">Product Designer & Engineer</p>
           <p className="mt-4">
@@ -35,7 +39,7 @@ function Component() {
       <div className="mt-8">
         <h2 className="font-medium">Roles</h2>
         <div className="grid auto-rows-max gap-8 mt-4">
-          <div className="max-w-xs grid gap-1 grid-cols-[32rem,max-content] grid-flow-row">
+          <div className="max-w-xs grid gap-y-0.5 gap-x-1 grid-cols-[32rem,max-content] grid-flow-row">
             <div className="grid-cols-subgrid grid col-span-2">
               <div>Towbook</div>
               <div className=" text-gray-500 tracking-tight tabular-nums">
@@ -178,9 +182,9 @@ function Component() {
 }
 
 let workStyle =
-  "group/work-item grid grid-cols-subgrid sm:col-span-2 relative py-1 group-hover/work-list:text-gray-500";
+  "group/work-item grid grid-cols-subgrid sm:col-span-2 relative py-0.5 group-hover/work-list:text-gray-500";
 
 let workTitleStyle = "group-hover/work-item:text-gray-900 max-sm:text-gray-900";
 
 let workDescriptionStyle =
-  "text-gray-500 sm:group-hover/work-item:block sm:absolute sm:hidden leading-snug max-sm:text-sm";
+  "text-gray-500 sm:group-hover/work-item:block sm:absolute sm:hidden leading-snug max-sm:text-sm max-sm:mt-1";
