@@ -10,12 +10,17 @@ function Component() {
     <div className="p-8">
       <div className="grid auto-cols-max justify-between grid-flow-col">
         <div>
-          <div className="inline-flex mb-4 rounded-full relative">
-            <div className="rounded-full border-1 border-gray-500/15 absolute inset-0 pointer-events-none" />
-            <img src="/avatar.jpg" className="h-20 rounded-full" />
+          <div className="inline-flex mb-4 rounded-full relative dark:bg-blend-multiply">
+            <div className="rounded-full border-1 border-zinc-500/15 absolute inset-0 pointer-events-none" />
+            <img
+              src="/avatar.jpg"
+              className="h-20 rounded-full dark:brightness-[.8] dark:contrast-[1.2]"
+            />
           </div>
           <h1 className="text-lg leading-tight font-medium">Anthony Garand</h1>
-          <p className="text-gray-500">Product Designer & Engineer</p>
+          <p className="text-zinc-500 dark:text-zinc-400">
+            Product Designer & Engineer
+          </p>
           <p className="mt-4">
             Currently working at{" "}
             <a
@@ -42,30 +47,30 @@ function Component() {
           <div className="max-w-xs grid gap-y-0.5 gap-x-1 grid-cols-[32rem,max-content] grid-flow-row">
             <div className="grid-cols-subgrid grid col-span-2">
               <div>Towbook</div>
-              <div className=" text-gray-500 tracking-tight tabular-nums">
+              <div className=" text-zinc-500 dark:text-zinc-400 tracking-tight tabular-nums">
                 2019 &ndash; Now
               </div>
             </div>
             <div className="grid-cols-subgrid grid col-span-2">
               <div>10up</div>
-              <div className=" text-gray-500 tracking-tight tabular-nums">
+              <div className=" text-zinc-500 dark:text-zinc-400 tracking-tight tabular-nums">
                 2017 &ndash; 2019
               </div>
             </div>
             <div className="grid-cols-subgrid grid col-span-2">
               <div className="flex items-center gap-2">
                 Lift UX{" "}
-                <span className="rounded-xl bg-slate-50 text-gray-500 text-xs px-1.5 py-0.5">
+                <span className="rounded-xl bg-zinc-50 text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400 text-xs px-1.5 py-0.5">
                   Acquired
                 </span>
               </div>
-              <div className=" text-gray-500 tracking-tight tabular-nums">
+              <div className=" text-zinc-500 dark:text-zinc-400 tracking-tight tabular-nums">
                 2011 &ndash; 2017
               </div>
             </div>
             <div className="grid-cols-subgrid grid col-span-2">
               <div>funeralOne</div>
-              <div className=" text-gray-500 tracking-tight tabular-nums">
+              <div className=" text-zinc-500 dark:text-zinc-400 tracking-tight tabular-nums">
                 2007 &ndash; 2011
               </div>
             </div>
@@ -182,9 +187,10 @@ function Component() {
 }
 
 let workStyle =
-  "group/work-item grid grid-cols-subgrid sm:col-span-2 relative py-0.5 group-hover/work-list:text-gray-500";
+  "group/work-item grid grid-cols-subgrid sm:col-span-2 relative py-0.5 group-hover/work-list:text-zinc-500 dark:group-hover/work-list:text-zinc-400";
 
-let workTitleStyle = "group-hover/work-item:text-gray-900 max-sm:text-gray-900";
+let workTitleStyle =
+  "group-hover/work-item:text-zinc-900 dark:group-hover/work-item:text-zinc-100 max-sm:text-zinc-900 dark:max-sm:text-zinc-100";
 
 let workDescriptionStyle =
-  "text-gray-500 sm:group-hover/work-item:block sm:absolute sm:hidden leading-snug max-sm:text-sm max-sm:mt-1";
+  "text-zinc-500 dark:text-zinc-400 sm:group-hover/work-item:block sm:absolute sm:hidden leading-snug max-sm:text-sm max-sm:mt-1";
