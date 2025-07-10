@@ -3,9 +3,18 @@ import tsConfigPaths from "vite-tsconfig-paths";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import tailwindcss from "@tailwindcss/vite";
 import devtoolsJson from "vite-plugin-devtools-json";
+import react from "@vitejs/plugin-react-swc";
 
 export default defineConfig({
-  plugins: [devtoolsJson(), tsConfigPaths(), tailwindcss(), tanstackStart()],
+  plugins: [
+    devtoolsJson(),
+    tsConfigPaths(),
+    tailwindcss(),
+    tanstackStart({
+      customViteReactPlugin: true,
+    }),
+    react(),
+  ],
   server: {
     allowedHosts: true,
   },
