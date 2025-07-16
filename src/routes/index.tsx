@@ -100,6 +100,14 @@ function Component() {
             </div>
           </div>
           <div className={workStyle}>
+            <h3 className={workTitleStyle}>GoDaddy</h3>
+            <div className="relative">
+              <p className={workDescriptionStyle}>
+                Developed custom WordPress themes for GoDaddy's website buider.
+              </p>
+            </div>
+          </div>
+          <div className={workStyle}>
             <h3 className={workTitleStyle}>Campus Insiders</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
