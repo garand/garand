@@ -3,7 +3,6 @@ primary_region = "ord"
 
 [deploy]
   strategy = "bluegreen"
-  max_unavailable = 0
   wait_timeout = "300s"
 
 [vm]
