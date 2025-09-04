@@ -2,47 +2,34 @@ app = "garand"
 primary_region = "ord"
 
 [deploy]
-strategy = "bluegreen"
-wait_timeout = "5m0s"
-auto_rollback = true  # Moved from experimental
+  strategy = "bluegreen"
+  wait_timeout = "5m"
 
 [env]
-NODE_ENV = "production"
-PORT = "3000"
+  NODE_ENV = "production"
+  PORT = "3000"
 
-# Modern HTTP service configuration
-[[http_service]]
-internal_port = 3000
-auto_start_machines = true
-auto_stop_machines = true
-min_machines_running = 0
-processes = ["app"]
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
 
   [http_service.concurrency]
-  type = "connections"
-  hard_limit = 25
-  soft_limit = 20
+    type = "requests"
+    soft_limit = 20
+    hard_limit = 25
 
-  # Only need HTTP checks (TCP checks are redundant)
   [[http_service.checks]]
-  grace_period = "5s"
-  interval = "10s"
-  method = "GET"
-  path = "/"
-  protocol = "http"
-  timeout = "2s"
-
-  [[http_service.ports]]
-  port = 80
-  handlers = ["http"]
-  force_https = true
-
-  [[http_service.ports]]
-  port = 443
-  handlers = ["tls", "http"]
-
-# Clearer VM configuration
+    interval = "10s"
+    timeout = "2s"
+    grace_period = "5s"
+    method = "GET"
+    path = "/"
+    protocol = "https"
+    
 [[vm]]
-cpu_kind = "shared"
-cpus = 1
-memory = "256MB"
+  size = "shared-cpu-1x"
+  memory = "256mb"
+  cpu_kind = "shared"
