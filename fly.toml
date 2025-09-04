@@ -1,2 +1,6 @@
 app = "garand"
 primary_region = "ord"
+
+[http_service]
+  force_https = true
+  auto_stop_machines = "stop"
