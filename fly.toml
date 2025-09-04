@@ -32,18 +32,15 @@ primary_region = "ord"
   hard_limit = 25
   soft_limit = 20
 
-  http_checks = [
-    {
-      grace_period = "5s"
-      interval = "10s"
-      method = "GET"
-      path = "/"
-      protocol = "http"
-      restart_limit = 3
-      timeout = "2s"
-      tls_skip_verify = false
-    }
-  ]
+  [[services.http_checks]]
+  grace_period = "5s"
+  interval = "10s"
+  method = "GET"
+  path = "/"
+  protocol = "http"
+  restart_limit = 3
+  timeout = "2s"
+  tls_skip_verify = false
 
   script_checks = []
 
@@ -57,7 +54,7 @@ primary_region = "ord"
     port = 443
 
   [[services.tcp_checks]]
-    grace_period = "5s"
-    interval = "10s"
-    restart_limit = 3
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 0
     timeout = "2s"
