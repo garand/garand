@@ -3,9 +3,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev --port 3000 --host 0.0.0.0",
+    "dev": "vite dev --port 8080 --host 0.0.0.0",
     "build": "vite build",
-    "start": "node .output/server/index.mjs"
+    "start": "node --env-file-if-exists=.env .output/server/index.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",

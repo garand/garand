@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-- `npm run dev` - Start development server on port 3000 with hot reload
+- `npm run dev` - Start development server on port 8080 with hot reload
 - `npm run build` - Build the application for production
 - `npm start` - Start the production server
 
