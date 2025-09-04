@@ -2,58 +2,47 @@ app = "garand"
 primary_region = "ord"
 
 [deploy]
-  strategy = "bluegreen"
-  wait_timeout = "300s"
-
-[vm]
-  size = "shared-cpu-1x"
-  memory = "256 MB"
-  cpu_kind = "shared"
+strategy = "bluegreen"
+wait_timeout = "5m0s"
+auto_rollback = true  # Moved from experimental
 
 [env]
-  NODE_ENV = "production"
-  PORT = "3000"
+NODE_ENV = "production"
+PORT = "3000"
 
-[experimental]
-  allowed_public_ports = []
-  auto_rollback = true
+# Modern HTTP service configuration
+[[http_service]]
+internal_port = 3000
+auto_start_machines = true
+auto_stop_machines = true
+min_machines_running = 0
+processes = ["app"]
 
-[[services]]
-  internal_port = 3000
-  processes = ["app"]
-  protocol = "tcp"
-  auto_stop_machines = true
-  auto_start_machines = true
-  min_machines_running = 0
-
-  [services.concurrency]
+  [http_service.concurrency]
   type = "connections"
   hard_limit = 25
   soft_limit = 20
 
-  [[services.http_checks]]
+  # Only need HTTP checks (TCP checks are redundant)
+  [[http_service.checks]]
   grace_period = "5s"
   interval = "10s"
   method = "GET"
   path = "/"
   protocol = "http"
-  restart_limit = 3
   timeout = "2s"
-  tls_skip_verify = false
 
-  script_checks = []
+  [[http_service.ports]]
+  port = 80
+  handlers = ["http"]
+  force_https = true
 
-  [[services.ports]]
-    force_https = true
-    handlers = ["http"]
-    port = 80
+  [[http_service.ports]]
+  port = 443
+  handlers = ["tls", "http"]
 
-  [[services.ports]]
-    handlers = ["tls", "http"]
-    port = 443
-
-  [[services.tcp_checks]]
-    grace_period = "1s"
-    interval = "15s"
-    restart_limit = 0
-    timeout = "2s"
+# Clearer VM configuration
+[[vm]]
+cpu_kind = "shared"
+cpus = 1
+memory = "256MB"
