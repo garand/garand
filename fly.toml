@@ -3,19 +3,48 @@ primary_region = "ord"
 
 [deploy]
   strategy = "bluegreen"
+  max_unavailable = 0
+  wait_timeout = "300s"
+
+[vm]
+  size = "shared-cpu-1x"
+  memory = "256 MB"
+  cpu_kind = "shared"
+
+[env]
+  NODE_ENV = "production"
+  PORT = "3000"
 
 [experimental]
   allowed_public_ports = []
   auto_rollback = true
 
 [[services]]
-  http_checks = []
   internal_port = 3000
   processes = ["app"]
   protocol = "tcp"
   auto_stop_machines = true
   auto_start_machines = true
-  min_machines_running = 1
+  min_machines_running = 0
+
+  [services.concurrency]
+  type = "connections"
+  hard_limit = 25
+  soft_limit = 20
+
+  http_checks = [
+    {
+      grace_period = "5s"
+      interval = "10s"
+      method = "GET"
+      path = "/"
+      protocol = "http"
+      restart_limit = 3
+      timeout = "2s"
+      tls_skip_verify = false
+    }
+  ]
+
   script_checks = []
 
   [[services.ports]]
@@ -28,7 +57,7 @@ primary_region = "ord"
     port = 443
 
   [[services.tcp_checks]]
-    grace_period = "1s"
-    interval = "15s"
-    restart_limit = 0
+    grace_period = "5s"
+    interval = "10s"
+    restart_limit = 3
     timeout = "2s"
