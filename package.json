@@ -12,9 +12,11 @@
     "@tanstack/react-router": "^1.131.44",
     "@tanstack/react-router-devtools": "^1.131.44",
     "@tanstack/react-start": "^1.131.44",
+    "cva": "npm:class-variance-authority@^0.7.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
+    "tailwind-merge": "^3.3.1",
     "vite": "^7.1.5"
   },
   "devDependencies": {

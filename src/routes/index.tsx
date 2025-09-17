@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
 
 function Component() {
   return (
-    <div className="p-8 sm:p-10 md:p-12">
+    <div className="min-h-screen bg-white p-8 sm:p-10 md:p-12 dark:bg-zinc-900">
       <div className="grid auto-cols-max grid-flow-col justify-between">
         <div>
           <div className="relative mb-4 inline-flex rounded-full dark:bg-blend-multiply">
@@ -17,11 +17,13 @@ function Component() {
               className="h-20 rounded-full dark:brightness-90 dark:contrast-[1.1]"
             />
           </div>
-          <h1 className="text-lg leading-tight font-medium">Anthony Garand</h1>
+          <h1 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">
+            Anthony Garand
+          </h1>
           <p className="text-zinc-500 dark:text-zinc-400">
             Product Designer & Engineer
           </p>
-          <p className="mt-4">
+          <p className="mt-4 text-zinc-700 dark:text-zinc-300">
             Currently working at{" "}
             <a
               href="https://towbook.com"
@@ -33,32 +35,38 @@ function Component() {
           </p>
         </div>
         <div className="grid auto-cols-max grid-flow-col gap-4">
-          <a href="https://x.com/garand" className="">
+          <a
+            href="https://x.com/garand"
+            className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+          >
             <FaXTwitter />
           </a>
-          <a href="https://github.com/garand" className="">
+          <a
+            href="https://github.com/garand"
+            className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+          >
             <FaGithub />
           </a>
         </div>
       </div>
       <div className="mt-8">
-        <h2 className="font-medium">Roles</h2>
+        <h2 className="font-medium text-zinc-900 dark:text-zinc-100">Roles</h2>
         <div className="mt-4 grid auto-rows-max gap-8">
           <div className="grid max-w-xs grid-flow-row grid-cols-[32rem,max-content] gap-x-1 gap-y-0.5">
             <div className="col-span-2 grid grid-cols-subgrid">
-              <div>Towbook</div>
+              <div className="text-zinc-900 dark:text-zinc-100">Towbook</div>
               <div className="tracking-tight text-zinc-500 tabular-nums dark:text-zinc-400">
                 2019 &ndash; Now
               </div>
             </div>
             <div className="col-span-2 grid grid-cols-subgrid">
-              <div>10up</div>
+              <div className="text-zinc-900 dark:text-zinc-100">10up</div>
               <div className="tracking-tight text-zinc-500 tabular-nums dark:text-zinc-400">
                 2017 &ndash; 2019
               </div>
             </div>
             <div className="col-span-2 grid grid-cols-subgrid">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 text-zinc-900 dark:text-zinc-100">
                 Lift UX{" "}
                 <span className="rounded-xl bg-zinc-50 px-1.5 py-0.5 text-xs text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400">
                   Acquired
@@ -69,7 +77,7 @@ function Component() {
               </div>
             </div>
             <div className="col-span-2 grid grid-cols-subgrid">
-              <div>funeralOne</div>
+              <div className="text-zinc-900 dark:text-zinc-100">funeralOne</div>
               <div className="tracking-tight text-zinc-500 tabular-nums dark:text-zinc-400">
                 2007 &ndash; 2011
               </div>
@@ -78,7 +86,9 @@ function Component() {
         </div>
       </div>
       <div className="mt-8">
-        <h2 className="font-medium">Past Work</h2>
+        <h2 className="font-medium text-zinc-900 dark:text-zinc-100">
+          Past Work
+        </h2>
         <div className="group/work-list mt-4 grid max-w-prose grid-flow-row auto-rows-max gap-x-8 max-sm:gap-y-5 sm:grid-cols-[max-content_auto]">
           <div className={workStyle}>
             <h3 className={workTitleStyle}>Microsoft</h3>
