@@ -5,6 +5,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import styles from "../index.css?url";
 
 export const Route = createRootRoute({
@@ -50,6 +51,7 @@ function Document({ children }: Readonly<{ children: React.ReactNode }>) {
       </head>
       <body className="h-full text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-50">
         {children}
+        <TanStackRouterDevtools />
         <Scripts />
       </body>
     </html>
