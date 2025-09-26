@@ -1,5 +1,5 @@
 import {
-  createRouter as createTanStackRouter,
+  createRouter,
   ErrorComponentProps,
   Link,
   NotFoundRouteProps,
@@ -8,13 +8,18 @@ import {
 import { routeTree } from "./routeTree.gen";
 import { Button } from "./components/Button";
 import { LuArrowLeft, LuHouse, LuRotateCcw } from "react-icons/lu";
+import { getGlobalStartContext } from "@tanstack/react-start";
 
-export function createRouter() {
-  const router = createTanStackRouter({
+export function getRouter() {
+  const router = createRouter({
     routeTree,
+    defaultPreload: "intent",
     scrollRestoration: true,
     defaultNotFoundComponent: NotFound,
     defaultErrorComponent: Error,
+    ssr: {
+      nonce: getGlobalStartContext()?.nonce,
+    },
   });
 
   return router;
