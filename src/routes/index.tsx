@@ -10,11 +10,11 @@ function Component() {
     <div className="min-h-screen bg-white p-8 sm:p-10 md:p-12 dark:bg-zinc-900">
       <div className="grid auto-cols-max grid-flow-col justify-between">
         <div>
-          <div className="relative mb-4 inline-flex rounded-full dark:bg-blend-multiply">
+          <div className="relative mb-4 inline-flex aspect-square size-20 rounded-full bg-zinc-200 dark:bg-blend-multiply">
             <div className="pointer-events-none absolute inset-0 rounded-full border-1 border-zinc-500/15 dark:hidden" />
             <img
               src="/avatar.jpg"
-              className="h-20 rounded-full dark:brightness-90 dark:contrast-[1.1]"
+              className="size-full rounded-full dark:brightness-90 dark:contrast-[1.1]"
             />
           </div>
           <h1 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">
