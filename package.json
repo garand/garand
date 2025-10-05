@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
-    "@tanstack/react-router": "^1.132.33",
-    "@tanstack/react-router-devtools": "^1.132.33",
-    "@tanstack/react-start": "^1.132.35",
+    "@tanstack/react-router": "^1.132.37",
+    "@tanstack/react-router-devtools": "^1.132.37",
+    "@tanstack/react-start": "^1.132.37",
     "cva": "npm:class-variance-authority@^0.7.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
