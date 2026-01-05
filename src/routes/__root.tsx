@@ -48,6 +48,10 @@ function Document({ children }: Readonly<{ children: React.ReactNode }>) {
     <html lang="en" className="h-full">
       <head>
         <HeadContent />
+        <script
+          src="https://cdn.visitors.now/v.js"
+          data-token="78bd4808-5b31-4d23-9a5d-36d769dc5dfe"
+        />
       </head>
       <body className="h-full text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-50">
         {children}
