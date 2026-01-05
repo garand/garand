@@ -1,6 +1,0 @@
-app = "garand"
-primary_region = "iad"
-
-[http_service]
-  force_https = true
-  auto_stop_machines = "stop"
