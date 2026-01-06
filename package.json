@@ -5,32 +5,30 @@
   "scripts": {
     "dev": "vite dev --port 8080 --host 0.0.0.0",
     "build": "vite build",
-    "start": "node --env-file-if-exists=.env server.ts"
+    "start": "PORT=8080 node .output/server/index.mjs"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.14",
-    "@tanstack/react-router": "^1.132.47",
-    "@tanstack/react-router-devtools": "^1.132.51",
-    "@tanstack/react-start": "^1.132.53",
+    "@tailwindcss/vite": "^4.1.18",
+    "@tanstack/react-router": "^1.145.7",
+    "@tanstack/react-router-devtools": "^1.145.7",
+    "@tanstack/react-start": "^1.145.7",
     "cva": "npm:class-variance-authority@^0.7.1",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "nitro": "^3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-icons": "^5.5.0",
-    "srvx": "^0.8.16",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@types/node": "^24.7.2",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.1",
-    "@vitejs/plugin-react-swc": "^4.1.0",
-    "prettier": "^3.6.2",
-    "prettier-plugin-tailwindcss": "^0.6.14",
-    "tailwindcss": "^4.1.14",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react-swc": "^4.2.2",
+    "prettier": "^3.7.4",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
-    "vite": "^7.1.9",
-    "vite-plugin-devtools-json": "^1.0.0",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite": "^7.3.0"
   },
   "prettier": {
     "plugins": [

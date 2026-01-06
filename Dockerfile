@@ -30,15 +30,12 @@ COPY . .
 # Build application
 RUN npm run build
 
-# Remove development dependencies
-RUN npm prune --omit=dev
-
 # Final stage for app image
 FROM base
 
-# Copy built application
-COPY --from=build /app /app
+# Copy only the Nitro output (self-contained server)
+COPY --from=build /app/.output /app/.output
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 8080
-CMD [ "npm", "run", "start" ]
+CMD [ "node", ".output/server/index.mjs" ]

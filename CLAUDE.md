@@ -5,8 +5,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 - `npm run dev` - Start development server on port 8080 with hot reload
-- `npm run build` - Build the application for production
-- `npm start` - Start the production server
+- `npm run build` - Build the application for production (outputs to `.output/`)
+- `npm start` - Start the production server (`node .output/server/index.mjs`)
 
 ## Architecture
 
@@ -14,9 +14,10 @@ This is a personal portfolio website built with:
 
 - **Framework**: TanStack Start (React-based full-stack framework)
 - **Router**: TanStack Router with file-based routing
+- **Server**: Nitro v3 (universal deployment layer)
 - **Styling**: Tailwind CSS v4 with dark mode support
 - **Build Tool**: Vite with SWC for fast compilation
-- **TypeScript**: Configured with modern ES2022 target
+- **TypeScript**: Strict mode with ES2022 target
 
 ### Key Components
 
