@@ -20,8 +20,7 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
@@ -34,10 +33,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         // Filter out button-specific props that shouldn't be passed to child elements
         const { type, disabled, children, ...childProps } = props;
         return cloneElement(props.children, {
-          className: twMerge(
-            buttonClasses,
-            (props.children.props as any)?.className,
-          ),
+          className: twMerge(buttonClasses, (props.children.props as any)?.className),
           ...(props.children.props as any),
           ...childProps,
         });

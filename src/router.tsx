@@ -33,9 +33,7 @@ function NotFound({ data }: NotFoundRouteProps) {
       <div className="mx-auto w-full max-w-md px-6 text-center">
         {/* 404 Number */}
         <div className="mb-8">
-          <h1 className="text-9xl font-bold text-zinc-200 select-none dark:text-zinc-900">
-            404
-          </h1>
+          <h1 className="text-9xl font-bold text-zinc-200 select-none dark:text-zinc-900">404</h1>
         </div>
 
         {/* Error Message */}
@@ -75,9 +73,7 @@ function Error({ error, info, reset }: ErrorComponentProps) {
       <div className="mx-auto w-full max-w-md px-6 text-center">
         {/* Error Number */}
         <div className="mb-8">
-          <h1 className="text-9xl font-bold text-zinc-200 select-none dark:text-zinc-900">
-            500
-          </h1>
+          <h1 className="text-9xl font-bold text-zinc-200 select-none dark:text-zinc-900">500</h1>
         </div>
 
         {/* Error Message */}
@@ -100,9 +96,7 @@ function Error({ error, info, reset }: ErrorComponentProps) {
           {/* Component Stack (Development) */}
           {info?.componentStack && process.env.NODE_ENV === "development" && (
             <details className="mb-4 rounded-lg bg-zinc-100 p-4 text-left text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400">
-              <summary className="mb-2 cursor-pointer font-semibold">
-                Component Stack
-              </summary>
+              <summary className="mb-2 cursor-pointer font-semibold">Component Stack</summary>
               <pre className="font-mono text-xs break-words whitespace-pre-wrap">
                 {info.componentStack}
               </pre>

@@ -10,7 +10,7 @@ function Component() {
     <div className="min-h-screen bg-white p-8 sm:p-10 md:p-12 dark:bg-zinc-900">
       <div className="grid auto-cols-max grid-flow-col justify-between">
         <div>
-          <div className="relative mb-4 inline-flex aspect-square size-20 rounded-full bg-zinc-200 dark:bg-blend-multiply">
+          <div className="relative mb-4 inline-flex aspect-square size-28 rounded-full bg-zinc-200 dark:bg-blend-multiply">
             <div className="pointer-events-none absolute inset-0 rounded-full border-1 border-zinc-500/15 dark:hidden" />
             <img
               src="/avatar.jpg"
@@ -20,11 +20,9 @@ function Component() {
           <h1 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">
             Anthony Garand
           </h1>
-          <p className="text-zinc-500 dark:text-zinc-400">
-            Product Designer & Engineer
-          </p>
+          <p className="text-zinc-500 dark:text-zinc-400">Product Designer & Engineer</p>
           <p className="mt-4 text-zinc-700 dark:text-zinc-300">
-            Currently working at{" "}
+            Currently building at{" "}
             <a
               href="https://towbook.com"
               className="underline decoration-amber-400 underline-offset-3"
@@ -86,17 +84,14 @@ function Component() {
         </div>
       </div>
       <div className="mt-8">
-        <h2 className="font-medium text-zinc-900 dark:text-zinc-100">
-          Past Work
-        </h2>
+        <h2 className="font-medium text-zinc-900 dark:text-zinc-100">Past Work</h2>
         <div className="group/work-list mt-4 grid max-w-prose grid-flow-row auto-rows-max gap-x-8 max-sm:gap-y-5 sm:grid-cols-[max-content_auto]">
           <div className={workStyle}>
             <h3 className={workTitleStyle}>Microsoft</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Managed and maintined feature updates and redesigns for multiple
-                WordPress powered sites, including Microsoft Blogs, Microsoft On
-                the Issues, and Microsoft Stories.
+                Managed and maintined feature updates and redesigns for multiple WordPress powered
+                sites, including Microsoft Blogs, Microsoft On the Issues, and Microsoft Stories.
               </p>
             </div>
           </div>
@@ -104,8 +99,7 @@ function Component() {
             <h3 className={workTitleStyle}>Facebook</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Helped maintain and implement redesigns for the Facebook
-                inspirED initiative.
+                Helped maintain and implement redesigns for the Facebook inspirED initiative.
               </p>
             </div>
           </div>
@@ -121,9 +115,9 @@ function Component() {
             <h3 className={workTitleStyle}>Campus Insiders</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Built the website for Campus Insiders, a college sports website
-                and TV service. One of the highlights of this project was
-                designing and building a March Madness bracket.
+                Built the website for Campus Insiders, a college sports website and TV service. One
+                of the highlights of this project was designing and building a March Madness
+                bracket.
               </p>
             </div>
           </div>
@@ -131,9 +125,9 @@ function Component() {
             <h3 className={workTitleStyle}>Control Engineering</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Entire front-end build, built on top of WordPress with a custom
-                PHP component implementation. The site layout was designed as a
-                template to be used across all of their properties.
+                Entire front-end build, built on top of WordPress with a custom PHP component
+                implementation. The site layout was designed as a template to be used across all of
+                their properties.
               </p>
             </div>
           </div>
@@ -141,8 +135,7 @@ function Component() {
             <h3 className={workTitleStyle}>PA Media Group</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Built a Vue.js based administration interface for browsing
-                stories and videos.
+                Built a Vue.js based administration interface for browsing stories and videos.
               </p>
             </div>
           </div>
@@ -150,8 +143,8 @@ function Component() {
             <h3 className={workTitleStyle}>CapitalOne</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Interfaced with internal CapitalOne designers to maintain their
-                design system documentation.
+                Interfaced with internal CapitalOne designers to maintain their design system
+                documentation.
               </p>
             </div>
           </div>
@@ -165,9 +158,9 @@ function Component() {
             <h3 className={workTitleStyle}>AMC</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Built an Emmy nominated second screen experience for The Walking
-                Dead. Maintined websites for The Walking Dead, Better Call Saul,
-                Mad Men, and more. Including mini-sites, Sweepstakes pages, etc.
+                Built an Emmy nominated second screen experience for The Walking Dead. Maintined
+                websites for The Walking Dead, Better Call Saul, Mad Men, and more. Including
+                mini-sites, Sweepstakes pages, etc.
               </p>
             </div>
           </div>
@@ -175,8 +168,7 @@ function Component() {
             <h3 className={workTitleStyle}>IFC</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Built a custom WordPress theme to power the redesign of the
-                IFC.com website.
+                Built a custom WordPress theme to power the redesign of the IFC.com website.
               </p>
             </div>
           </div>
@@ -184,8 +176,7 @@ function Component() {
             <h3 className={workTitleStyle}>We TV</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Built a custom WordPress theme to power the redesign of the
-                we.tv website.
+                Built a custom WordPress theme to power the redesign of the we.tv website.
               </p>
             </div>
           </div>
@@ -193,8 +184,7 @@ function Component() {
             <h3 className={workTitleStyle}>Sundance TV</h3>
             <div className="relative">
               <p className={workDescriptionStyle}>
-                Built a custom WordPress theme to power the redesign of the
-                sundancetv.com website.
+                Built a custom WordPress theme to power the redesign of the sundancetv.com website.
               </p>
             </div>
           </div>
