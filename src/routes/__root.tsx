@@ -1,6 +1,7 @@
-import * as React from "react";
+import type { ReactNode } from "react";
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { TanStackDevtools } from "@tanstack/react-devtools";
+import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import styles from "../index.css?url";
 
 export const Route = createRootRoute({
@@ -27,30 +28,35 @@ export const Route = createRootRoute({
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
     ],
   }),
-  component: Component,
+  shellComponent: Document,
+  component: Outlet,
 });
 
-function Component() {
-  return (
-    <Document>
-      <Outlet />
-    </Document>
-  );
-}
-
-function Document({ children }: Readonly<{ children: React.ReactNode }>) {
+function Document({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" className="h-full">
       <head>
         <HeadContent />
         <script
+          async
+          defer
           src="https://cdn.visitors.now/v.js"
           data-token="78bd4808-5b31-4d23-9a5d-36d769dc5dfe"
         />
       </head>
       <body className="h-full text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-50">
         {children}
-        <TanStackRouterDevtools />
+        <TanStackDevtools
+          config={{
+            position: "bottom-right",
+          }}
+          plugins={[
+            {
+              name: "TanStack Router",
+              render: <TanStackRouterDevtoolsPanel />,
+            },
+          ]}
+        />
         <Scripts />
       </body>
     </html>
