@@ -149,7 +149,7 @@ const pastWork: readonly PastWorkItem[] = [
     client: "Microsoft",
     Logo: MicrosoftLogo,
     description:
-      "Managed and maintined feature updates and redesigns for multiple WordPress powered sites, including Microsoft Blogs, Microsoft On the Issues, and Microsoft Stories.",
+      "Managed and maintained feature updates and redesigns for multiple WordPress-powered sites, including Microsoft Blogs, Microsoft On the Issues, and Microsoft Stories.",
     accent: "microsoft",
     contentTone: "light",
     bodyTone: "strong",
@@ -157,7 +157,8 @@ const pastWork: readonly PastWorkItem[] = [
   {
     client: "Facebook",
     Logo: FacebookLogo,
-    description: "Helped maintain and implement redesigns for the Facebook inspirED initiative.",
+    description:
+      "Maintained and implemented redesign updates for the Facebook inspirED initiative, including ongoing front-end improvements across the experience.",
     accent: "facebook",
     contentTone: "light",
     bodyTone: "default",
@@ -165,7 +166,8 @@ const pastWork: readonly PastWorkItem[] = [
   {
     client: "GoDaddy",
     Logo: GoDaddyLogo,
-    description: "Developed custom WordPress themes for GoDaddy's website buider.",
+    description:
+      "Developed custom WordPress themes for GoDaddy's website builder, supporting product marketing pages and broader site updates.",
     accent: "godaddy",
     contentTone: "dark",
     bodyTone: "default",
@@ -183,7 +185,7 @@ const pastWork: readonly PastWorkItem[] = [
     client: "Control Engineering",
     Logo: ControlEngineeringLogo,
     description:
-      "Entire front-end build, built on top of WordPress with a custom PHP component implementation. The site layout was designed as a template to be used across all of their properties.",
+      "Built the front end on top of WordPress with a custom PHP component system. Designed the site layout as a reusable template for use across all of their properties.",
     accent: "controlEngineering",
     contentTone: "light",
     bodyTone: "strong",
@@ -191,7 +193,8 @@ const pastWork: readonly PastWorkItem[] = [
   {
     client: "PA Media Group",
     Logo: PaMediaLogo,
-    description: "Built a Vue.js based administration interface for browsing stories and videos.",
+    description:
+      "Built a Vue.js based administration interface for browsing stories and videos, making editorial content easier to review and manage.",
     accent: "paMedia",
     contentTone: "dark",
     bodyTone: "default",
@@ -200,7 +203,7 @@ const pastWork: readonly PastWorkItem[] = [
     client: "Capital One",
     Logo: CapitalOneLogo,
     description:
-      "Interfaced with internal CapitalOne designers to maintain their design system documentation.",
+      "Maintained and extended Capital One's design system documentation in collaboration with internal designers, making it more useful across teams.",
     accent: "capitalOne",
     contentTone: "light",
     bodyTone: "default",
@@ -209,7 +212,7 @@ const pastWork: readonly PastWorkItem[] = [
     client: "AMC Networks",
     Logo: AmcNetworksLogo,
     description:
-      "Supported work across the AMC Networks ecosystem and related entertainment brands.",
+      "Supported site updates and launches across the AMC Networks ecosystem and related entertainment brands.",
     accent: "amcNetworks",
     contentTone: "light",
     bodyTone: "subtle",
@@ -218,7 +221,7 @@ const pastWork: readonly PastWorkItem[] = [
     client: "AMC",
     Logo: AmcLogo,
     description:
-      "Built an Emmy nominated second screen experience for The Walking Dead. Maintined websites for The Walking Dead, Better Call Saul, Mad Men, and more, including mini-sites and sweepstakes pages.",
+      "Built an Emmy-nominated second screen experience for The Walking Dead. Built sites for The Walking Dead, Better Call Saul, Mad Men, and more, including mini-sites and sweepstakes pages.",
     accent: "amc",
     contentTone: "dark",
     bodyTone: "default",
@@ -226,7 +229,8 @@ const pastWork: readonly PastWorkItem[] = [
   {
     client: "IFC",
     Logo: IfcLogo,
-    description: "Built a custom WordPress theme to power the redesign of the IFC.com website.",
+    description:
+      "Built a custom WordPress theme to power the redesign of the IFC.com website, with a focus on a flexible editorial experience.",
     accent: "ifc",
     contentTone: "light",
     bodyTone: "default",
@@ -234,7 +238,8 @@ const pastWork: readonly PastWorkItem[] = [
   {
     client: "We TV",
     Logo: WeTvLogo,
-    description: "Built a custom WordPress theme to power the redesign of the we.tv website.",
+    description:
+      "Built a custom WordPress theme to power the redesign of the we.tv website and support content publishing across the brand.",
     accent: "weTv",
     contentTone: "light",
     bodyTone: "default",
@@ -243,7 +248,7 @@ const pastWork: readonly PastWorkItem[] = [
     client: "Sundance TV",
     Logo: SundanceTvLogo,
     description:
-      "Built a custom WordPress theme to power the redesign of the sundancetv.com website.",
+      "Built a custom WordPress theme to power the redesign of the sundancetv.com website, creating a more polished and scalable foundation.",
     accent: "sundanceTv",
     contentTone: "light",
     bodyTone: "default",
