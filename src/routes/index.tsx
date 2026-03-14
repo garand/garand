@@ -515,7 +515,7 @@ function Component() {
     }
 
     const timeouts: Array<number> = [];
-    const startDelay = 360;
+    const startDelay = 200;
     const stepDuration = 100;
     const dimmedTransitionDuration = 400;
 
