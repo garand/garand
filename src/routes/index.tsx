@@ -382,7 +382,7 @@ function Component() {
             .
           </p>
         </div>
-        <div className="mt-8">
+        <div className="mt-12">
           <h2 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">Roles</h2>
           <div className="mt-4 grid auto-rows-max gap-8">
             <div className="grid max-w-xs grid-flow-row grid-cols-[32rem,max-content] gap-x-1 gap-y-1">
@@ -412,7 +412,7 @@ function Component() {
             </div>
           </div>
         </div>
-        <div className="mt-8 @container/past-work">
+        <div className="mt-12 @container/past-work">
           <h2 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">Past Work</h2>
           <div className="-mx-8 mt-5 grid gap-5 sm:-mx-10 @xl/past-work:grid-cols-2 @6xl/past-work:grid-cols-3 @7xl/past-work:grid-cols-4">
             {pastWork.map((item, index) => (
