@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { cva } from "cva";
+import { useEffect, useRef, useState } from "react";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import {
   AmcLogo,
@@ -31,18 +32,21 @@ type PastWorkItem = {
 };
 
 const accentStyles = {
-  microsoft: "hover:shadow-brand-microsoft/60",
-  facebook: "hover:shadow-brand-facebook/60",
-  godaddy: "hover:shadow-brand-godaddy/55",
-  stadium: "hover:shadow-brand-stadium/60",
-  controlEngineering: "hover:shadow-brand-control-engineering/55",
-  paMedia: "hover:shadow-brand-pa-media/55",
-  capitalOne: "hover:shadow-brand-capital-one/55",
-  amcNetworks: "hover:shadow-brand-amc-networks/55",
-  amc: "hover:shadow-brand-amc/55",
-  ifc: "hover:shadow-brand-ifc/55",
-  weTv: "hover:shadow-brand-we-tv/55",
-  sundanceTv: "hover:shadow-brand-sundance-tv/55",
+  microsoft: "hover:shadow-brand-microsoft/60 data-[active=true]:shadow-brand-microsoft/60",
+  facebook: "hover:shadow-brand-facebook/60 data-[active=true]:shadow-brand-facebook/60",
+  godaddy: "hover:shadow-brand-godaddy/55 data-[active=true]:shadow-brand-godaddy/55",
+  stadium: "hover:shadow-brand-stadium/60 data-[active=true]:shadow-brand-stadium/60",
+  controlEngineering:
+    "hover:shadow-brand-control-engineering/55 data-[active=true]:shadow-brand-control-engineering/55",
+  paMedia: "hover:shadow-brand-pa-media/55 data-[active=true]:shadow-brand-pa-media/55",
+  capitalOne: "hover:shadow-brand-capital-one/55 data-[active=true]:shadow-brand-capital-one/55",
+  amcNetworks:
+    "hover:shadow-brand-amc-networks/55 data-[active=true]:shadow-brand-amc-networks/55",
+  amc: "hover:shadow-brand-amc/55 data-[active=true]:shadow-brand-amc/55",
+  ifc: "hover:shadow-brand-ifc/55 data-[active=true]:shadow-brand-ifc/55",
+  weTv: "hover:shadow-brand-we-tv/55 data-[active=true]:shadow-brand-we-tv/55",
+  sundanceTv:
+    "hover:shadow-brand-sundance-tv/55 data-[active=true]:shadow-brand-sundance-tv/55",
 } as const;
 
 const accentBackgroundStyles = {
@@ -61,7 +65,7 @@ const accentBackgroundStyles = {
 } as const;
 
 const pastWorkCardVariants = cva(
-  "group relative isolate z-0 min-h-64 overflow-hidden rounded-2xl bg-zinc-500/5 px-8 py-7 text-zinc-800 transition-shadow duration-200 ease-in hover:z-10 hover:shadow-card-hover sm:px-10 sm:py-8",
+  "group relative isolate z-0 min-h-64 overflow-hidden rounded-2xl bg-zinc-500/5 px-8 py-7 text-zinc-800 transition-shadow duration-200 ease-in hover:z-10 hover:shadow-card-hover data-[active=true]:z-10 data-[active=true]:shadow-card-hover sm:px-10 sm:py-8",
   {
     variants: {
       accent: accentStyles,
@@ -70,7 +74,7 @@ const pastWorkCardVariants = cva(
 );
 
 const pastWorkCardBackgroundVariants = cva(
-  "pointer-events-none absolute inset-0 transition-opacity duration-200 ease-in opacity-0 group-hover:opacity-100",
+  "pointer-events-none absolute inset-0 rounded-[inherit] transition-opacity duration-200 ease-in opacity-0 group-hover:opacity-100 group-data-[active=true]:opacity-100",
   {
     variants: {
       accent: accentBackgroundStyles,
@@ -83,8 +87,8 @@ const pastWorkTitleVariants = cva(
   {
     variants: {
       tone: {
-        light: "group-hover:text-white",
-        dark: "group-hover:text-zinc-950",
+        light: "group-hover:text-white group-data-[active=true]:text-white",
+        dark: "group-hover:text-zinc-950 group-data-[active=true]:text-zinc-950",
       },
     },
   },
@@ -108,22 +112,22 @@ const pastWorkBodyVariants = cva(
       {
         tone: "subtle",
         contentTone: "light",
-        className: "group-hover:text-white/80",
+        className: "group-hover:text-white/80 group-data-[active=true]:text-white/80",
       },
       {
         tone: "default",
         contentTone: "light",
-        className: "group-hover:text-white/88",
+        className: "group-hover:text-white/88 group-data-[active=true]:text-white/88",
       },
       {
         tone: "default",
         contentTone: "dark",
-        className: "group-hover:text-zinc-950/88",
+        className: "group-hover:text-zinc-950/88 group-data-[active=true]:text-zinc-950/88",
       },
       {
         tone: "strong",
         contentTone: "light",
-        className: "group-hover:text-white/90",
+        className: "group-hover:text-white/90 group-data-[active=true]:text-white/90",
       },
     ],
   },
@@ -134,8 +138,8 @@ const pastWorkLogoVariants = cva(
   {
     variants: {
       tone: {
-        dark: "group-hover:text-zinc-950",
-        light: "group-hover:text-white",
+        dark: "group-hover:text-zinc-950 group-data-[active=true]:text-zinc-950",
+        light: "group-hover:text-white group-data-[active=true]:text-white",
       },
     },
     defaultVariants: {
@@ -256,6 +260,82 @@ const pastWork: readonly PastWorkItem[] = [
 ];
 
 function Component() {
+  const cardRefs = useRef<Array<HTMLElement | null>>([]);
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(max-width: 639px)");
+    let frameId = 0;
+
+    const updateActiveCard = () => {
+      if (!mediaQuery.matches) {
+        setActiveCard(null);
+        return;
+      }
+
+      if (window.scrollY <= 0) {
+        setActiveCard(null);
+        return;
+      }
+
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 1;
+
+      if (scrolledToBottom) {
+        setActiveCard(pastWork.length - 1);
+        return;
+      }
+
+      const viewportCenter = window.innerHeight * 0.45;
+      let nextActive: number | null = null;
+      let closestDistance = Number.POSITIVE_INFINITY;
+
+      cardRefs.current.forEach((card, index) => {
+        if (!card) {
+          return;
+        }
+
+        const rect = card.getBoundingClientRect();
+        const isVisible = rect.bottom > 0 && rect.top < window.innerHeight;
+
+        if (!isVisible) {
+          return;
+        }
+
+        const cardCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(cardCenter - viewportCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          nextActive = index;
+        }
+      });
+
+      setActiveCard((current) => (current === nextActive ? current : nextActive));
+    };
+
+    const requestUpdate = () => {
+      window.cancelAnimationFrame(frameId);
+      frameId = window.requestAnimationFrame(updateActiveCard);
+    };
+
+    requestUpdate();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    mediaQuery.addEventListener("change", requestUpdate);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+      mediaQuery.removeEventListener("change", requestUpdate);
+    };
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-white px-[3.25rem] py-8 dark:bg-zinc-900 sm:px-[3.75rem] sm:py-10 md:py-12">
       <div className="from-white dark:from-zinc-900 to-white/0 dark:to-zinc-900/0 h-8 sm:h-10 md:h-12 pointer-events-none fixed top-0 inset-x-0 bg-linear-to-b z-999" />
@@ -335,10 +415,17 @@ function Component() {
         <div className="mt-8 @container/past-work">
           <h2 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">Past Work</h2>
           <div className="-mx-8 mt-5 grid gap-5 sm:-mx-10 @xl/past-work:grid-cols-2 @6xl/past-work:grid-cols-3 @7xl/past-work:grid-cols-4">
-            {pastWork.map((item) => (
-              <article key={item.client} className={pastWorkCardVariants({ accent: item.accent })}>
+            {pastWork.map((item, index) => (
+              <article
+                key={item.client}
+                ref={(element) => {
+                  cardRefs.current[index] = element;
+                }}
+                data-active={activeCard === index ? "true" : "false"}
+                className={pastWorkCardVariants({ accent: item.accent })}
+              >
                 <div className={pastWorkCardBackgroundVariants({ accent: item.accent })} />
-                <div className="pointer-events-none absolute inset-0 opacity-0 mix-blend-overlay bg-linear-to-tr from-black/60 via-black/0 to-white/60 transition-opacity duration-200 ease-in group-hover:opacity-100" />
+                <div className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 mix-blend-overlay bg-linear-to-tr from-black/60 via-black/0 to-white/60 transition-opacity duration-200 ease-in group-hover:opacity-100 group-data-[active=true]:opacity-100" />
                 <div className="relative z-10 mb-5 flex h-14 w-full items-center">
                   {item.Logo ? (
                     <item.Logo
