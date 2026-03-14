@@ -674,7 +674,7 @@ function Component() {
           <h2 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">
             Past Work
           </h2>
-          <div className="-mx-8 mt-5 grid gap-5 sm:-mx-10 @xl/past-work:grid-cols-2 @6xl/past-work:grid-cols-3 @7xl/past-work:grid-cols-4">
+          <div className="-mx-8 mt-5 grid gap-5 sm:-mx-10 @xl/past-work:grid-cols-2 @5xl/past-work:grid-cols-3 @7xl/past-work:grid-cols-4">
             {pastWork.map((item, index) => (
               <article
                 key={item.client}
