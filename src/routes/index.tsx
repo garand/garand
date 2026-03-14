@@ -182,6 +182,15 @@ const pastWork: readonly PastWorkItem[] = [
     bodyTone: "strong",
   },
   {
+    client: "Capital One",
+    Logo: CapitalOneLogo,
+    description:
+      "Maintained and extended Capital One's design system documentation in collaboration with internal designers, making it more useful across teams.",
+    accent: "capitalOne",
+    contentTone: "light",
+    bodyTone: "default",
+  },
+  {
     client: "Control Engineering",
     Logo: ControlEngineeringLogo,
     description:
@@ -197,15 +206,6 @@ const pastWork: readonly PastWorkItem[] = [
       "Built a Vue.js based administration interface for browsing stories and videos, making editorial content easier to review and manage.",
     accent: "paMedia",
     contentTone: "dark",
-    bodyTone: "default",
-  },
-  {
-    client: "Capital One",
-    Logo: CapitalOneLogo,
-    description:
-      "Maintained and extended Capital One's design system documentation in collaboration with internal designers, making it more useful across teams.",
-    accent: "capitalOne",
-    contentTone: "light",
     bodyTone: "default",
   },
   {
