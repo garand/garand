@@ -88,19 +88,19 @@ function getAdjacentCardIndexes(positions: CardGridPosition[], index: number) {
 }
 
 const accentStyles = {
-  microsoft: "hover:shadow-brand-microsoft/60 data-[active=true]:shadow-brand-microsoft/60",
-  facebook: "hover:shadow-brand-facebook/60 data-[active=true]:shadow-brand-facebook/60",
-  godaddy: "hover:shadow-brand-godaddy/55 data-[active=true]:shadow-brand-godaddy/55",
-  stadium: "hover:shadow-brand-stadium/60 data-[active=true]:shadow-brand-stadium/60",
+  microsoft: "sm:hover:shadow-brand-microsoft/60 data-[active=true]:shadow-brand-microsoft/60",
+  facebook: "sm:hover:shadow-brand-facebook/60 data-[active=true]:shadow-brand-facebook/60",
+  godaddy: "sm:hover:shadow-brand-godaddy/55 data-[active=true]:shadow-brand-godaddy/55",
+  stadium: "sm:hover:shadow-brand-stadium/60 data-[active=true]:shadow-brand-stadium/60",
   controlEngineering:
-    "hover:shadow-brand-control-engineering/55 data-[active=true]:shadow-brand-control-engineering/55",
-  paMedia: "hover:shadow-brand-pa-media/55 data-[active=true]:shadow-brand-pa-media/55",
-  capitalOne: "hover:shadow-brand-capital-one/55 data-[active=true]:shadow-brand-capital-one/55",
-  amcNetworks: "hover:shadow-brand-amc-networks/55 data-[active=true]:shadow-brand-amc-networks/55",
-  amc: "hover:shadow-brand-amc/55 data-[active=true]:shadow-brand-amc/55",
-  ifc: "hover:shadow-brand-ifc/55 data-[active=true]:shadow-brand-ifc/55",
-  weTv: "hover:shadow-brand-we-tv/55 data-[active=true]:shadow-brand-we-tv/55",
-  sundanceTv: "hover:shadow-brand-sundance-tv/55 data-[active=true]:shadow-brand-sundance-tv/55",
+    "sm:hover:shadow-brand-control-engineering/55 data-[active=true]:shadow-brand-control-engineering/55",
+  paMedia: "sm:hover:shadow-brand-pa-media/55 data-[active=true]:shadow-brand-pa-media/55",
+  capitalOne: "sm:hover:shadow-brand-capital-one/55 data-[active=true]:shadow-brand-capital-one/55",
+  amcNetworks: "sm:hover:shadow-brand-amc-networks/55 data-[active=true]:shadow-brand-amc-networks/55",
+  amc: "sm:hover:shadow-brand-amc/55 data-[active=true]:shadow-brand-amc/55",
+  ifc: "sm:hover:shadow-brand-ifc/55 data-[active=true]:shadow-brand-ifc/55",
+  weTv: "sm:hover:shadow-brand-we-tv/55 data-[active=true]:shadow-brand-we-tv/55",
+  sundanceTv: "sm:hover:shadow-brand-sundance-tv/55 data-[active=true]:shadow-brand-sundance-tv/55",
 } as const;
 
 const accentBackgroundStyles = {
@@ -119,7 +119,7 @@ const accentBackgroundStyles = {
 } as const;
 
 const pastWorkCardVariants = cva(
-  "group relative isolate z-0 min-h-64 overflow-hidden rounded-2xl bg-zinc-500/5 text-zinc-800 transition-shadow duration-150 ease-in hover:z-10 hover:shadow-card-hover data-[active=true]:z-10 data-[active=true]:shadow-card-hover",
+  "group relative isolate z-0 min-h-64 overflow-hidden rounded-2xl bg-zinc-500/5 text-zinc-800 transition-shadow duration-150 ease-in sm:hover:z-10 sm:hover:shadow-card-hover data-[active=true]:z-10 data-[active=true]:shadow-card-hover",
   {
     variants: {
       accent: accentStyles,
@@ -128,7 +128,7 @@ const pastWorkCardVariants = cva(
 );
 
 const pastWorkCardBackgroundVariants = cva(
-  "pointer-events-none absolute inset-0 rounded-[inherit] transition-opacity duration-150 ease-in opacity-0 group-hover:opacity-100 group-data-[active=true]:opacity-100",
+  "pointer-events-none absolute inset-0 rounded-[inherit] transition-opacity duration-150 ease-in opacity-0 sm:group-hover:opacity-100 group-data-[active=true]:opacity-100",
   {
     variants: {
       accent: accentBackgroundStyles,
@@ -137,7 +137,7 @@ const pastWorkCardBackgroundVariants = cva(
 );
 
 const pastWorkCardDimmedBackgroundVariants = cva(
-  "pointer-events-none absolute inset-0 rounded-[inherit] transition-opacity duration-[225ms] ease-in opacity-0 group-data-[shimmer=true]:opacity-12 group-data-[adjacent=true]:opacity-12",
+  "pointer-events-none absolute inset-0 rounded-[inherit] transition-opacity duration-[400ms] ease-in-out opacity-0 group-data-[shimmer=true]:opacity-12 group-data-[adjacent=true]:opacity-12",
   {
     variants: {
       accent: accentBackgroundStyles,
@@ -515,8 +515,9 @@ function Component() {
     }
 
     const timeouts: Array<number> = [];
-    const startDelay = 180;
-    const stepDuration = 150;
+    const startDelay = 360;
+    const stepDuration = 100;
+    const dimmedTransitionDuration = 400;
 
     const cards = cardRefs.current.filter((card): card is HTMLElement => card !== null);
 
@@ -540,33 +541,40 @@ function Component() {
       .filter((group) => group.length > 0);
 
     shimmerGroups.forEach((group, groupIndex) => {
+      const groupStartTime = startDelay + groupIndex * stepDuration;
+
       timeouts.push(
         window.setTimeout(
           () => {
-            setShimmerCards(group);
+            setShimmerCards((current) => [...new Set([...current, ...group])]);
           },
-          startDelay + groupIndex * stepDuration,
+          groupStartTime,
+        ),
+      );
+
+      timeouts.push(
+        window.setTimeout(
+          () => {
+            setShimmerCards((current) => current.filter((index) => !group.includes(index)));
+          },
+          groupStartTime + dimmedTransitionDuration,
         ),
       );
     });
-
-    timeouts.push(
-      window.setTimeout(
-        () => {
-          setShimmerCards([]);
-        },
-        startDelay + shimmerGroups.length * stepDuration,
-      ),
-    );
 
     return () => {
       timeouts.forEach((timeoutId) => {
         window.clearTimeout(timeoutId);
       });
+      setShimmerCards([]);
     };
   }, []);
 
   const handleCardEnter = (index: number) => {
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 639px)").matches) {
+      return;
+    }
+
     const cards = cardRefs.current.filter((card): card is HTMLElement => card !== null);
 
     if (cards.length === 0) {
@@ -577,6 +585,10 @@ function Component() {
   };
 
   const handleCardLeave = () => {
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 639px)").matches) {
+      return;
+    }
+
     setAdjacentCards([]);
   };
 
@@ -673,7 +685,8 @@ function Component() {
                   handleCardEnter(index);
                 }}
                 onMouseLeave={handleCardLeave}
-                className="transition-transform duration-700 ease-out hover:scale-[1.015]"
+                data-active={activeCard === index ? "true" : "false"}
+                className="transition-transform duration-700 ease-out sm:hover:scale-[1.015] data-[active=true]:scale-[1.015]"
               >
                 <div
                   data-active={activeCard === index ? "true" : "false"}
@@ -683,16 +696,16 @@ function Component() {
                 >
                   <div className={pastWorkCardDimmedBackgroundVariants({ accent: item.accent })} />
                   <div className={pastWorkCardBackgroundVariants({ accent: item.accent })} />
-                  <div className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 mix-blend-overlay transition-opacity duration-150 ease-in group-hover:opacity-100 group-data-[active=true]:opacity-100 shadow-card-inner-glow shadow-black/20" />
-                  <div className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 mix-blend-overlay bg-linear-to-tr from-black/60 via-black/0 to-white/60 transition-opacity duration-150 ease-in group-hover:opacity-100 group-data-[active=true]:opacity-100" />
-                  <div className="pointer-events-none absolute inset-0 z-10 opacity-100 transition-opacity duration-150 ease-in group-hover:opacity-0 group-data-[active=true]:opacity-0">
+                  <div className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 mix-blend-overlay transition-opacity duration-150 ease-in sm:group-hover:opacity-100 group-data-[active=true]:opacity-100 shadow-card-inner-glow shadow-black/20" />
+                  <div className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 mix-blend-overlay bg-linear-to-tr from-black/60 via-black/0 to-white/60 transition-opacity duration-150 ease-in sm:group-hover:opacity-100 group-data-[active=true]:opacity-100" />
+                  <div className="pointer-events-none absolute inset-0 z-10 opacity-100 transition-opacity duration-150 ease-in sm:group-hover:opacity-0 group-data-[active=true]:opacity-0">
                     <div className="h-full mix-blend-overlay dark:mix-blend-darken">
                       <PastWorkCardContent item={item} state="blended" />
                     </div>
                   </div>
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-100 ease-in group-hover:opacity-100 group-data-[active=true]:opacity-100"
+                    className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-100 ease-in sm:group-hover:opacity-100 group-data-[active=true]:opacity-100"
                   >
                     <PastWorkCardContent item={item} state="active" />
                   </div>
