@@ -1,1 +1,48 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Uncut Sans";
+  src: url("/UncutSans-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Uncut Sans", ui-sans-serif, system-ui, sans-serif;
+  --shadow-card-hover: 0 26px 60px -22px;
+  --color-brand-microsoft: #0078d4;
+  --color-brand-facebook: #0866ff;
+  --color-brand-godaddy: #18d4d3;
+  --color-brand-stadium: #0c0a2c;
+  --color-brand-control-engineering: #0972ba;
+  --color-brand-pa-media: #ffa631;
+  --color-brand-capital-one: #004977;
+  --color-brand-amc-networks: #008e9e;
+  --color-brand-amc: #ffc600;
+  --color-brand-ifc: #e3442f;
+  --color-brand-we-tv: #d83157;
+  --color-brand-sundance-tv: #ef4444;
+  --color-logo-stadium-primary: #f2efef;
+  --color-logo-stadium-secondary: #f1f0fa;
+  --color-logo-sundance-tv-accent: #87a9a4;
+  --color-logo-microsoft-neutral: #737373;
+  --color-logo-microsoft-red: #f25022;
+  --color-logo-microsoft-green: #7fba00;
+  --color-logo-microsoft-blue: #00a4ef;
+  --color-logo-microsoft-yellow: #ffb900;
+  --color-logo-pa-media-neutral: #1d1d1b;
+  --color-logo-pa-media-primary: #ffa631;
+  --color-logo-pa-media-secondary: #ffcb47;
+  --color-logo-facebook: #0866ff;
+  --color-logo-godaddy: #1bdbdb;
+  --color-logo-control-engineering: #0872b9;
+  --color-logo-capital-one-red: #cc2427;
+  --color-logo-capital-one-blue: #013d5b;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+}
