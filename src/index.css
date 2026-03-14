@@ -11,6 +11,7 @@
 @theme {
   --font-sans: "Uncut Sans", ui-sans-serif, system-ui, sans-serif;
   --shadow-card-hover: 0 26px 60px -22px;
+  --shadow-card-inner-glow: inset 0 0 60px;
   --color-brand-microsoft: #0078d4;
   --color-brand-facebook: #0866ff;
   --color-brand-godaddy: #18d4d3;

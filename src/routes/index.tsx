@@ -66,28 +66,41 @@ function getCardGridPositions(cards: HTMLElement[]) {
   });
 }
 
+function getAdjacentCardIndexes(positions: CardGridPosition[], index: number) {
+  const referenceCard = positions.find((position) => position.index === index);
+
+  if (!referenceCard) {
+    return [];
+  }
+
+  return positions
+    .filter((position) => {
+      const sameRowNeighbor =
+        position.row === referenceCard.row &&
+        Math.abs(position.column - referenceCard.column) === 1;
+      const sameColumnNeighbor =
+        position.column === referenceCard.column &&
+        Math.abs(position.row - referenceCard.row) === 1;
+
+      return sameRowNeighbor || sameColumnNeighbor;
+    })
+    .map((position) => position.index);
+}
+
 const accentStyles = {
-  microsoft:
-    "hover:shadow-brand-microsoft/60 data-[active=true]:shadow-brand-microsoft/60",
-  facebook:
-    "hover:shadow-brand-facebook/60 data-[active=true]:shadow-brand-facebook/60",
-  godaddy:
-    "hover:shadow-brand-godaddy/55 data-[active=true]:shadow-brand-godaddy/55",
-  stadium:
-    "hover:shadow-brand-stadium/60 data-[active=true]:shadow-brand-stadium/60",
+  microsoft: "hover:shadow-brand-microsoft/60 data-[active=true]:shadow-brand-microsoft/60",
+  facebook: "hover:shadow-brand-facebook/60 data-[active=true]:shadow-brand-facebook/60",
+  godaddy: "hover:shadow-brand-godaddy/55 data-[active=true]:shadow-brand-godaddy/55",
+  stadium: "hover:shadow-brand-stadium/60 data-[active=true]:shadow-brand-stadium/60",
   controlEngineering:
     "hover:shadow-brand-control-engineering/55 data-[active=true]:shadow-brand-control-engineering/55",
-  paMedia:
-    "hover:shadow-brand-pa-media/55 data-[active=true]:shadow-brand-pa-media/55",
-  capitalOne:
-    "hover:shadow-brand-capital-one/55 data-[active=true]:shadow-brand-capital-one/55",
-  amcNetworks:
-    "hover:shadow-brand-amc-networks/55 data-[active=true]:shadow-brand-amc-networks/55",
+  paMedia: "hover:shadow-brand-pa-media/55 data-[active=true]:shadow-brand-pa-media/55",
+  capitalOne: "hover:shadow-brand-capital-one/55 data-[active=true]:shadow-brand-capital-one/55",
+  amcNetworks: "hover:shadow-brand-amc-networks/55 data-[active=true]:shadow-brand-amc-networks/55",
   amc: "hover:shadow-brand-amc/55 data-[active=true]:shadow-brand-amc/55",
   ifc: "hover:shadow-brand-ifc/55 data-[active=true]:shadow-brand-ifc/55",
   weTv: "hover:shadow-brand-we-tv/55 data-[active=true]:shadow-brand-we-tv/55",
-  sundanceTv:
-    "hover:shadow-brand-sundance-tv/55 data-[active=true]:shadow-brand-sundance-tv/55",
+  sundanceTv: "hover:shadow-brand-sundance-tv/55 data-[active=true]:shadow-brand-sundance-tv/55",
 } as const;
 
 const accentBackgroundStyles = {
@@ -115,7 +128,16 @@ const pastWorkCardVariants = cva(
 );
 
 const pastWorkCardBackgroundVariants = cva(
-  "pointer-events-none absolute inset-0 rounded-[inherit] transition-opacity duration-150 ease-in opacity-0 group-hover:opacity-100 group-data-[active=true]:opacity-100 group-data-[shimmer=true]:opacity-12 group-data-[adjacent=true]:opacity-12",
+  "pointer-events-none absolute inset-0 rounded-[inherit] transition-opacity duration-150 ease-in opacity-0 group-hover:opacity-100 group-data-[active=true]:opacity-100",
+  {
+    variants: {
+      accent: accentBackgroundStyles,
+    },
+  },
+);
+
+const pastWorkCardDimmedBackgroundVariants = cva(
+  "pointer-events-none absolute inset-0 rounded-[inherit] transition-opacity duration-[225ms] ease-in opacity-0 group-data-[shimmer=true]:opacity-12 group-data-[adjacent=true]:opacity-12",
   {
     variants: {
       accent: accentBackgroundStyles,
@@ -124,21 +146,35 @@ const pastWorkCardBackgroundVariants = cva(
 );
 
 const pastWorkTitleVariants = cva(
-  "w-full text-4xl leading-none tracking-tighter font-semibold text-zinc-800 transition-colors duration-75 ease-in",
+  "w-full text-4xl leading-none tracking-tighter font-semibold transition-colors duration-75 ease-in",
   {
     variants: {
       tone: {
-        light:
-          "group-hover:text-white group-data-[active=true]:text-white",
-        dark:
-          "group-hover:text-zinc-950 group-data-[active=true]:text-zinc-950",
+        light: "",
+        dark: "",
+      },
+      state: {
+        blended: "text-black/80 dark:text-white/80",
+        active: "",
       },
     },
+    compoundVariants: [
+      {
+        tone: "light",
+        state: "active",
+        className: "text-white",
+      },
+      {
+        tone: "dark",
+        state: "active",
+        className: "text-zinc-950",
+      },
+    ],
   },
 );
 
 const pastWorkBodyVariants = cva(
-  "max-w-xs text-base leading-tight text-zinc-500 transition-colors duration-75 ease-in text-balance",
+  "max-w-xs text-base leading-tight transition-colors duration-75 ease-in text-balance",
   {
     variants: {
       tone: {
@@ -150,49 +186,108 @@ const pastWorkBodyVariants = cva(
         light: "",
         dark: "",
       },
+      state: {
+        blended: "text-black/55 dark:text-white/55",
+        active: "",
+      },
     },
     compoundVariants: [
       {
         tone: "subtle",
         contentTone: "light",
-        className: "group-hover:text-white/80 group-data-[active=true]:text-white/80",
+        state: "active",
+        className: "text-white/80",
       },
       {
         tone: "default",
         contentTone: "light",
-        className: "group-hover:text-white/88 group-data-[active=true]:text-white/88",
+        state: "active",
+        className: "text-white/88",
       },
       {
         tone: "default",
         contentTone: "dark",
-        className:
-          "group-hover:text-zinc-950/88 group-data-[active=true]:text-zinc-950/88",
+        state: "active",
+        className: "text-zinc-950/88",
       },
       {
         tone: "strong",
         contentTone: "light",
-        className: "group-hover:text-white/90 group-data-[active=true]:text-white/90",
+        state: "active",
+        className: "text-white/90",
       },
     ],
   },
 );
 
 const pastWorkLogoVariants = cva(
-  "block max-h-full w-auto max-w-36 shrink-0 text-zinc-900/70 transition-colors duration-75 ease-in sm:max-w-44 dark:text-zinc-100/75 [&_circle]:fill-current [&_ellipse]:fill-current [&_path]:fill-current [&_polygon]:fill-current [&_rect]:fill-current",
+  "block max-h-full w-auto max-w-36 shrink-0 transition-colors duration-75 ease-in sm:max-w-44 [&_circle]:fill-current [&_ellipse]:fill-current [&_path]:fill-current [&_polygon]:fill-current [&_rect]:fill-current",
   {
     variants: {
       tone: {
-        dark:
-          "group-hover:text-zinc-950 group-data-[active=true]:text-zinc-950",
-        light:
-          "group-hover:text-white group-data-[active=true]:text-white",
+        dark: "",
+        light: "",
+      },
+      state: {
+        blended: "text-black/55 dark:text-white/75",
+        active: "",
       },
     },
+    compoundVariants: [
+      {
+        tone: "dark",
+        state: "active",
+        className: "text-zinc-950",
+      },
+      {
+        tone: "light",
+        state: "active",
+        className: "text-white",
+      },
+    ],
     defaultVariants: {
       tone: "dark",
     },
   },
 );
+
+function PastWorkCardContent({ item, state }: { item: PastWorkItem; state: "blended" | "active" }) {
+  return (
+    <>
+      <div className="px-8 pt-7 sm:px-10 sm:pt-8">
+        <div className="mb-5 flex h-14 w-full flex-none items-center">
+          {item.Logo ? (
+            <item.Logo
+              aria-label={`${item.client} logo`}
+              fill="currentColor"
+              className={pastWorkLogoVariants({ tone: item.contentTone, state })}
+            />
+          ) : null}
+        </div>
+      </div>
+      <div className="flex h-full flex-col items-start px-8 pb-7 sm:px-10 sm:pb-8">
+        <div className="w-full">
+          {!item.Logo ? (
+            <div className="mb-3.5 flex min-h-13 items-end">
+              <h3 className={pastWorkTitleVariants({ tone: item.contentTone, state })}>
+                {item.client}
+              </h3>
+            </div>
+          ) : null}
+          <p
+            className={pastWorkBodyVariants({
+              tone: item.bodyTone,
+              contentTone: item.contentTone,
+              state,
+            })}
+          >
+            {item.description}
+          </p>
+        </div>
+      </div>
+    </>
+  );
+}
 
 const pastWork: readonly PastWorkItem[] = [
   {
@@ -389,6 +484,28 @@ function Component() {
       return;
     }
 
+    const mediaQuery = window.matchMedia("(max-width: 639px)");
+
+    if (!mediaQuery.matches || activeCard === null) {
+      setAdjacentCards([]);
+      return;
+    }
+
+    const cards = cardRefs.current.filter((card): card is HTMLElement => card !== null);
+
+    if (cards.length === 0) {
+      setAdjacentCards([]);
+      return;
+    }
+
+    setAdjacentCards(getAdjacentCardIndexes(getCardGridPositions(cards), activeCard));
+  }, [activeCard]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
     const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     const desktopQuery = window.matchMedia("(min-width: 1024px)");
 
@@ -424,16 +541,22 @@ function Component() {
 
     shimmerGroups.forEach((group, groupIndex) => {
       timeouts.push(
-        window.setTimeout(() => {
-          setShimmerCards(group);
-        }, startDelay + groupIndex * stepDuration),
+        window.setTimeout(
+          () => {
+            setShimmerCards(group);
+          },
+          startDelay + groupIndex * stepDuration,
+        ),
       );
     });
 
     timeouts.push(
-      window.setTimeout(() => {
-        setShimmerCards([]);
-      }, startDelay + shimmerGroups.length * stepDuration),
+      window.setTimeout(
+        () => {
+          setShimmerCards([]);
+        },
+        startDelay + shimmerGroups.length * stepDuration,
+      ),
     );
 
     return () => {
@@ -450,25 +573,7 @@ function Component() {
       return;
     }
 
-    const positions = getCardGridPositions(cards);
-    const hoveredCard = positions.find((position) => position.index === index);
-
-    if (!hoveredCard) {
-      return;
-    }
-
-    const neighbors = positions
-      .filter((position) => {
-        const sameRowNeighbor =
-          position.row === hoveredCard.row && Math.abs(position.column - hoveredCard.column) === 1;
-        const sameColumnNeighbor =
-          position.column === hoveredCard.column && Math.abs(position.row - hoveredCard.row) === 1;
-
-        return sameRowNeighbor || sameColumnNeighbor;
-      })
-      .map((position) => position.index);
-
-    setAdjacentCards(neighbors);
+    setAdjacentCards(getAdjacentCardIndexes(getCardGridPositions(cards), index));
   };
 
   const handleCardLeave = () => {
@@ -522,7 +627,9 @@ function Component() {
           </p>
         </div>
         <div className="mt-12">
-          <h2 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">Roles</h2>
+          <h2 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">
+            Roles
+          </h2>
           <div className="mt-4 grid auto-rows-max gap-8">
             <div className="grid max-w-xs grid-flow-row grid-cols-[32rem,max-content] gap-x-1 gap-y-1">
               <div className="col-span-2 grid grid-cols-subgrid">
@@ -552,7 +659,9 @@ function Component() {
           </div>
         </div>
         <div className="mt-12 @container/past-work">
-          <h2 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">Past Work</h2>
+          <h2 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">
+            Past Work
+          </h2>
           <div className="-mx-8 mt-5 grid gap-5 sm:-mx-10 @xl/past-work:grid-cols-2 @6xl/past-work:grid-cols-3 @7xl/past-work:grid-cols-4">
             {pastWork.map((item, index) => (
               <article
@@ -572,39 +681,20 @@ function Component() {
                   data-shimmer={shimmerCards.includes(index) ? "true" : "false"}
                   className={pastWorkCardVariants({ accent: item.accent })}
                 >
+                  <div className={pastWorkCardDimmedBackgroundVariants({ accent: item.accent })} />
                   <div className={pastWorkCardBackgroundVariants({ accent: item.accent })} />
+                  <div className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 mix-blend-overlay transition-opacity duration-150 ease-in group-hover:opacity-100 group-data-[active=true]:opacity-100 shadow-card-inner-glow shadow-black/20" />
                   <div className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 mix-blend-overlay bg-linear-to-tr from-black/60 via-black/0 to-white/60 transition-opacity duration-150 ease-in group-hover:opacity-100 group-data-[active=true]:opacity-100" />
-                  <div className="relative z-10 mix-blend-overlay group-hover:mix-blend-normal group-data-[active=true]:mix-blend-normal">
-                    <div className="px-8 pt-7 sm:px-10 sm:pt-8">
-                      <div className="mb-5 flex h-14 w-full items-center">
-                        {item.Logo ? (
-                          <item.Logo
-                            aria-label={`${item.client} logo`}
-                            fill="currentColor"
-                            className={pastWorkLogoVariants({ tone: item.contentTone })}
-                          />
-                        ) : null}
-                      </div>
+                  <div className="pointer-events-none absolute inset-0 z-10 opacity-100 transition-opacity duration-150 ease-in group-hover:opacity-0 group-data-[active=true]:opacity-0">
+                    <div className="h-full mix-blend-overlay dark:mix-blend-darken">
+                      <PastWorkCardContent item={item} state="blended" />
                     </div>
-                    <div className="relative flex h-full flex-col items-start px-8 pb-7 sm:px-10 sm:pb-8">
-                      <div className="w-full">
-                        {!item.Logo ? (
-                          <div className="mb-3.5 flex min-h-13 items-end">
-                            <h3 className={pastWorkTitleVariants({ tone: item.contentTone })}>
-                              {item.client}
-                            </h3>
-                          </div>
-                        ) : null}
-                        <p
-                          className={pastWorkBodyVariants({
-                            tone: item.bodyTone,
-                            contentTone: item.contentTone,
-                          })}
-                        >
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-100 ease-in group-hover:opacity-100 group-data-[active=true]:opacity-100"
+                  >
+                    <PastWorkCardContent item={item} state="active" />
                   </div>
                 </div>
               </article>
