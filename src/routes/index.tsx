@@ -349,14 +349,14 @@ function Component() {
               className="size-full rounded-full dark:brightness-90 dark:contrast-[1.1]"
             />
           </div>
-          <div className="flex flex-wrap items-start gap-y-3 sm:flex-nowrap sm:gap-x-24">
-            <div>
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0">
               <h1 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">
                 Anthony Garand
               </h1>
               <p className="text-zinc-500 dark:text-zinc-400">Product Designer & Engineer</p>
             </div>
-            <div className="grid auto-cols-max grid-flow-col gap-4 pt-0.5">
+            <div className="grid shrink-0 auto-cols-max grid-flow-col justify-end gap-4 pt-0.5">
               <a
                 href="https://x.com/garand"
                 className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
@@ -371,7 +371,7 @@ function Component() {
               </a>
             </div>
           </div>
-          <p className="mt-4 text-zinc-700 dark:text-zinc-300">
+          <p className="mt-5 text-zinc-700 dark:text-zinc-300">
             Currently building at{" "}
             <a
               href="https://towbook.com"
@@ -383,9 +383,9 @@ function Component() {
           </p>
         </div>
         <div className="mt-8">
-          <h2 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">Roles</h2>
+          <h2 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">Roles</h2>
           <div className="mt-4 grid auto-rows-max gap-8">
-            <div className="grid max-w-xs grid-flow-row grid-cols-[32rem,max-content] gap-x-1 gap-y-0.5">
+            <div className="grid max-w-xs grid-flow-row grid-cols-[32rem,max-content] gap-x-1 gap-y-1">
               <div className="col-span-2 grid grid-cols-subgrid">
                 <div className="text-zinc-900 dark:text-zinc-100">Towbook</div>
                 <div className="tracking-tight text-zinc-500 tabular-nums dark:text-zinc-400">
@@ -413,7 +413,7 @@ function Component() {
           </div>
         </div>
         <div className="mt-8 @container/past-work">
-          <h2 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">Past Work</h2>
+          <h2 className="text-lg leading-tight font-medium text-zinc-900 dark:text-zinc-100">Past Work</h2>
           <div className="-mx-8 mt-5 grid gap-5 sm:-mx-10 @xl/past-work:grid-cols-2 @6xl/past-work:grid-cols-3 @7xl/past-work:grid-cols-4">
             {pastWork.map((item, index) => (
               <article
