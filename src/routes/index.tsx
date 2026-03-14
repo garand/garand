@@ -61,7 +61,7 @@ const accentBackgroundStyles = {
 } as const;
 
 const pastWorkCardVariants = cva(
-  "group relative isolate z-0 min-h-64 overflow-hidden rounded-2xl bg-zinc-500/5 px-10 py-8 text-zinc-800 transition-shadow duration-200 ease-in hover:z-10 hover:shadow-card-hover sm:px-12 sm:py-10",
+  "group relative isolate z-0 min-h-64 overflow-hidden rounded-2xl bg-zinc-500/5 px-8 py-7 text-zinc-800 transition-shadow duration-200 ease-in hover:z-10 hover:shadow-card-hover sm:px-10 sm:py-8",
   {
     variants: {
       accent: accentStyles,
@@ -130,7 +130,7 @@ const pastWorkBodyVariants = cva(
 );
 
 const pastWorkLogoVariants = cva(
-  "block max-h-full w-auto max-w-44 shrink-0 text-zinc-900/70 transition-colors duration-200 ease-in dark:text-zinc-100/75 [&_circle]:fill-current [&_ellipse]:fill-current [&_path]:fill-current [&_polygon]:fill-current [&_rect]:fill-current",
+  "block max-h-full w-auto max-w-36 shrink-0 text-zinc-900/70 transition-colors duration-200 ease-in sm:max-w-44 dark:text-zinc-100/75 [&_circle]:fill-current [&_ellipse]:fill-current [&_path]:fill-current [&_polygon]:fill-current [&_rect]:fill-current",
   {
     variants: {
       tone: {
@@ -252,10 +252,10 @@ const pastWork: readonly PastWorkItem[] = [
 
 function Component() {
   return (
-    <div className="relative min-h-screen bg-white p-8 dark:bg-zinc-900 sm:p-10 md:p-12">
+    <div className="relative min-h-screen bg-white px-[3.25rem] py-8 dark:bg-zinc-900 sm:px-[3.75rem] sm:py-10 md:py-12">
       <div className="from-white dark:from-zinc-900 to-white/0 dark:to-zinc-900/0 h-8 sm:h-10 md:h-12 pointer-events-none fixed top-0 inset-x-0 bg-linear-to-b z-999" />
       <div className="from-white dark:from-zinc-900 to-white/0 dark:to-zinc-900/0 h-8 sm:h-10 md:h-12 pointer-events-none fixed bottom-0 inset-x-0 bg-linear-to-t z-999" />
-      <div className="mx-auto w-full max-w-360">
+      <div className="mx-auto w-full max-w-6xl">
         <div>
           <div className="relative mb-4 inline-flex aspect-square size-28 rounded-full bg-zinc-200 dark:bg-blend-multiply">
             <div className="pointer-events-none absolute inset-0 rounded-full border border-zinc-500/15 dark:hidden" />
@@ -298,7 +298,7 @@ function Component() {
           </p>
         </div>
         <div className="mt-8">
-          <h2 className="font-medium text-zinc-900 dark:text-zinc-100">Roles</h2>
+          <h2 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">Roles</h2>
           <div className="mt-4 grid auto-rows-max gap-8">
             <div className="grid max-w-xs grid-flow-row grid-cols-[32rem,max-content] gap-x-1 gap-y-0.5">
               <div className="col-span-2 grid grid-cols-subgrid">
@@ -327,9 +327,9 @@ function Component() {
             </div>
           </div>
         </div>
-        <div className="mt-8">
-          <h2 className="font-medium text-zinc-900 dark:text-zinc-100">Past Work</h2>
-          <div className="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 @container/past-work">
+          <h2 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">Past Work</h2>
+          <div className="-mx-8 mt-5 grid gap-5 sm:-mx-10 @xl/past-work:grid-cols-2 @6xl/past-work:grid-cols-3 @7xl/past-work:grid-cols-4">
             {pastWork.map((item) => (
               <article key={item.client} className={pastWorkCardVariants({ accent: item.accent })}>
                 <div className={pastWorkCardBackgroundVariants({ accent: item.accent })} />
