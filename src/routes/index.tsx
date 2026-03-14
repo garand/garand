@@ -594,8 +594,8 @@ function Component() {
 
   return (
     <div className="relative min-h-screen bg-white px-[3.25rem] py-8 dark:bg-zinc-900 sm:px-[3.75rem] sm:py-10 md:py-12 lg:py-24">
-      <div className="from-white dark:from-zinc-900 to-white/0 dark:to-zinc-900/0 h-8 sm:h-10 md:h-12 lg:h-20 pointer-events-none fixed top-0 inset-x-0 bg-linear-to-b mix-blend-soft-light z-999" />
-      <div className="from-white dark:from-zinc-900 to-white/0 dark:to-zinc-900/0 h-8 sm:h-10 md:h-12 lg:h-20 pointer-events-none fixed bottom-0 inset-x-0 bg-linear-to-t mix-blend-soft-light z-999" />
+      <div className="from-white dark:from-zinc-900 to-white/0 dark:to-zinc-900/0 h-8 sm:h-10 md:h-12 lg:h-20 pointer-events-none fixed top-0 inset-x-0 bg-linear-to-b mix-blend-soft-light dark:mix-blend-normal z-999" />
+      <div className="from-white dark:from-zinc-900 to-white/0 dark:to-zinc-900/0 h-8 sm:h-10 md:h-12 lg:h-20 pointer-events-none fixed bottom-0 inset-x-0 bg-linear-to-t mix-blend-soft-light dark:mix-blend-normal z-999" />
       <div className="mx-auto w-full max-w-6xl">
         <div>
           <div className="relative mb-4 inline-flex aspect-square size-28 rounded-full bg-zinc-200 dark:bg-blend-multiply">
