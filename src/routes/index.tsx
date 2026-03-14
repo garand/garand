@@ -96,7 +96,8 @@ const accentStyles = {
     "sm:hover:shadow-brand-control-engineering/55 data-[active=true]:shadow-brand-control-engineering/55",
   paMedia: "sm:hover:shadow-brand-pa-media/55 data-[active=true]:shadow-brand-pa-media/55",
   capitalOne: "sm:hover:shadow-brand-capital-one/55 data-[active=true]:shadow-brand-capital-one/55",
-  amcNetworks: "sm:hover:shadow-brand-amc-networks/55 data-[active=true]:shadow-brand-amc-networks/55",
+  amcNetworks:
+    "sm:hover:shadow-brand-amc-networks/55 data-[active=true]:shadow-brand-amc-networks/55",
   amc: "sm:hover:shadow-brand-amc/55 data-[active=true]:shadow-brand-amc/55",
   ifc: "sm:hover:shadow-brand-ifc/55 data-[active=true]:shadow-brand-ifc/55",
   weTv: "sm:hover:shadow-brand-we-tv/55 data-[active=true]:shadow-brand-we-tv/55",
@@ -544,21 +545,15 @@ function Component() {
       const groupStartTime = startDelay + groupIndex * stepDuration;
 
       timeouts.push(
-        window.setTimeout(
-          () => {
-            setShimmerCards((current) => [...new Set([...current, ...group])]);
-          },
-          groupStartTime,
-        ),
+        window.setTimeout(() => {
+          setShimmerCards((current) => [...new Set([...current, ...group])]);
+        }, groupStartTime),
       );
 
       timeouts.push(
-        window.setTimeout(
-          () => {
-            setShimmerCards((current) => current.filter((index) => !group.includes(index)));
-          },
-          groupStartTime + dimmedTransitionDuration,
-        ),
+        window.setTimeout(() => {
+          setShimmerCards((current) => current.filter((index) => !group.includes(index)));
+        }, groupStartTime + dimmedTransitionDuration),
       );
     });
 
