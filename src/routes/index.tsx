@@ -254,7 +254,7 @@ const pastWorkLogoVariants = cva(
 function PastWorkCardContent({ item, state }: { item: PastWorkItem; state: "blended" | "active" }) {
   return (
     <>
-      <div className="px-8 pt-7 sm:px-10 sm:pt-8">
+      <div className="px-8 pt-8 sm:px-10 sm:pt-9">
         <div className="mb-5 flex h-14 w-full flex-none items-center">
           {item.Logo ? (
             <item.Logo
@@ -265,7 +265,7 @@ function PastWorkCardContent({ item, state }: { item: PastWorkItem; state: "blen
           ) : null}
         </div>
       </div>
-      <div className="flex h-full flex-col items-start px-8 pb-7 sm:px-10 sm:pb-8">
+      <div className="flex h-full flex-col items-start px-8 pb-8 sm:px-10 sm:pb-9">
         <div className="w-full">
           {!item.Logo ? (
             <div className="mb-3.5 flex min-h-13 items-end">
@@ -696,7 +696,7 @@ function Component() {
                 >
                   <div className={pastWorkCardDimmedBackgroundVariants({ accent: item.accent })} />
                   <div className={pastWorkCardBackgroundVariants({ accent: item.accent })} />
-                  <div className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 mix-blend-overlay transition-opacity duration-150 ease-in sm:group-hover:opacity-100 group-data-[active=true]:opacity-100 shadow-card-inner-glow shadow-black/20" />
+                  <div className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 mix-blend-overlay transition-opacity duration-150 ease-in sm:group-hover:opacity-100 group-data-[active=true]:opacity-100 shadow-card-inner-glow shadow-black/20 dark:shadow-black/35" />
                   <div className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 mix-blend-overlay bg-linear-to-tr from-black/60 via-black/0 to-white/60 transition-opacity duration-150 ease-in sm:group-hover:opacity-100 group-data-[active=true]:opacity-100" />
                   <div className="pointer-events-none absolute inset-0 z-10 opacity-100 transition-opacity duration-150 ease-in sm:group-hover:opacity-0 group-data-[active=true]:opacity-0">
                     <div className="h-full mix-blend-overlay dark:mix-blend-darken">
