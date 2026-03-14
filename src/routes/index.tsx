@@ -221,7 +221,7 @@ const pastWorkBodyVariants = cva(
 );
 
 const pastWorkLogoVariants = cva(
-  "block max-h-full w-auto max-w-36 shrink-0 transition-colors duration-75 ease-in sm:max-w-44 [&_circle]:fill-current [&_ellipse]:fill-current [&_path]:fill-current [&_polygon]:fill-current [&_rect]:fill-current",
+  "block max-h-full w-auto max-w-34 shrink-0 transition-colors duration-75 ease-in sm:max-w-40 [&_circle]:fill-current [&_ellipse]:fill-current [&_path]:fill-current [&_polygon]:fill-current [&_rect]:fill-current",
   {
     variants: {
       tone: {
