@@ -36,6 +36,7 @@ function Document({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" className="h-full">
       <head>
+        <script src="/vite-preload-recovery.js" />
         <HeadContent />
         <script
           async
