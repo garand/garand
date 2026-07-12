@@ -401,11 +401,36 @@ const pastWork: readonly PastWorkItem[] = [
   },
 ];
 
+function useCanHover() {
+  const [canHover, setCanHover] = useState(true);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const hoverQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => {
+      setCanHover(hoverQuery.matches);
+    };
+
+    update();
+    hoverQuery.addEventListener("change", update);
+
+    return () => {
+      hoverQuery.removeEventListener("change", update);
+    };
+  }, []);
+
+  return canHover;
+}
+
 function Component() {
   const cardRefs = useRef<Array<HTMLElement | null>>([]);
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const [shimmerCards, setShimmerCards] = useState<number[]>([]);
   const [adjacentCards, setAdjacentCards] = useState<number[]>([]);
+  const canHover = useCanHover();
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -565,8 +590,25 @@ function Component() {
     };
   }, []);
 
+  useEffect(() => {
+    if (canHover) {
+      return;
+    }
+
+    const handleDocumentClick = () => {
+      setActiveCard(null);
+      setAdjacentCards([]);
+    };
+
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, [canHover]);
+
   const handleCardEnter = (index: number) => {
-    if (typeof window !== "undefined" && window.matchMedia("(max-width: 639px)").matches) {
+    if (!canHover) {
       return;
     }
 
@@ -580,11 +622,33 @@ function Component() {
   };
 
   const handleCardLeave = () => {
-    if (typeof window !== "undefined" && window.matchMedia("(max-width: 639px)").matches) {
+    if (!canHover) {
       return;
     }
 
     setAdjacentCards([]);
+  };
+
+  const handleCardActivate = (index: number) => {
+    if (canHover) {
+      return;
+    }
+
+    const nextActive = activeCard === index ? null : index;
+    setActiveCard(nextActive);
+
+    if (nextActive === null) {
+      setAdjacentCards([]);
+      return;
+    }
+
+    const cards = cardRefs.current.filter((card): card is HTMLElement => card !== null);
+
+    if (cards.length === 0) {
+      return;
+    }
+
+    setAdjacentCards(getAdjacentCardIndexes(getCardGridPositions(cards), index));
   };
 
   return (
@@ -680,6 +744,10 @@ function Component() {
                   handleCardEnter(index);
                 }}
                 onMouseLeave={handleCardLeave}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  handleCardActivate(index);
+                }}
                 data-active={activeCard === index ? "true" : "false"}
                 className="transition-transform duration-700 ease-out sm:hover:scale-[1.015] data-[active=true]:scale-[1.015]"
               >
