@@ -401,36 +401,15 @@ const pastWork: readonly PastWorkItem[] = [
   },
 ];
 
-function useCanHover() {
-  const [canHover, setCanHover] = useState(true);
-
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    const hoverQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
-    const update = () => {
-      setCanHover(hoverQuery.matches);
-    };
-
-    update();
-    hoverQuery.addEventListener("change", update);
-
-    return () => {
-      hoverQuery.removeEventListener("change", update);
-    };
-  }, []);
-
-  return canHover;
-}
-
 function Component() {
   const cardRefs = useRef<Array<HTMLElement | null>>([]);
+  const lastPointerType = useRef<string | null>(null);
   const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [shimmerCards, setShimmerCards] = useState<number[]>([]);
   const [adjacentCards, setAdjacentCards] = useState<number[]>([]);
-  const canHover = useCanHover();
+
+  const isCardActive = (index: number) => hoveredCard === index || activeCard === index;
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -510,9 +489,9 @@ function Component() {
       return;
     }
 
-    const mediaQuery = window.matchMedia("(max-width: 639px)");
+    const effectiveIndex = hoveredCard ?? activeCard;
 
-    if (!mediaQuery.matches || activeCard === null) {
+    if (effectiveIndex === null) {
       setAdjacentCards([]);
       return;
     }
@@ -524,8 +503,8 @@ function Component() {
       return;
     }
 
-    setAdjacentCards(getAdjacentCardIndexes(getCardGridPositions(cards), activeCard));
-  }, [activeCard]);
+    setAdjacentCards(getAdjacentCardIndexes(getCardGridPositions(cards), effectiveIndex));
+  }, [hoveredCard, activeCard]);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -591,13 +570,8 @@ function Component() {
   }, []);
 
   useEffect(() => {
-    if (canHover) {
-      return;
-    }
-
     const handleDocumentClick = () => {
       setActiveCard(null);
-      setAdjacentCards([]);
     };
 
     document.addEventListener("click", handleDocumentClick);
@@ -605,50 +579,14 @@ function Component() {
     return () => {
       document.removeEventListener("click", handleDocumentClick);
     };
-  }, [canHover]);
-
-  const handleCardEnter = (index: number) => {
-    if (!canHover) {
-      return;
-    }
-
-    const cards = cardRefs.current.filter((card): card is HTMLElement => card !== null);
-
-    if (cards.length === 0) {
-      return;
-    }
-
-    setAdjacentCards(getAdjacentCardIndexes(getCardGridPositions(cards), index));
-  };
-
-  const handleCardLeave = () => {
-    if (!canHover) {
-      return;
-    }
-
-    setAdjacentCards([]);
-  };
+  }, []);
 
   const handleCardActivate = (index: number) => {
-    if (canHover) {
+    if (lastPointerType.current === "mouse") {
       return;
     }
 
-    const nextActive = activeCard === index ? null : index;
-    setActiveCard(nextActive);
-
-    if (nextActive === null) {
-      setAdjacentCards([]);
-      return;
-    }
-
-    const cards = cardRefs.current.filter((card): card is HTMLElement => card !== null);
-
-    if (cards.length === 0) {
-      return;
-    }
-
-    setAdjacentCards(getAdjacentCardIndexes(getCardGridPositions(cards), index));
+    setActiveCard((current) => (current === index ? null : index));
   };
 
   return (
@@ -740,19 +678,24 @@ function Component() {
                 ref={(element) => {
                   cardRefs.current[index] = element;
                 }}
-                onMouseEnter={() => {
-                  handleCardEnter(index);
+                onPointerDown={(event) => {
+                  lastPointerType.current = event.pointerType;
                 }}
-                onMouseLeave={handleCardLeave}
+                onMouseEnter={() => {
+                  setHoveredCard(index);
+                }}
+                onMouseLeave={() => {
+                  setHoveredCard(null);
+                }}
                 onClick={(event) => {
                   event.stopPropagation();
                   handleCardActivate(index);
                 }}
-                data-active={activeCard === index ? "true" : "false"}
+                data-active={isCardActive(index) ? "true" : "false"}
                 className="transition-transform duration-700 ease-out sm:hover:scale-[1.015] data-[active=true]:scale-[1.015]"
               >
                 <div
-                  data-active={activeCard === index ? "true" : "false"}
+                  data-active={isCardActive(index) ? "true" : "false"}
                   data-adjacent={adjacentCards.includes(index) ? "true" : "false"}
                   data-shimmer={shimmerCards.includes(index) ? "true" : "false"}
                   className={pastWorkCardVariants({ accent: item.accent })}
