@@ -4,7 +4,7 @@ export function CapitalOneLogo(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      ariaLabel="Capital One"
+      aria-label="Capital One"
       viewBox="0 0 418 150"
       {...props}
     >
