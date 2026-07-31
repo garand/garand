@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Uncut Sans";
-  src: url("/UncutSans-Variable.woff2") format("woff2");
+  font-family: "Innovator Grotesk";
+  src: url("./assets/innovator-grotesk-vf/WOFF/InnovatorGroteskVF-VF.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @theme {
-  --font-sans: "Uncut Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Innovator Grotesk", ui-sans-serif, system-ui, sans-serif;
   --shadow-card-hover: 0 26px 60px -22px;
   --shadow-card-inner-glow: inset 0 0 60px;
   --color-brand-microsoft: #0078d4;
