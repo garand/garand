@@ -199,24 +199,24 @@ function ArchivePage() {
   const frameUrl = eraFrameUrl(era, framePath);
 
   return (
-    <div className="flex h-dvh flex-col bg-gray-100 text-gray-900 dark:bg-gray-950 dark:text-gray-50">
+    <div className="flex h-dvh flex-col bg-graphite-100 text-graphite-900 dark:bg-graphite-950 dark:text-graphite-50">
       <header className="flex h-14 flex-none items-center justify-between gap-4 px-4 sm:px-6">
         <nav aria-label="Breadcrumb" className="flex min-w-0 items-center gap-2 text-sm">
           <Link
             to="/archive"
             aria-label="Back to all versions"
-            className="group -ml-1 inline-flex size-7 flex-none items-center justify-center rounded-md text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+            className="group -ml-1 inline-flex size-7 flex-none items-center justify-center rounded-md text-graphite-500 hover:text-graphite-900 dark:text-graphite-400 dark:hover:text-graphite-100"
           >
             <LuArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
           </Link>
-          <span className="truncate text-gray-500 dark:text-gray-400">
-            <Link to="/" className="text-gray-900 hover:underline max-sm:hidden dark:text-gray-100">
+          <span className="truncate text-graphite-500 dark:text-graphite-400">
+            <Link to="/" className="text-graphite-900 hover:underline max-sm:hidden dark:text-graphite-100">
               Anthony Garand
             </Link>
-            <span className="mx-1.5 text-gray-300 max-sm:hidden dark:text-gray-700">/</span>
+            <span className="mx-1.5 text-graphite-300 max-sm:hidden dark:text-graphite-700">/</span>
             <Link
               to="/archive"
-              className="hover:text-gray-900 hover:underline dark:hover:text-gray-100"
+              className="hover:text-graphite-900 hover:underline dark:hover:text-graphite-100"
             >
               Archive
             </Link>
@@ -226,7 +226,7 @@ function ArchivePage() {
           <IconButton label="Previous version (←)" onClick={() => selectEra(selectedIndex - 1)}>
             <LuChevronLeft />
           </IconButton>
-          <span className="w-14 text-center text-sm text-gray-500 tabular-nums dark:text-gray-400">
+          <span className="w-14 text-center text-sm text-graphite-500 tabular-nums dark:text-graphite-400">
             {selectedIndex + 1} / {ERAS.length}
           </span>
           <IconButton label="Next version (→)" onClick={() => selectEra(selectedIndex + 1)}>
@@ -238,12 +238,12 @@ function ArchivePage() {
       <Timeline selectedIndex={selectedIndex} onSelect={selectEra} />
 
       <div className="flex min-h-0 flex-1 flex-col px-3 pb-3 sm:px-6 sm:pb-6">
-        <main className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden rounded-xl bg-white shadow-[0_0_0_1px_rgb(0_0_0/0.06),0_8px_30px_-12px_rgb(0_0_0/0.18)] dark:bg-gray-900 dark:shadow-[0_0_0_1px_rgb(255_255_255/0.08)]">
-          <div className="flex h-11 flex-none items-center gap-1 border-b border-gray-200/80 px-2 dark:border-gray-800">
+        <main className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden rounded-xl bg-white shadow-[0_0_0_1px_rgb(0_0_0/0.06),0_8px_30px_-12px_rgb(0_0_0/0.18)] dark:bg-graphite-900 dark:shadow-[0_0_0_1px_rgb(255_255_255/0.08)]">
+          <div className="flex h-11 flex-none items-center gap-1 border-b border-graphite-200/80 px-2 dark:border-graphite-800">
             <div className="mr-2 ml-1 hidden gap-1.5 sm:flex" aria-hidden="true">
-              <span className="size-2.5 rounded-full bg-gray-200 dark:bg-gray-700" />
-              <span className="size-2.5 rounded-full bg-gray-200 dark:bg-gray-700" />
-              <span className="size-2.5 rounded-full bg-gray-200 dark:bg-gray-700" />
+              <span className="size-2.5 rounded-full bg-graphite-200 dark:bg-graphite-700" />
+              <span className="size-2.5 rounded-full bg-graphite-200 dark:bg-graphite-700" />
+              <span className="size-2.5 rounded-full bg-graphite-200 dark:bg-graphite-700" />
             </div>
             <IconButton
               label="Back"
@@ -264,18 +264,18 @@ function ArchivePage() {
             <IconButton label="Reload" size="sm" onClick={() => frameHistory("reload")}>
               <LuRotateCw className={loading ? "animate-spin" : undefined} />
             </IconButton>
-            <div className="mx-1 flex h-7 min-w-0 flex-1 items-center rounded-md bg-gray-100 px-3 text-[13px] dark:bg-gray-800/80">
+            <div className="mx-1 flex h-7 min-w-0 flex-1 items-center rounded-md bg-graphite-100 px-3 text-[13px] dark:bg-graphite-800/80">
               <span className="truncate">
-                <span className="text-gray-900 dark:text-gray-100">{era.domain}</span>
-                <span className="text-gray-500 dark:text-gray-400">
+                <span className="text-graphite-900 dark:text-graphite-100">{era.domain}</span>
+                <span className="text-graphite-500 dark:text-graphite-400">
                   {framePath === "/" ? "" : framePath}
                 </span>
               </span>
-              <span className="ml-auto flex-none pl-3 text-xs text-gray-400 tabular-nums dark:text-gray-500">
+              <span className="ml-auto flex-none pl-3 text-xs text-graphite-400 tabular-nums dark:text-graphite-500">
                 {new Date(era.start).getUTCFullYear()}
               </span>
             </div>
-            <div className="flex flex-none items-center rounded-md bg-gray-100 p-0.5 dark:bg-gray-800/80">
+            <div className="flex flex-none items-center rounded-md bg-graphite-100 p-0.5 dark:bg-graphite-800/80">
               <ViewportButton
                 label="Desktop"
                 active={viewport === "desktop"}
@@ -297,7 +297,7 @@ function ArchivePage() {
               rel="noreferrer"
               title="Open in a new tab"
               aria-label="Open in a new tab"
-              className="inline-flex size-8 flex-none items-center justify-center rounded-md text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+              className="inline-flex size-8 flex-none items-center justify-center rounded-md text-graphite-500 hover:bg-graphite-100 hover:text-graphite-900 dark:text-graphite-400 dark:hover:bg-graphite-800 dark:hover:text-graphite-100"
             >
               <LuExternalLink className="size-4" />
             </a>
@@ -333,9 +333,9 @@ function Timeline({
   const pct = (t: number) => ((t - TIMELINE_START) / span) * 100;
   const triggerLabel = (
     <>
-      <span className="text-gray-400 tabular-nums dark:text-gray-500">{era.start.slice(0, 4)}</span>
+      <span className="text-graphite-400 tabular-nums dark:text-graphite-500">{era.start.slice(0, 4)}</span>
       <span className="truncate font-medium">{era.name}</span>
-      <LuChevronsUpDown className="size-3.5 flex-none text-gray-400 dark:text-gray-500" />
+      <LuChevronsUpDown className="size-3.5 flex-none text-graphite-400 dark:text-graphite-500" />
     </>
   );
 
@@ -350,7 +350,7 @@ function Timeline({
         </Menu.Trigger>
         <Menu.Portal>
           <Menu.Positioner side="bottom" align="start" sideOffset={6} className="z-50 outline-none">
-            <Menu.Popup className="max-h-[min(70dvh,var(--available-height))] w-80 origin-(--transform-origin) overflow-y-auto rounded-xl bg-white p-1 shadow-[0_0_0_1px_rgb(0_0_0/0.06),0_16px_40px_-12px_rgb(0_0_0/0.25)] outline-none transition-[scale,opacity] duration-150 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0 dark:bg-gray-900 dark:shadow-[0_0_0_1px_rgb(255_255_255/0.08),0_16px_40px_-12px_rgb(0_0_0/0.6)]">
+            <Menu.Popup className="max-h-[min(70dvh,var(--available-height))] w-80 origin-(--transform-origin) overflow-y-auto rounded-xl bg-white p-1 shadow-[0_0_0_1px_rgb(0_0_0/0.06),0_16px_40px_-12px_rgb(0_0_0/0.25)] outline-none transition-[scale,opacity] duration-150 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0 dark:bg-graphite-900 dark:shadow-[0_0_0_1px_rgb(255_255_255/0.08),0_16px_40px_-12px_rgb(0_0_0/0.6)]">
               {ERAS.map((e, i) => (
                 <Menu.Item
                   key={e.slug}
@@ -387,8 +387,8 @@ function Timeline({
               <span
                 className={`w-full min-w-1.5 rounded-full transition-all ${
                   selected
-                    ? "h-2 bg-gray-900 dark:bg-gray-100"
-                    : "h-1.5 bg-gray-300 group-hover:h-2 group-hover:bg-gray-400 dark:bg-gray-700 dark:group-hover:bg-gray-500"
+                    ? "h-2 bg-graphite-900 dark:bg-graphite-100"
+                    : "h-1.5 bg-graphite-300 group-hover:h-2 group-hover:bg-graphite-400 dark:bg-graphite-700 dark:group-hover:bg-graphite-500"
                 }`}
               />
             </button>
@@ -397,12 +397,12 @@ function Timeline({
         {YEARS.map((year) => (
           <span
             key={year}
-            className={`pointer-events-none absolute top-5 flex -translate-x-1/2 flex-col items-center gap-0.5 text-[10px] leading-none text-gray-400 tabular-nums dark:text-gray-500 ${
+            className={`pointer-events-none absolute top-5 flex -translate-x-1/2 flex-col items-center gap-0.5 text-[10px] leading-none text-graphite-400 tabular-nums dark:text-graphite-500 ${
               year % 5 === 0 ? "" : "max-md:hidden"
             }`}
             style={{ left: `${pct(Date.UTC(year, 0, 1))}%` }}
           >
-            <span className="h-1 w-px bg-gray-300 dark:bg-gray-700" />
+            <span className="h-1 w-px bg-graphite-300 dark:bg-graphite-700" />
             {year === 2011 ? "" : year}
           </span>
         ))}
@@ -429,8 +429,8 @@ function EraDrawer({
       <Drawer.Portal>
         <Drawer.Backdrop className="fixed inset-0 min-h-dvh bg-black opacity-[calc(0.3*(1-var(--drawer-swipe-progress)))] transition-opacity duration-[450ms] ease-[cubic-bezier(0.32,0.72,0,1)] data-ending-style:opacity-0 data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] data-starting-style:opacity-0 data-swiping:duration-0 supports-[-webkit-touch-callout:none]:absolute" />
         <Drawer.Viewport className="fixed inset-0 flex items-end justify-center">
-          <Drawer.Popup className="-mb-12 max-h-[calc(80dvh+3rem)] w-full overflow-y-auto overscroll-contain rounded-t-2xl bg-white px-2 pt-3 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px)+3rem)] text-gray-900 outline-none [transform:translateY(var(--drawer-swipe-movement-y))] transition-transform duration-[450ms] ease-[cubic-bezier(0.32,0.72,0,1)] data-ending-style:[transform:translateY(calc(100%-3rem+2px))] data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] data-starting-style:[transform:translateY(calc(100%-3rem+2px))] data-swiping:select-none dark:bg-gray-900 dark:text-gray-50">
-            <div className="mx-auto mb-2 h-1 w-10 rounded-full bg-gray-200 dark:bg-gray-700" />
+          <Drawer.Popup className="-mb-12 max-h-[calc(80dvh+3rem)] w-full overflow-y-auto overscroll-contain rounded-t-2xl bg-white px-2 pt-3 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px)+3rem)] text-graphite-900 outline-none [transform:translateY(var(--drawer-swipe-movement-y))] transition-transform duration-[450ms] ease-[cubic-bezier(0.32,0.72,0,1)] data-ending-style:[transform:translateY(calc(100%-3rem+2px))] data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] data-starting-style:[transform:translateY(calc(100%-3rem+2px))] data-swiping:select-none dark:bg-graphite-900 dark:text-graphite-50">
+            <div className="mx-auto mb-2 h-1 w-10 rounded-full bg-graphite-200 dark:bg-graphite-700" />
             <Drawer.Content>
               <Drawer.Title className="px-3 py-2 text-sm font-medium">Versions</Drawer.Title>
               <ol>
@@ -461,11 +461,11 @@ function EraDrawer({
 function EraRowContent({ era, index }: { era: Era; index: number }) {
   return (
     <>
-      <span className="w-9 flex-none text-gray-400 tabular-nums dark:text-gray-500">
+      <span className="w-9 flex-none text-graphite-400 tabular-nums dark:text-graphite-500">
         {era.start.slice(0, 4)}
       </span>
       <span className="min-w-0 flex-1 truncate">{era.name}</span>
-      <span className="flex-none text-xs text-gray-400 tabular-nums dark:text-gray-500">
+      <span className="flex-none text-xs text-graphite-400 tabular-nums dark:text-graphite-500">
         {formatRange(index)}
       </span>
     </>
@@ -473,10 +473,10 @@ function EraRowContent({ era, index }: { era: Era; index: number }) {
 }
 
 const pickerTrigger =
-  "-ml-3 inline-flex h-9 min-w-0 flex-none items-center gap-2 rounded-md px-3 text-sm text-gray-900 transition-colors outline-none select-none hover:bg-gray-200/70 focus-visible:ring-2 focus-visible:ring-gray-400 data-popup-open:bg-gray-200/70 dark:text-gray-100 dark:hover:bg-gray-800 dark:data-popup-open:bg-gray-800";
+  "-ml-3 inline-flex h-9 min-w-0 flex-none items-center gap-2 rounded-md px-3 text-sm text-graphite-900 transition-colors outline-none select-none hover:bg-graphite-200/70 focus-visible:ring-2 focus-visible:ring-graphite-400 data-popup-open:bg-graphite-200/70 dark:text-graphite-100 dark:hover:bg-graphite-800 dark:data-popup-open:bg-graphite-800";
 
 const eraRow =
-  "flex cursor-default items-center gap-3 rounded-lg px-3 py-2 text-left text-sm text-gray-700 outline-none select-none data-highlighted:bg-gray-100 aria-[current=true]:font-medium aria-[current=true]:text-gray-900 dark:text-gray-300 dark:data-highlighted:bg-gray-800 dark:aria-[current=true]:text-gray-50 active:bg-gray-100 dark:active:bg-gray-800";
+  "flex cursor-default items-center gap-3 rounded-lg px-3 py-2 text-left text-sm text-graphite-700 outline-none select-none data-highlighted:bg-graphite-100 aria-[current=true]:font-medium aria-[current=true]:text-graphite-900 dark:text-graphite-300 dark:data-highlighted:bg-graphite-800 dark:aria-[current=true]:text-graphite-50 active:bg-graphite-100 dark:active:bg-graphite-800";
 
 /**
  * Desktop mode renders the page at a real desktop width and scales it down to
@@ -523,7 +523,7 @@ function FrameViewport({
     <div
       ref={outerRef}
       className={`relative min-h-0 flex-1 overflow-hidden ${
-        viewport === "phone" ? "flex justify-center bg-gray-100 dark:bg-gray-950" : ""
+        viewport === "phone" ? "flex justify-center bg-graphite-100 dark:bg-graphite-950" : ""
       }`}
     >
       <div
@@ -541,7 +541,7 @@ function FrameViewport({
 }
 
 const iconButton = cva(
-  "inline-flex flex-none items-center justify-center rounded-md text-gray-500 transition-colors hover:bg-gray-200/70 hover:text-gray-900 aria-pressed:bg-gray-200/70 aria-pressed:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100 dark:aria-pressed:bg-gray-800 dark:aria-pressed:text-gray-100 [&>svg]:size-4",
+  "inline-flex flex-none items-center justify-center rounded-md text-graphite-500 transition-colors hover:bg-graphite-200/70 hover:text-graphite-900 aria-pressed:bg-graphite-200/70 aria-pressed:text-graphite-900 dark:text-graphite-400 dark:hover:bg-graphite-800 dark:hover:text-graphite-100 dark:aria-pressed:bg-graphite-800 dark:aria-pressed:text-graphite-100 [&>svg]:size-4",
   {
     variants: {
       size: {
@@ -600,7 +600,7 @@ function ViewportButton({
       aria-label={label}
       aria-pressed={active}
       onClick={onClick}
-      className="inline-flex h-6 w-7 items-center justify-center rounded text-gray-500 transition-colors hover:text-gray-900 aria-pressed:bg-white aria-pressed:text-gray-900 aria-pressed:shadow-sm dark:text-gray-400 dark:hover:text-gray-100 dark:aria-pressed:bg-gray-700 dark:aria-pressed:text-gray-100 [&>svg]:size-3.5"
+      className="inline-flex h-6 w-7 items-center justify-center rounded text-graphite-500 transition-colors hover:text-graphite-900 aria-pressed:bg-white aria-pressed:text-graphite-900 aria-pressed:shadow-sm dark:text-graphite-400 dark:hover:text-graphite-100 dark:aria-pressed:bg-graphite-700 dark:aria-pressed:text-graphite-100 [&>svg]:size-3.5"
     >
       {children}
     </button>
