@@ -12,6 +12,24 @@
   --font-sans: "Innovator Grotesk", ui-sans-serif, system-ui, sans-serif;
   --shadow-card-hover: 0 26px 60px -22px;
   --shadow-card-inner-glow: inset 0 0 60px;
+  /*
+   * Graphite: a neutral between Tailwind's zinc and gray. It uses gray's
+   * lightness steps, with the hue moved slightly toward zinc's and the
+   * chroma cut well below gray's, most of all at the dark end where gray
+   * reads as navy (gray-900 has chroma 0.034, zinc-900 has 0.006).
+   */
+  --color-graphite-50: oklch(98.5% 0.002 260);
+  --color-graphite-100: oklch(96.7% 0.003 266);
+  --color-graphite-200: oklch(92.6% 0.005 268);
+  --color-graphite-300: oklch(87.2% 0.008 268);
+  --color-graphite-400: oklch(70.6% 0.018 270);
+  --color-graphite-500: oklch(55.1% 0.02 271);
+  --color-graphite-600: oklch(44.4% 0.02 272);
+  --color-graphite-700: oklch(37.2% 0.018 273);
+  --color-graphite-800: oklch(27.6% 0.014 274);
+  --color-graphite-900: oklch(21% 0.012 275);
+  --color-graphite-950: oklch(13.6% 0.01 276);
+
   --color-brand-microsoft: #0078d4;
   --color-brand-facebook: #0866ff;
   --color-brand-godaddy: #18d4d3;

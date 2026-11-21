@@ -45,7 +45,7 @@ function Document({ children }: Readonly<{ children: ReactNode }>) {
           data-token="78bd4808-5b31-4d23-9a5d-36d769dc5dfe"
         />
       </head>
-      <body className="h-full text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-50">
+      <body className="h-full text-graphite-900 antialiased dark:bg-graphite-950 dark:text-graphite-50">
         {children}
         <TanStackDevtools
           config={{

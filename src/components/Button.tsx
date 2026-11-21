@@ -8,9 +8,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-gray-900 text-white hover:bg-gray-800 focus:ring-gray-500 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200 dark:focus:ring-gray-400",
+          "bg-graphite-900 text-white hover:bg-graphite-800 focus:ring-graphite-500 dark:bg-graphite-100 dark:text-graphite-900 dark:hover:bg-graphite-200 dark:focus:ring-graphite-400",
         secondary:
-          "border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700",
+          "border border-graphite-200 bg-white text-graphite-700 hover:bg-graphite-50 focus:ring-blue-500 dark:border-graphite-700 dark:bg-graphite-800 dark:text-graphite-200 dark:hover:bg-graphite-700",
       },
     },
     defaultVariants: {

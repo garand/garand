@@ -121,7 +121,7 @@ const accentBackgroundStyles = {
 } as const;
 
 const pastWorkCardVariants = cva(
-  "group relative isolate z-0 min-h-64 overflow-hidden rounded-2xl bg-gray-500/5 text-gray-800 transition-shadow duration-150 ease-in sm:hover:z-10 sm:hover:shadow-card-hover data-[active=true]:z-10 data-[active=true]:shadow-card-hover",
+  "group relative isolate z-0 min-h-64 overflow-hidden rounded-2xl bg-graphite-500/5 text-graphite-800 transition-shadow duration-150 ease-in sm:hover:z-10 sm:hover:shadow-card-hover data-[active=true]:z-10 data-[active=true]:shadow-card-hover",
   {
     variants: {
       accent: accentStyles,
@@ -169,7 +169,7 @@ const pastWorkTitleVariants = cva(
       {
         tone: "dark",
         state: "active",
-        className: "text-gray-950",
+        className: "text-graphite-950",
       },
     ],
   },
@@ -210,7 +210,7 @@ const pastWorkBodyVariants = cva(
         tone: "default",
         contentTone: "dark",
         state: "active",
-        className: "text-gray-950/88",
+        className: "text-graphite-950/88",
       },
       {
         tone: "strong",
@@ -239,7 +239,7 @@ const pastWorkLogoVariants = cva(
       {
         tone: "dark",
         state: "active",
-        className: "text-gray-950",
+        className: "text-graphite-950",
       },
       {
         tone: "light",
@@ -591,13 +591,13 @@ function Component() {
   };
 
   return (
-    <div className="relative min-h-screen bg-white px-[3.25rem] py-8 dark:bg-gray-900 sm:px-[3.75rem] sm:py-10 md:py-12 lg:py-24">
-      <div className="from-white dark:from-gray-900 to-white/0 dark:to-gray-900/0 h-8 sm:h-10 md:h-12 lg:h-20 pointer-events-none fixed top-0 inset-x-0 bg-linear-to-b mix-blend-soft-light dark:mix-blend-normal z-999" />
-      <div className="from-white dark:from-gray-900 to-white/0 dark:to-gray-900/0 h-8 sm:h-10 md:h-12 lg:h-20 pointer-events-none fixed bottom-0 inset-x-0 bg-linear-to-t mix-blend-soft-light dark:mix-blend-normal z-999" />
+    <div className="relative min-h-screen bg-white px-[3.25rem] py-8 dark:bg-graphite-900 sm:px-[3.75rem] sm:py-10 md:py-12 lg:py-24">
+      <div className="from-white dark:from-graphite-900 to-white/0 dark:to-graphite-900/0 h-8 sm:h-10 md:h-12 lg:h-20 pointer-events-none fixed top-0 inset-x-0 bg-linear-to-b mix-blend-soft-light dark:mix-blend-normal z-999" />
+      <div className="from-white dark:from-graphite-900 to-white/0 dark:to-graphite-900/0 h-8 sm:h-10 md:h-12 lg:h-20 pointer-events-none fixed bottom-0 inset-x-0 bg-linear-to-t mix-blend-soft-light dark:mix-blend-normal z-999" />
       <div className="mx-auto w-full max-w-6xl">
         <div>
-          <div className="relative mb-4 inline-flex aspect-square size-28 rounded-full bg-gray-200 dark:bg-blend-multiply">
-            <div className="pointer-events-none absolute inset-0 rounded-full border border-gray-500/15 dark:hidden" />
+          <div className="relative mb-4 inline-flex aspect-square size-28 rounded-full bg-graphite-200 dark:bg-blend-multiply">
+            <div className="pointer-events-none absolute inset-0 rounded-full border border-graphite-500/15 dark:hidden" />
             <img
               src="/avatar.jpg"
               className="size-full rounded-full dark:brightness-90 dark:contrast-[1.1]"
@@ -605,21 +605,21 @@ function Component() {
           </div>
           <div className="flex items-start justify-between gap-4">
             <div className="min-w-0">
-              <h1 className="text-lg leading-tight font-medium text-gray-900 dark:text-gray-100">
+              <h1 className="text-lg leading-tight font-medium text-graphite-900 dark:text-graphite-100">
                 Anthony Garand
               </h1>
-              <p className="text-gray-500 dark:text-gray-400">Product Designer & Engineer</p>
+              <p className="text-graphite-500 dark:text-graphite-400">Product Designer & Engineer</p>
             </div>
             <div className="grid shrink-0 auto-cols-max grid-flow-col items-center justify-end gap-4 pt-0.5">
               <a
                 href="https://x.com/garand"
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+                className="text-graphite-600 hover:text-graphite-900 dark:text-graphite-400 dark:hover:text-graphite-100"
               >
                 <FaXTwitter />
               </a>
               <a
                 href="https://github.com/garand"
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+                className="text-graphite-600 hover:text-graphite-900 dark:text-graphite-400 dark:hover:text-graphite-100"
               >
                 <FaGithub />
               </a>
@@ -629,14 +629,14 @@ function Component() {
                 href="/archive"
                 target="_top"
                 title="Every version of this site since 2011"
-                className="-my-1 inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-2.5 py-0.5 text-sm text-gray-600 transition-colors hover:border-gray-300 hover:text-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:border-gray-600 dark:hover:text-gray-100"
+                className="-my-1 inline-flex items-center gap-1.5 rounded-full border border-graphite-200 px-2.5 py-0.5 text-sm text-graphite-600 transition-colors hover:border-graphite-300 hover:text-graphite-900 dark:border-graphite-700 dark:text-graphite-400 dark:hover:border-graphite-600 dark:hover:text-graphite-100"
               >
                 <LuHistory className="size-3.5" />
                 Archive
               </a>
             </div>
           </div>
-          <p className="mt-5 text-gray-700 dark:text-gray-300">
+          <p className="mt-5 text-graphite-700 dark:text-graphite-300">
             Currently building at{" "}
             <a
               href="https://towbook.com"
@@ -648,31 +648,31 @@ function Component() {
           </p>
         </div>
         <div className="mt-12">
-          <h2 className="text-lg leading-tight font-medium text-gray-900 dark:text-gray-100">
+          <h2 className="text-lg leading-tight font-medium text-graphite-900 dark:text-graphite-100">
             Roles
           </h2>
           <div className="mt-4 grid auto-rows-max gap-8">
             <div className="grid max-w-xs grid-flow-row grid-cols-[32rem,max-content] gap-x-1 gap-y-1">
               <div className="col-span-2 grid grid-cols-subgrid">
-                <div className="text-gray-900 dark:text-gray-100">Towbook</div>
-                <div className="tracking-tight text-gray-500 tabular-nums dark:text-gray-400">
+                <div className="text-graphite-900 dark:text-graphite-100">Towbook</div>
+                <div className="tracking-tight text-graphite-500 tabular-nums dark:text-graphite-400">
                   2019 &ndash; Now
                 </div>
               </div>
               <div className="col-span-2 grid grid-cols-subgrid">
-                <div className="text-gray-900 dark:text-gray-100">10up</div>
-                <div className="tracking-tight text-gray-500 tabular-nums dark:text-gray-400">
+                <div className="text-graphite-900 dark:text-graphite-100">10up</div>
+                <div className="tracking-tight text-graphite-500 tabular-nums dark:text-graphite-400">
                   2017 &ndash; 2019
                 </div>
               </div>
               <div className="col-span-2 grid grid-cols-subgrid">
-                <div className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
+                <div className="flex items-center gap-2 text-graphite-900 dark:text-graphite-100">
                   Lift UX{" "}
-                  <span className="rounded-xl bg-gray-50 px-1.5 py-0.5 text-xs text-gray-500 dark:bg-gray-900 dark:text-gray-400">
+                  <span className="rounded-xl bg-graphite-50 px-1.5 py-0.5 text-xs text-graphite-500 dark:bg-graphite-900 dark:text-graphite-400">
                     Acquired
                   </span>
                 </div>
-                <div className="tracking-tight text-gray-500 tabular-nums dark:text-gray-400">
+                <div className="tracking-tight text-graphite-500 tabular-nums dark:text-graphite-400">
                   2011 &ndash; 2017
                 </div>
               </div>
@@ -680,7 +680,7 @@ function Component() {
           </div>
         </div>
         <div className="mt-12 @container/past-work">
-          <h2 className="text-lg leading-tight font-medium text-gray-900 dark:text-gray-100">
+          <h2 className="text-lg leading-tight font-medium text-graphite-900 dark:text-graphite-100">
             Past Work
           </h2>
           <div className="-mx-8 mt-5 grid gap-5 sm:-mx-10 @xl/past-work:grid-cols-2 @5xl/past-work:grid-cols-3 @7xl/past-work:grid-cols-4">
