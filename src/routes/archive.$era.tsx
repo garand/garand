@@ -1,4 +1,6 @@
 import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
+import { Drawer } from "@base-ui/react/drawer";
+import { Menu } from "@base-ui/react/menu";
 import { cva } from "cva";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import {
@@ -6,15 +8,13 @@ import {
   LuArrowRight,
   LuChevronLeft,
   LuChevronRight,
+  LuChevronsUpDown,
   LuExternalLink,
-  LuGitCommitHorizontal,
-  LuInfo,
   LuMonitor,
   LuRotateCw,
   LuSmartphone,
 } from "react-icons/lu";
 import { ARCHIVE_BASE, ERAS, type Era, eraFrameUrl, eraPathFromFrame } from "../archive/eras";
-import pagesBySlug from "../archive/pages.gen.json";
 
 type Search = { path?: string };
 
@@ -44,13 +44,10 @@ export const Route = createFileRoute("/archive/$era")({
   component: ArchivePage,
 });
 
-type Page = { path: string; title: string };
-const PAGES = pagesBySlug as Record<string, Page[]>;
-const REPO_URL = "https://github.com/garand/garand";
 const DESKTOP_WIDTH = 1280;
 const PHONE_WIDTH = 390;
 
-const TIMELINE_START = Date.parse("2011-07-01");
+const TIMELINE_START = Date.parse("2011-01-01");
 const TIMELINE_END = Date.parse("2026-12-31");
 const YEARS = Array.from({ length: 2026 - 2011 + 1 }, (_, i) => 2011 + i);
 
@@ -72,32 +69,10 @@ const monthYear = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   timeZone: "UTC",
 });
-const fullDate = new Intl.DateTimeFormat("en-US", {
-  month: "long",
-  day: "numeric",
-  year: "numeric",
-  timeZone: "UTC",
-});
-
 function formatRange(index: number) {
   const { from, to } = liveRange(index);
   const end = index === ERAS.length - 1 ? "now" : monthYear.format(to);
   return `${monthYear.format(from)} – ${end}`;
-}
-
-function pageLabel(page: Page) {
-  const title = page.title
-    .replace(/\s*[|–—-]\s*Anthony Garand\s*$/i, "")
-    .replace(/^\s*[|–—-]\s*/, "")
-    .trim();
-  if (page.path === "/") return "Home";
-  if (title && title !== "Anthony Garand") return title;
-  const last = page.path.split("/").filter(Boolean).pop() ?? page.path;
-  return last.replace(/[-_]+/g, " ").replace(/^\w/, (c) => c.toUpperCase());
-}
-
-function pageDepth(path: string) {
-  return Math.max(0, path.split("/").filter(Boolean).length - 1);
 }
 
 type Viewport = "desktop" | "phone";
@@ -112,14 +87,12 @@ function ArchivePage() {
     ERAS.findIndex((e) => e.slug === params.era),
   );
   const era = eraAt(selectedIndex);
-  const pages = PAGES[era.slug] ?? [{ path: "/", title: "" }];
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [initialSrc] = useState(() => eraFrameUrl(era, search.path ?? "/"));
   const [loading, setLoading] = useState(true);
   const [framePath, setFramePath] = useState(search.path ?? "/");
   const [viewport, setViewport] = useState<Viewport>("desktop");
-  const [showInfo, setShowInfo] = useState(false);
   const loadedEra = useRef(era.slug);
 
   // Default to the phone viewport on small screens.
@@ -163,13 +136,6 @@ function ArchivePage() {
       loadInFrame(eraFrameUrl(next, "/"), "replace");
     },
     [loadInFrame, navigate],
-  );
-
-  const openPage = useCallback(
-    (path: string) => {
-      loadInFrame(eraFrameUrl(era, path), "push");
-    },
-    [era, loadInFrame],
   );
 
   const onFrameLoad = useCallback(() => {
@@ -233,24 +199,24 @@ function ArchivePage() {
   const frameUrl = eraFrameUrl(era, framePath);
 
   return (
-    <div className="flex h-dvh flex-col bg-zinc-100 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50">
+    <div className="flex h-dvh flex-col bg-gray-100 text-gray-900 dark:bg-gray-950 dark:text-gray-50">
       <header className="flex h-14 flex-none items-center justify-between gap-4 px-4 sm:px-6">
         <nav aria-label="Breadcrumb" className="flex min-w-0 items-center gap-2 text-sm">
           <Link
             to="/archive"
             aria-label="Back to all versions"
-            className="group -ml-1 inline-flex size-7 flex-none items-center justify-center rounded-md text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+            className="group -ml-1 inline-flex size-7 flex-none items-center justify-center rounded-md text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
           >
             <LuArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
           </Link>
-          <span className="truncate text-zinc-500 dark:text-zinc-400">
-            <Link to="/" className="text-zinc-900 hover:underline dark:text-zinc-100">
+          <span className="truncate text-gray-500 dark:text-gray-400">
+            <Link to="/" className="text-gray-900 hover:underline max-sm:hidden dark:text-gray-100">
               Anthony Garand
             </Link>
-            <span className="mx-1.5 text-zinc-300 dark:text-zinc-700">/</span>
+            <span className="mx-1.5 text-gray-300 max-sm:hidden dark:text-gray-700">/</span>
             <Link
               to="/archive"
-              className="hover:text-zinc-900 hover:underline dark:hover:text-zinc-100"
+              className="hover:text-gray-900 hover:underline dark:hover:text-gray-100"
             >
               Archive
             </Link>
@@ -260,7 +226,7 @@ function ArchivePage() {
           <IconButton label="Previous version (←)" onClick={() => selectEra(selectedIndex - 1)}>
             <LuChevronLeft />
           </IconButton>
-          <span className="w-14 text-center text-sm text-zinc-500 tabular-nums dark:text-zinc-400">
+          <span className="w-14 text-center text-sm text-gray-500 tabular-nums dark:text-gray-400">
             {selectedIndex + 1} / {ERAS.length}
           </span>
           <IconButton label="Next version (→)" onClick={() => selectEra(selectedIndex + 1)}>
@@ -269,13 +235,15 @@ function ArchivePage() {
         </div>
       </header>
 
-      <div className="flex min-h-0 flex-1 flex-col gap-4 px-4 pb-4 sm:px-6 lg:flex-row lg:gap-6">
-        <main className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden rounded-xl bg-white shadow-[0_0_0_1px_rgb(0_0_0/0.06),0_8px_30px_-12px_rgb(0_0_0/0.18)] dark:bg-zinc-900 dark:shadow-[0_0_0_1px_rgb(255_255_255/0.08)]">
-          <div className="flex h-11 flex-none items-center gap-1 border-b border-zinc-200/80 px-2 dark:border-zinc-800">
+      <Timeline selectedIndex={selectedIndex} onSelect={selectEra} />
+
+      <div className="flex min-h-0 flex-1 flex-col px-3 pb-3 sm:px-6 sm:pb-6">
+        <main className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden rounded-xl bg-white shadow-[0_0_0_1px_rgb(0_0_0/0.06),0_8px_30px_-12px_rgb(0_0_0/0.18)] dark:bg-gray-900 dark:shadow-[0_0_0_1px_rgb(255_255_255/0.08)]">
+          <div className="flex h-11 flex-none items-center gap-1 border-b border-gray-200/80 px-2 dark:border-gray-800">
             <div className="mr-2 ml-1 hidden gap-1.5 sm:flex" aria-hidden="true">
-              <span className="size-2.5 rounded-full bg-zinc-200 dark:bg-zinc-700" />
-              <span className="size-2.5 rounded-full bg-zinc-200 dark:bg-zinc-700" />
-              <span className="size-2.5 rounded-full bg-zinc-200 dark:bg-zinc-700" />
+              <span className="size-2.5 rounded-full bg-gray-200 dark:bg-gray-700" />
+              <span className="size-2.5 rounded-full bg-gray-200 dark:bg-gray-700" />
+              <span className="size-2.5 rounded-full bg-gray-200 dark:bg-gray-700" />
             </div>
             <IconButton
               label="Back"
@@ -296,18 +264,18 @@ function ArchivePage() {
             <IconButton label="Reload" size="sm" onClick={() => frameHistory("reload")}>
               <LuRotateCw className={loading ? "animate-spin" : undefined} />
             </IconButton>
-            <div className="mx-1 flex h-7 min-w-0 flex-1 items-center rounded-md bg-zinc-100 px-3 text-[13px] dark:bg-zinc-800/80">
+            <div className="mx-1 flex h-7 min-w-0 flex-1 items-center rounded-md bg-gray-100 px-3 text-[13px] dark:bg-gray-800/80">
               <span className="truncate">
-                <span className="text-zinc-900 dark:text-zinc-100">{era.domain}</span>
-                <span className="text-zinc-500 dark:text-zinc-400">
+                <span className="text-gray-900 dark:text-gray-100">{era.domain}</span>
+                <span className="text-gray-500 dark:text-gray-400">
                   {framePath === "/" ? "" : framePath}
                 </span>
               </span>
-              <span className="ml-auto flex-none pl-3 text-xs text-zinc-400 tabular-nums dark:text-zinc-500">
+              <span className="ml-auto flex-none pl-3 text-xs text-gray-400 tabular-nums dark:text-gray-500">
                 {new Date(era.start).getUTCFullYear()}
               </span>
             </div>
-            <div className="flex flex-none items-center rounded-md bg-zinc-100 p-0.5 dark:bg-zinc-800/80">
+            <div className="flex flex-none items-center rounded-md bg-gray-100 p-0.5 dark:bg-gray-800/80">
               <ViewportButton
                 label="Desktop"
                 active={viewport === "desktop"}
@@ -329,19 +297,10 @@ function ArchivePage() {
               rel="noreferrer"
               title="Open in a new tab"
               aria-label="Open in a new tab"
-              className="inline-flex size-8 flex-none items-center justify-center rounded-md text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+              className="inline-flex size-8 flex-none items-center justify-center rounded-md text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
             >
               <LuExternalLink className="size-4" />
             </a>
-            <IconButton
-              label="About this version"
-              size="sm"
-              className="lg:hidden"
-              pressed={showInfo}
-              onClick={() => setShowInfo((v) => !v)}
-            >
-              <LuInfo />
-            </IconButton>
           </div>
           <FrameViewport viewport={viewport} loading={loading}>
             <iframe
@@ -353,122 +312,15 @@ function ArchivePage() {
             />
           </FrameViewport>
         </main>
-
-        <aside
-          className={`${showInfo ? "flex" : "hidden"} max-h-[45dvh] min-h-0 flex-none flex-col overflow-y-auto rounded-xl bg-white p-5 shadow-[0_0_0_1px_rgb(0_0_0/0.06)] lg:flex lg:max-h-none lg:w-80 lg:bg-transparent lg:p-0 lg:shadow-none dark:bg-zinc-900 dark:shadow-[0_0_0_1px_rgb(255_255_255/0.08)] lg:dark:bg-transparent lg:dark:shadow-none`}
-        >
-          <EraDetails
-            era={era}
-            index={selectedIndex}
-            pages={pages}
-            framePath={framePath}
-            onOpenPage={openPage}
-          />
-        </aside>
       </div>
-
-      <Timeline selectedIndex={selectedIndex} onSelect={selectEra} />
     </div>
   );
 }
 
-function EraDetails({
-  era,
-  index,
-  pages,
-  framePath,
-  onOpenPage,
-}: {
-  era: Era;
-  index: number;
-  pages: Page[];
-  framePath: string;
-  onOpenPage: (path: string) => void;
-}) {
-  return (
-    <div className="flex flex-col gap-6 lg:pt-1">
-      <div>
-        <p className="text-sm text-zinc-500 tabular-nums dark:text-zinc-400">
-          {formatRange(index)}
-        </p>
-        <h1 className="mt-1 text-2xl leading-tight font-medium tracking-tight">{era.name}</h1>
-        <p className="mt-3 text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-300">
-          {era.summary}
-        </p>
-      </div>
-
-      <ul className="flex flex-wrap gap-1.5">
-        {era.stack.map((item) => (
-          <li
-            key={item}
-            className="rounded-full border border-zinc-200 px-2.5 py-0.5 text-xs text-zinc-600 dark:border-zinc-800 dark:text-zinc-400"
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
-
-      {pages.length > 1 ? (
-        <div>
-          <h2 className="text-xs font-medium tracking-wide text-zinc-500 uppercase dark:text-zinc-400">
-            Pages
-          </h2>
-          <ul className="mt-2 -ml-2 flex flex-col">
-            {pages.map((page) => {
-              const active = page.path === framePath;
-              return (
-                <li key={page.path}>
-                  <button
-                    type="button"
-                    onClick={() => onOpenPage(page.path)}
-                    aria-current={active ? "page" : undefined}
-                    style={{ paddingLeft: `${0.5 + pageDepth(page.path) * 0.875}rem` }}
-                    className="w-full truncate rounded-md py-1 pr-2 text-left text-sm text-zinc-600 hover:bg-zinc-200/60 hover:text-zinc-900 aria-[current=page]:font-medium aria-[current=page]:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 dark:aria-[current=page]:text-zinc-100"
-                  >
-                    {pageLabel(page)}
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      ) : null}
-
-      {era.notes?.length ? (
-        <div>
-          <h2 className="text-xs font-medium tracking-wide text-zinc-500 uppercase dark:text-zinc-400">
-            Notes
-          </h2>
-          <ul className="mt-2 flex flex-col gap-1.5 text-sm leading-snug text-zinc-500 dark:text-zinc-400">
-            {era.notes.map((note) => (
-              <li key={note} className="flex gap-2">
-                <span
-                  aria-hidden="true"
-                  className="mt-[0.45em] size-1 flex-none rounded-full bg-zinc-300 dark:bg-zinc-600"
-                />
-                {note}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
-
-      <a
-        href={`${REPO_URL}/tree/${era.commit}`}
-        target="_blank"
-        rel="noreferrer"
-        className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-      >
-        <LuGitCommitHorizontal className="size-4" />
-        <span>
-          <code className="font-mono text-[13px]">{era.commit}</code> on {era.branch} ·{" "}
-          {fullDate.format(Date.parse(era.end))}
-        </span>
-      </a>
-    </div>
-  );
-}
-
+/**
+ * The version picker and a to-scale track of how long each version was live.
+ * The picker is a menu on larger screens and a bottom drawer on phones.
+ */
 function Timeline({
   selectedIndex,
   onSelect,
@@ -476,91 +328,155 @@ function Timeline({
   selectedIndex: number;
   onSelect: (index: number) => void;
 }) {
-  const listRef = useRef<HTMLOListElement>(null);
+  const era = eraAt(selectedIndex);
   const span = TIMELINE_END - TIMELINE_START;
   const pct = (t: number) => ((t - TIMELINE_START) / span) * 100;
-
-  useEffect(() => {
-    const item = listRef.current?.children[selectedIndex] as HTMLElement | undefined;
-    item?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
-  }, [selectedIndex]);
+  const triggerLabel = (
+    <>
+      <span className="text-gray-400 tabular-nums dark:text-gray-500">{era.start.slice(0, 4)}</span>
+      <span className="truncate font-medium">{era.name}</span>
+      <LuChevronsUpDown className="size-3.5 flex-none text-gray-400 dark:text-gray-500" />
+    </>
+  );
 
   return (
     <nav
       aria-label="Versions"
-      className="flex-none border-t border-zinc-200 bg-white/70 dark:border-zinc-800 dark:bg-zinc-900/60"
+      className="flex flex-none items-center gap-3 px-3 pb-3 sm:gap-6 sm:px-6 sm:pb-4"
     >
-      <div className="relative mx-4 mt-3 h-6 sm:mx-6" aria-hidden="true">
-        <div className="absolute inset-x-0 top-2 h-1 rounded-full bg-zinc-100 dark:bg-zinc-800" />
-        {ERAS.map((era, i) => {
+      <Menu.Root>
+        <Menu.Trigger className={`${pickerTrigger} w-48 max-sm:hidden [&>svg]:ml-auto`}>
+          {triggerLabel}
+        </Menu.Trigger>
+        <Menu.Portal>
+          <Menu.Positioner side="bottom" align="start" sideOffset={6} className="z-50 outline-none">
+            <Menu.Popup className="max-h-[min(70dvh,var(--available-height))] w-80 origin-(--transform-origin) overflow-y-auto rounded-xl bg-white p-1 shadow-[0_0_0_1px_rgb(0_0_0/0.06),0_16px_40px_-12px_rgb(0_0_0/0.25)] outline-none transition-[scale,opacity] duration-150 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0 dark:bg-gray-900 dark:shadow-[0_0_0_1px_rgb(255_255_255/0.08),0_16px_40px_-12px_rgb(0_0_0/0.6)]">
+              {ERAS.map((e, i) => (
+                <Menu.Item
+                  key={e.slug}
+                  onClick={() => onSelect(i)}
+                  aria-current={i === selectedIndex ? "true" : undefined}
+                  className={eraRow}
+                >
+                  <EraRowContent era={e} index={i} />
+                </Menu.Item>
+              ))}
+            </Menu.Popup>
+          </Menu.Positioner>
+        </Menu.Portal>
+      </Menu.Root>
+
+      <EraDrawer selectedIndex={selectedIndex} onSelect={onSelect}>
+        {triggerLabel}
+      </EraDrawer>
+
+      <div className="relative h-9 min-w-0 flex-1" aria-hidden="true">
+        {ERAS.map((e, i) => {
           const { from, to } = liveRange(i);
           const selected = i === selectedIndex;
           return (
             <button
-              key={era.slug}
+              key={e.slug}
               type="button"
               tabIndex={-1}
               onClick={() => onSelect(i)}
-              title={`${era.name} · ${formatRange(i)}`}
-              className={`absolute top-1.5 h-2 min-w-1.5 rounded-full transition-colors ${
-                selected
-                  ? "z-10 bg-zinc-900 dark:bg-zinc-100"
-                  : "bg-zinc-300 hover:bg-zinc-400 dark:bg-zinc-600 dark:hover:bg-zinc-500"
-              }`}
+              title={`${e.name} · ${formatRange(i)}`}
+              className="group absolute top-0 flex h-5 items-center"
               style={{ left: `${pct(from)}%`, width: `calc(${pct(to) - pct(from)}% - 2px)` }}
-            />
+            >
+              <span
+                className={`w-full min-w-1.5 rounded-full transition-all ${
+                  selected
+                    ? "h-2 bg-gray-900 dark:bg-gray-100"
+                    : "h-1.5 bg-gray-300 group-hover:h-2 group-hover:bg-gray-400 dark:bg-gray-700 dark:group-hover:bg-gray-500"
+                }`}
+              />
+            </button>
           );
         })}
         {YEARS.map((year) => (
           <span
             key={year}
-            className={`absolute top-4 -translate-x-1/2 text-[10px] text-zinc-400 tabular-nums dark:text-zinc-500 ${
-              year % 5 === 0 ? "" : "max-sm:hidden"
+            className={`pointer-events-none absolute top-5 flex -translate-x-1/2 flex-col items-center gap-0.5 text-[10px] leading-none text-gray-400 tabular-nums dark:text-gray-500 ${
+              year % 5 === 0 ? "" : "max-md:hidden"
             }`}
             style={{ left: `${pct(Date.UTC(year, 0, 1))}%` }}
           >
+            <span className="h-1 w-px bg-gray-300 dark:bg-gray-700" />
             {year === 2011 ? "" : year}
           </span>
         ))}
       </div>
-      <ol
-        ref={listRef}
-        className="flex snap-x gap-1 overflow-x-auto px-3 pt-2 pb-3 [scrollbar-width:none] sm:px-5 [&::-webkit-scrollbar]:hidden"
-      >
-        {ERAS.map((era, i) => {
-          const selected = i === selectedIndex;
-          return (
-            <li key={era.slug} className="flex-1 snap-start">
-              <button
-                type="button"
-                onClick={() => onSelect(i)}
-                aria-current={selected ? "true" : undefined}
-                className={timelineItem({ selected })}
-              >
-                <span className="text-xs text-zinc-500 tabular-nums dark:text-zinc-400">
-                  {new Date(era.start).getUTCFullYear()}
-                </span>
-                <span className="truncate text-sm">{era.name}</span>
-              </button>
-            </li>
-          );
-        })}
-      </ol>
     </nav>
   );
 }
 
-const timelineItem = cva(
-  "flex w-full min-w-28 flex-col items-start rounded-lg px-3 py-2 text-left transition-colors",
-  {
-    variants: {
-      selected: {
-        true: "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 [&>span:first-child]:text-zinc-400 dark:[&>span:first-child]:text-zinc-500",
-        false: "text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800",
-      },
-    },
-  },
-);
+function EraDrawer({
+  selectedIndex,
+  onSelect,
+  children,
+}: {
+  selectedIndex: number;
+  onSelect: (index: number) => void;
+  children: React.ReactNode;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <Drawer.Root open={open} onOpenChange={setOpen}>
+      <Drawer.Trigger className={`${pickerTrigger} max-w-[45%] sm:hidden`}>
+        {children}
+      </Drawer.Trigger>
+      <Drawer.Portal>
+        <Drawer.Backdrop className="fixed inset-0 min-h-dvh bg-black opacity-[calc(0.3*(1-var(--drawer-swipe-progress)))] transition-opacity duration-[450ms] ease-[cubic-bezier(0.32,0.72,0,1)] data-ending-style:opacity-0 data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] data-starting-style:opacity-0 data-swiping:duration-0 supports-[-webkit-touch-callout:none]:absolute" />
+        <Drawer.Viewport className="fixed inset-0 flex items-end justify-center">
+          <Drawer.Popup className="-mb-12 max-h-[calc(80dvh+3rem)] w-full overflow-y-auto overscroll-contain rounded-t-2xl bg-white px-2 pt-3 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px)+3rem)] text-gray-900 outline-none [transform:translateY(var(--drawer-swipe-movement-y))] transition-transform duration-[450ms] ease-[cubic-bezier(0.32,0.72,0,1)] data-ending-style:[transform:translateY(calc(100%-3rem+2px))] data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] data-starting-style:[transform:translateY(calc(100%-3rem+2px))] data-swiping:select-none dark:bg-gray-900 dark:text-gray-50">
+            <div className="mx-auto mb-2 h-1 w-10 rounded-full bg-gray-200 dark:bg-gray-700" />
+            <Drawer.Content>
+              <Drawer.Title className="px-3 py-2 text-sm font-medium">Versions</Drawer.Title>
+              <ol>
+                {ERAS.map((e, i) => (
+                  <li key={e.slug}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        onSelect(i);
+                        setOpen(false);
+                      }}
+                      aria-current={i === selectedIndex ? "true" : undefined}
+                      className={`${eraRow} w-full py-3`}
+                    >
+                      <EraRowContent era={e} index={i} />
+                    </button>
+                  </li>
+                ))}
+              </ol>
+            </Drawer.Content>
+          </Drawer.Popup>
+        </Drawer.Viewport>
+      </Drawer.Portal>
+    </Drawer.Root>
+  );
+}
+
+function EraRowContent({ era, index }: { era: Era; index: number }) {
+  return (
+    <>
+      <span className="w-9 flex-none text-gray-400 tabular-nums dark:text-gray-500">
+        {era.start.slice(0, 4)}
+      </span>
+      <span className="min-w-0 flex-1 truncate">{era.name}</span>
+      <span className="flex-none text-xs text-gray-400 tabular-nums dark:text-gray-500">
+        {formatRange(index)}
+      </span>
+    </>
+  );
+}
+
+const pickerTrigger =
+  "-ml-3 inline-flex h-9 min-w-0 flex-none items-center gap-2 rounded-md px-3 text-sm text-gray-900 transition-colors outline-none select-none hover:bg-gray-200/70 focus-visible:ring-2 focus-visible:ring-gray-400 data-popup-open:bg-gray-200/70 dark:text-gray-100 dark:hover:bg-gray-800 dark:data-popup-open:bg-gray-800";
+
+const eraRow =
+  "flex cursor-default items-center gap-3 rounded-lg px-3 py-2 text-left text-sm text-gray-700 outline-none select-none data-highlighted:bg-gray-100 aria-[current=true]:font-medium aria-[current=true]:text-gray-900 dark:text-gray-300 dark:data-highlighted:bg-gray-800 dark:aria-[current=true]:text-gray-50 active:bg-gray-100 dark:active:bg-gray-800";
 
 /**
  * Desktop mode renders the page at a real desktop width and scales it down to
@@ -607,7 +523,7 @@ function FrameViewport({
     <div
       ref={outerRef}
       className={`relative min-h-0 flex-1 overflow-hidden ${
-        viewport === "phone" ? "flex justify-center bg-zinc-100 dark:bg-zinc-950" : ""
+        viewport === "phone" ? "flex justify-center bg-gray-100 dark:bg-gray-950" : ""
       }`}
     >
       <div
@@ -625,7 +541,7 @@ function FrameViewport({
 }
 
 const iconButton = cva(
-  "inline-flex flex-none items-center justify-center rounded-md text-zinc-500 transition-colors hover:bg-zinc-200/70 hover:text-zinc-900 aria-pressed:bg-zinc-200/70 aria-pressed:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 dark:aria-pressed:bg-zinc-800 dark:aria-pressed:text-zinc-100 [&>svg]:size-4",
+  "inline-flex flex-none items-center justify-center rounded-md text-gray-500 transition-colors hover:bg-gray-200/70 hover:text-gray-900 aria-pressed:bg-gray-200/70 aria-pressed:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100 dark:aria-pressed:bg-gray-800 dark:aria-pressed:text-gray-100 [&>svg]:size-4",
   {
     variants: {
       size: {
@@ -684,7 +600,7 @@ function ViewportButton({
       aria-label={label}
       aria-pressed={active}
       onClick={onClick}
-      className="inline-flex h-6 w-7 items-center justify-center rounded text-zinc-500 transition-colors hover:text-zinc-900 aria-pressed:bg-white aria-pressed:text-zinc-900 aria-pressed:shadow-sm dark:text-zinc-400 dark:hover:text-zinc-100 dark:aria-pressed:bg-zinc-700 dark:aria-pressed:text-zinc-100 [&>svg]:size-3.5"
+      className="inline-flex h-6 w-7 items-center justify-center rounded text-gray-500 transition-colors hover:text-gray-900 aria-pressed:bg-white aria-pressed:text-gray-900 aria-pressed:shadow-sm dark:text-gray-400 dark:hover:text-gray-100 dark:aria-pressed:bg-gray-700 dark:aria-pressed:text-gray-100 [&>svg]:size-3.5"
     >
       {children}
     </button>

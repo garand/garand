@@ -29,22 +29,22 @@ function NotFound({ data }: NotFoundRouteProps) {
   const location = useLocation();
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-zinc-950">
+    <div className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-gray-950">
       <div className="mx-auto w-full max-w-md px-6 text-center">
         {/* 404 Number */}
         <div className="mb-8">
-          <h1 className="text-9xl font-bold text-zinc-200 select-none dark:text-zinc-900">404</h1>
+          <h1 className="text-9xl font-bold text-gray-200 select-none dark:text-gray-900">404</h1>
         </div>
 
         {/* Error Message */}
         <div className="mb-8">
-          <h2 className="mb-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+          <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-gray-100">
             Page Not Found
           </h2>
-          <p className="mb-2 text-zinc-600 dark:text-zinc-400">
+          <p className="mb-2 text-gray-600 dark:text-gray-400">
             Sorry, we couldn't find the page you're looking for.
           </p>
-          <p className="inline-block rounded-lg bg-zinc-100 px-3 py-2 font-mono text-sm text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+          <p className="inline-block rounded-lg bg-gray-100 px-3 py-2 font-mono text-sm text-gray-600 dark:bg-gray-800 dark:text-gray-400">
             {location.pathname}
           </p>
         </div>
@@ -69,33 +69,33 @@ function NotFound({ data }: NotFoundRouteProps) {
 
 function Error({ error, info, reset }: ErrorComponentProps) {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-zinc-950">
+    <div className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-gray-950">
       <div className="mx-auto w-full max-w-md px-6 text-center">
         {/* Error Number */}
         <div className="mb-8">
-          <h1 className="text-9xl font-bold text-zinc-200 select-none dark:text-zinc-900">500</h1>
+          <h1 className="text-9xl font-bold text-gray-200 select-none dark:text-gray-900">500</h1>
         </div>
 
         {/* Error Message */}
         <div className="mb-8">
-          <h2 className="mb-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+          <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-gray-100">
             Something went wrong
           </h2>
-          <p className="mb-4 text-zinc-600 dark:text-zinc-400">
+          <p className="mb-4 text-gray-600 dark:text-gray-400">
             We encountered an unexpected error.
             <br /> Please try again.
           </p>
 
           {/* Error Details */}
           {error && (
-            <div className="mb-4 rounded-lg bg-zinc-100 p-4 text-left text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400">
+            <div className="mb-4 rounded-lg bg-gray-100 p-4 text-left text-gray-600 dark:bg-gray-900 dark:text-gray-400">
               <p className="font-mono text-sm break-words">{error.message}</p>
             </div>
           )}
 
           {/* Component Stack (Development) */}
           {info?.componentStack && process.env.NODE_ENV === "development" && (
-            <details className="mb-4 rounded-lg bg-zinc-100 p-4 text-left text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400">
+            <details className="mb-4 rounded-lg bg-gray-100 p-4 text-left text-gray-600 dark:bg-gray-900 dark:text-gray-400">
               <summary className="mb-2 cursor-pointer font-semibold">Component Stack</summary>
               <pre className="font-mono text-xs break-words whitespace-pre-wrap">
                 {info.componentStack}

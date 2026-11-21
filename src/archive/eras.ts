@@ -29,6 +29,23 @@ export type Era = {
 
 export const ERAS: Era[] = [
   {
+    slug: "2011-calling-card",
+    name: "Calling Card",
+    start: "2011-02-15",
+    end: "2011-08-17",
+    commit: "602ac80",
+    branch: "legacy",
+    kind: "static",
+    domain: "anthonygarand.com",
+    stack: ["Hand-written HTML", "Compass", "Mensch", "Cabin"],
+    summary:
+      "The first anthonygarand.com: one white card with the name in Mensch Thin over an avatar, and links to Twitter, GitHub, Dribbble and email.",
+    notes: [
+      "The original folder never made it into git on its own. It was copied in later under /vcard/, which is what this is built from.",
+      "The launch date comes from the Gaug.es analytics ID, created February 15, 2011.",
+    ],
+  },
+  {
     slug: "2011-notebook",
     name: "The Notebook",
     start: "2011-08-18",

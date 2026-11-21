@@ -81,6 +81,8 @@ const PROXIMA: FontShim = {
 };
 
 const BUILDS: Record<string, EraBuild> = {
+  // Committed later as a subfolder, but written to be served from the root.
+  "2011-calling-card": { staticDir: "vcard" },
   "2011-notebook": { staticDir: "_site", seeds: ["/posts/square-support/"] },
   "2011-version-two": { staticDir: "_site", seeds: ["/vcard/"] },
   "2011-new-version": {
