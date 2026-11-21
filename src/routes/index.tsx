@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { cva } from "cva";
 import { useEffect, useRef, useState } from "react";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
+import { LuHistory } from "react-icons/lu";
 import {
   AmcLogo,
   AmcNetworksLogo,
@@ -609,7 +610,7 @@ function Component() {
               </h1>
               <p className="text-zinc-500 dark:text-zinc-400">Product Designer & Engineer</p>
             </div>
-            <div className="grid shrink-0 auto-cols-max grid-flow-col justify-end gap-4 pt-0.5">
+            <div className="grid shrink-0 auto-cols-max grid-flow-col items-center justify-end gap-4 pt-0.5">
               <a
                 href="https://x.com/garand"
                 className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
@@ -621,6 +622,17 @@ function Component() {
                 className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
               >
                 <FaGithub />
+              </a>
+              {/* A full page load with target=_top, so following it from the
+                  archive's own preview of this page doesn't nest the viewer. */}
+              <a
+                href="/archive"
+                target="_top"
+                title="Every version of this site since 2011"
+                className="-my-1 inline-flex items-center gap-1.5 rounded-full border border-zinc-200 px-2.5 py-0.5 text-sm text-zinc-600 transition-colors hover:border-zinc-300 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-100"
+              >
+                <LuHistory className="size-3.5" />
+                Archive
               </a>
             </div>
           </div>

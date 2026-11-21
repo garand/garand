@@ -1,0 +1,258 @@
+{
+  "2011-notebook": [
+    {
+      "path": "/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/posts/square-support/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/posts/thoughs-on-valiocon-2011/",
+      "title": "Anthony Garand"
+    }
+  ],
+  "2011-version-two": [
+    {
+      "path": "/",
+      "title": "| Anthony Garand"
+    },
+    {
+      "path": "/about/",
+      "title": "About | Anthony Garand"
+    },
+    {
+      "path": "/articles/",
+      "title": "Articles | Anthony Garand"
+    },
+    {
+      "path": "/articles/css3-animated-button/",
+      "title": "CSS3 Animated Button | Anthony Garand"
+    },
+    {
+      "path": "/articles/on-disconnecting/",
+      "title": "On Disconnecting | Anthony Garand"
+    },
+    {
+      "path": "/articles/square-support/",
+      "title": "Square Support | Anthony Garand"
+    },
+    {
+      "path": "/articles/standing-desk/",
+      "title": "Standing Desk | Anthony Garand"
+    },
+    {
+      "path": "/articles/thoughts-on-valiocon-2011/",
+      "title": "Thoughts on ValioCon 2011 | Anthony Garand"
+    },
+    {
+      "path": "/articles/whether-you-think-you-can/",
+      "title": "Whether you think you can... | Anthony Garand"
+    },
+    {
+      "path": "/vcard/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/work/",
+      "title": "Recent Work | Anthony Garand"
+    }
+  ],
+  "2011-new-version": [
+    {
+      "path": "/",
+      "title": "On Productivity | Anthony Garand"
+    },
+    {
+      "path": "/about/",
+      "title": "About | Anthony Garand"
+    },
+    {
+      "path": "/avatar/",
+      "title": "Avatar"
+    },
+    {
+      "path": "/experiments/",
+      "title": "Experiments | Anthony Garand"
+    },
+    {
+      "path": "/projects/",
+      "title": "Projects | Anthony Garand"
+    },
+    {
+      "path": "/sephora/",
+      "title": "Sephora"
+    },
+    {
+      "path": "/vcard/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/writing/",
+      "title": "Writing | Anthony Garand"
+    },
+    {
+      "path": "/writing/on-disconnecting/",
+      "title": "On Disconnecting | Anthony Garand"
+    },
+    {
+      "path": "/writing/on-productivity/",
+      "title": "On Productivity | Anthony Garand"
+    },
+    {
+      "path": "/writing/on-valiocon-2011/",
+      "title": "On ValioCon 2011 | Anthony Garand"
+    }
+  ],
+  "2012-v3": [
+    {
+      "path": "/",
+      "title": "Graceful Improvements with CSS3 - Anthony Garand"
+    },
+    {
+      "path": "/about/",
+      "title": "About - Anthony Garand"
+    },
+    {
+      "path": "/articles/",
+      "title": "Articles - Anthony Garand"
+    },
+    {
+      "path": "/articles/graceful-improvements-with-css3/",
+      "title": "Graceful Improvements with CSS3 - Anthony Garand"
+    },
+    {
+      "path": "/articles/on-disconnecting/",
+      "title": "On Disconnecting - Anthony Garand"
+    },
+    {
+      "path": "/articles/on-productivity/",
+      "title": "On Productivity - Anthony Garand"
+    },
+    {
+      "path": "/articles/on-valiocon-2011/",
+      "title": "On ValioCon 2011 - Anthony Garand"
+    },
+    {
+      "path": "/experiments/",
+      "title": "Experiments - Anthony Garand"
+    },
+    {
+      "path": "/projects/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/vcard/",
+      "title": "Anthony Garand"
+    }
+  ],
+  "2013-hey": [
+    {
+      "path": "/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/avatar/",
+      "title": ""
+    },
+    {
+      "path": "/thoughts/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/thoughts/graceful-improvements-with-css3/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/thoughts/on-disconnecting/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/thoughts/on-productivity/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/thoughts/on-valiocon-2011/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/vcard/",
+      "title": ""
+    }
+  ],
+  "2015-responsive": [
+    {
+      "path": "/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/avatar/",
+      "title": ""
+    }
+  ],
+  "2018-dark-mode": [
+    {
+      "path": "/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/avatar/",
+      "title": ""
+    }
+  ],
+  "2023-remix": [
+    {
+      "path": "/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/about/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/articles/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/articles/conditional-links-in-remix/",
+      "title": "Heading"
+    },
+    {
+      "path": "/projects/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/snippets/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/snippets/radix-dropdown-dialog/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/thoughts/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/thoughts/on-disconnecting/",
+      "title": "Anthony Garand"
+    },
+    {
+      "path": "/uses/",
+      "title": "Anthony Garand"
+    }
+  ],
+  "2023-clean": [
+    {
+      "path": "/",
+      "title": "Anthony Garand"
+    }
+  ],
+  "2025-tanstack": [
+    {
+      "path": "/",
+      "title": "Anthony Garand"
+    }
+  ]
+}

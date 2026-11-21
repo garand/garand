@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><meta name="robots" content="noindex"><link rel="stylesheet" href="../../_archive/fonts/shims.css">
+  <title>Graceful Improvements with CSS3 - Anthony Garand</title>
+  <link rel="stylesheet" type="text/css" href="../../css/screen.css">
+  
+  
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="../../index.html" class="logo"><span>Anthony Garand</span></a>
+      <nav>
+        <ul>
+          <li class="active"><a href="../index.html">Articles</a><div></div></li>
+          <li><a href="../../experiments/index.html">Experiments</a><div></div></li>
+          <li><a href="../../projects/index.html">Projects</a><div></div></li>
+          <li><a href="../../about/index.html">About</a><div></div></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="content">
+      <article>
+        <h1>Graceful Improvements with CSS3</h1>
+
+        <p>I&rsquo;ve been using CSS3 on a number of projects recently and I&rsquo;d like to share a few things I&rsquo;ve found useful when using things such as <code>linear-gradient</code>, <code>box-shadow</code>, and <code>rgba</code> values in my designs, while not forgoing support for browsers that have yet to support these features.</p>
+
+        <p>There are a variety of scripts that will tell you if an element can use these new features, I prefer to use purely CSS where I can.</p>
+
+        <p>I&rsquo;m continuing with the assumption that you know how to use these, if you don&rsquo;t, I suggest you take a look at these before continuing:</p>
+
+        <ul>
+          <li><a href="http://dochub.io/#css/linear-gradient" target="_blank" rel="noopener noreferrer">Linear Gradient</a></li>
+          <li><a href="http://dochub.io/#css/box-shadow" target="_blank" rel="noopener noreferrer">Box Shadow</a></li>
+          <li><a href="http://css-tricks.com/rgba-browser-support/" target="_blank" rel="noopener noreferrer">RGBA</a></li>
+        </ul>
+
+        <h2>Linear Gradient</h2>
+
+        <p>Generally gradients are used as backgrounds for a website, div, or other similar content wrapper on a website. This is a place where the gradient is not typically required, but rather is there to improve the look of the site. A technique I&rsquo;ve used frequently to continue to use <code>linear-gradient</code>&rsquo;s but still have the site function in older browsers is setting a <code>background-color</code> before setting the gradient. Typically I go with a color halfway between both colors for the gradient so I end up with a nice mid-tone for the background in older browsers, depending on your design you may choose to opt for something different.</p>
+
+        <pre><ul class="source-meta"><li>CSS</li></ul><code>
+body {
+  background:gray;
+  background-image:linear-gradient(black,white);
+}
+        </code></pre>
+
+        <h2>Box Shadow</h2>
+
+        <p>This is another property that is generally a visual addition rather than being a required component. The way I&rsquo;ve gotten around lack of support in older browsers is by setting a border on the element in addition to the <code>box-shadow</code> and then removing that border on browsers that support <code>box-shadow</code>&rsquo;s. Here&rsquo;s an example of my technique:</p>
+
+        <pre><ul class="source-meta"><li>CSS</li></ul><code>
+.shadow {
+  border-right:1px solid #999;
+  border-left:1px solid #999;
+  border-bottom:2px solid #777;
+  border:0 solid rgba(0,0,0,0);
+  box-shadow:0 1px 2px #666;
+}
+        </code></pre>
+
+        <p>You&rsquo;ll notice I have an extra border declaration, <code>border:0 solid rgba(0,0,0,0)</code>, what that does is sets a 0px border and sets the color to completely transparent black. Browsers that support <code>rgba</code> will remove the border set before, and browsers that do not will disregard the line entierly.</p>
+
+        <hr/>
+
+        <h2>RGBA</h2>
+
+        <p>RGBA has proven to be a very powerful feature in CSS3 for me. It allows you to set RGB values as you have done in the past, but with one extra property, transparency. The alpha level is set in the last attribute as a decimal value with 1 being completely opaque and .5 being 50% opaque. A trick I have used in combination wtih RGBA is also setting the same property with an RGB value one line before. Here is an example:</p>
+
+        <pre><ul class="source-meta"><li>CSS</li></ul><code>
+.rgba {
+  color:rgb(50,50,50);
+  color:rgba(0,0,0,.7);
+}
+        </code></pre>
+
+        <p>Similar to the last example, this sets the color with RGB and then sets the color with RGBA, which will be ignored by browsers that do not support it.</p>
+      
+        <hr/>
+      
+        <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-via="garand" target="_blank" rel="noopener noreferrer">Tweet</a>
+        &nbsp;
+        <a href="https://twitter.com/garand" class="twitter-follow-button" data-show-count="false" target="_blank" rel="noopener noreferrer">Follow @garand</a>
+        
+      </article>
+    </div>
+  </div>
+  
+</body>
+</html>

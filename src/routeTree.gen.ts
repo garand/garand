@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArchiveIndexRouteImport } from './routes/archive.index'
+import { Route as ArchiveEraRouteImport } from './routes/archive.$era'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArchiveIndexRoute = ArchiveIndexRouteImport.update({
+  id: '/archive/',
+  path: '/archive/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArchiveEraRoute = ArchiveEraRouteImport.update({
+  id: '/archive/$era',
+  path: '/archive/$era',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/archive/$era': typeof ArchiveEraRoute
+  '/archive/': typeof ArchiveIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/archive/$era': typeof ArchiveEraRoute
+  '/archive': typeof ArchiveIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/archive/$era': typeof ArchiveEraRoute
+  '/archive/': typeof ArchiveIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/archive/$era' | '/archive/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/archive/$era' | '/archive'
+  id: '__root__' | '/' | '/archive/$era' | '/archive/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArchiveEraRoute: typeof ArchiveEraRoute
+  ArchiveIndexRoute: typeof ArchiveIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/archive/': {
+      id: '/archive/'
+      path: '/archive'
+      fullPath: '/archive/'
+      preLoaderRoute: typeof ArchiveIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/archive/$era': {
+      id: '/archive/$era'
+      path: '/archive/$era'
+      fullPath: '/archive/$era'
+      preLoaderRoute: typeof ArchiveEraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArchiveEraRoute: ArchiveEraRoute,
+  ArchiveIndexRoute: ArchiveIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
